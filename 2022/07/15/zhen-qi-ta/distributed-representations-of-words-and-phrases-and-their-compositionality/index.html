@@ -1,0 +1,3435 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Distributed Representations of Words and Phrases and their Compositionality | pengber&#39;s site</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Distributed Representations of Words and Phrases and their Compositionality | pengber&#39;s site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="pengber&#39;s site">
+<meta property="og:url" content="https://pengber.github.io/about/index.html">
+<meta property="og:site_name" content="pengber&#39;s site">
+<meta property="og:description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-15T11:15:27.280Z">
+<meta property="article:modified_time" content="2022-07-15T11:15:22.204Z">
+<meta property="article:author" content="pengber">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>pengber</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/pengber"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:pengber@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(225)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="计算机">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        计算机
+                        <small>(105)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="计算机<--->编程语言">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        编程语言
+                                        
+                                            <small>(24
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言其它">
+                                                        
+                                                        其它
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言C">
+                                                        
+                                                        C
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言JAVA">
+                                                        
+                                                        JAVA
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言PHP">
+                                                        
+                                                        PHP
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言Python">
+                                                        
+                                                        Python
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->集成开发环境">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        集成开发环境
+                                        
+                                            <small>(36
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境IDEA">
+                                                        
+                                                        IDEA
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境linux">
+                                                        
+                                                        linux
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境sublime">
+                                                        
+                                                        sublime
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境Vs2019">
+                                                        
+                                                        Vs2019
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境VsCode">
+                                                        
+                                                        VsCode
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境WAMP">
+                                                        
+                                                        WAMP
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境windows">
+                                                        
+                                                        windows
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机理论与数学">
+                                        
+                                        计算机理论与数学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机图形学">
+                                        
+                                        计算机图形学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机网络">
+                                        
+                                        计算机网络
+                                        
+                                            <small>(9
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机硬件">
+                                        
+                                        计算机硬件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机组成原理和系统结构">
+                                        
+                                        计算机组成原理和系统结构
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->人工智能">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        人工智能
+                                        
+                                            <small>(11
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->人工智能机器学习">
+                                                        
+                                                        机器学习
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->人工智能自然语言处理">
+                                                        
+                                                        自然语言处理
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->软件开发">
+                                        
+                                        软件开发
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->算法与数据结构">
+                                        
+                                        算法与数据结构
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->真其它">
+                                        
+                                        真其它
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="金融">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        金融
+                        <small>(31)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="金融<--->金融知识">
+                                        
+                                        金融知识
+                                        
+                                            <small>(14
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->经济周期与宏观调控">
+                                        
+                                        经济周期与宏观调控
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->投资记录">
+                                        
+                                        投资记录
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->投资理念">
+                                        
+                                        投资理念
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->行业个股">
+                                        
+                                        行业个股
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="修身">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        修身
+                        <small>(64)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="修身<--->创业">
+                                        
+                                        创业
+                                        
+                                            <small>(16
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->工作">
+                                        
+                                        工作
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->奇思妙想">
+                                        
+                                        奇思妙想
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->三省吾身">
+                                        
+                                        三省吾身
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->生活技能">
+                                        
+                                        生活技能
+                                        
+                                            <small>(10
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->生活知识">
+                                        
+                                        生活知识
+                                        
+                                            <small>(18
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="学科">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        学科
+                        <small>(13)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="学科<--->社会科学">
+                                        
+                                        社会科学
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->文学">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        文学
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="学科<--->文学村上春树">
+                                                        
+                                                        村上春树
+                                                        
+                                                            <small>(3)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->心理学">
+                                        
+                                        心理学
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->影评">
+                                        
+                                        影评
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运动">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        运动
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="运动<--->足球">
+                                        
+                                        足球
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="真其它">
+                        
+                        真其它
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="最近">
+                        
+                        最近
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="225">
+<input type="hidden" id="yelog_site_word_count" value="432.8k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PHP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pytorch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WAMP</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/07/15/yun-dong/zu-qiu/ti-qiu-jing-yan-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="踢球经验总结">踢球经验总结</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/07/15/yun-dong/zu-qiu/yue-wei-pan-fa/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="越位判罚">越位判罚</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/07/15/yun-dong/zu-qiu/cai-pan-gui-ze/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="裁判规则">裁判规则</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/07/15/yun-dong/zu-qiu/di-si-guan-yuan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="第四官员职责">第四官员职责</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/07/15/yun-dong/zu-qiu/zhu-li-cai-pan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="助理裁判职责">助理裁判职责</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2022/07/15/xue-ke/she-hui-ke-xue/she-hui-xing-dong-wu-wei-wan-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会性动物(未完结)">社会性动物(未完结)</span>
+            <span class="post-date" title="2022-07-15 11:15:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2022/07/15/xue-ke/she-hui-ke-xue/xiang-tu-zhong-guo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="乡土中国">乡土中国</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2022/07/15/xue-ke/wen-xue/cun-shang-chun-shu/cun-shang-xiao-shuo-xun-li-wu-nuo-wei-de-sen-lin-dai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="村上小说巡礼五——《挪威的森林》（待）">村上小说巡礼五——《挪威的森林》（待）</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2022/07/15/xue-ke/wen-xue/cun-shang-chun-shu/cun-shang-xiao-shuo-xun-li-san-xun-yang-mou-xian-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="村上小说巡礼三——《寻羊冒险记》">村上小说巡礼三——《寻羊冒险记》</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2022/07/15/xue-ke/wen-xue/cun-shang-chun-shu/cun-shang-xiao-shuo-xun-li-qi-guo-jing-yi-nan-tai-yang-yi-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="村上小说巡礼七——《国境以南，太阳以西》">村上小说巡礼七——《国境以南，太阳以西》</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 心理学 "
+           href="/2022/07/15/xue-ke/xin-li-xue/xin-li-xue-gai-nian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="心理学概念">心理学概念</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/gao-shu-shu-xue-zi-liao-de-xuan-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="高数数学资料的选择">高数数学资料的选择</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/shan-zhong-yi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="陕中医">陕中医</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/mi-xue-bing-cheng-diao-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="蜜雪冰城调研">蜜雪冰城调研</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/kao-yan-jing-yan-fen-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="考研经验分享">考研经验分享</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/she-hui-bao-xian-yang-lao-bao-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会保险养老保险">社会保险养老保险</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/yan-jiu-sheng-jie-duan-zhun-bei/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="研究生阶段准备">研究生阶段准备</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/zhi-shi-guan-li/"
+           data-tag="Java,github,python,PHP,C++"
+           data-author="" >
+            <span class="post-title" title="知识管理">知识管理</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/pi-fu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="皮肤">皮肤</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/liu-xue-yi-min/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="留学移民">留学移民</span>
+            <span class="post-date" title="2022-07-15 11:15:04">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/bi-ye-lun-wen-jin-zhan/"
+           data-tag="Java,github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="毕业论文进展">毕业论文进展</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/bi-ye-lun-wen-si-lu-he-can-kao-zi-liao/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="毕业论文思路和参考资料">毕业论文思路和参考资料</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/lu-you/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="旅游">旅游</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/tuo-hang-ji-hua-mian-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="拓航计划面试总结">拓航计划面试总结</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/shou-ji-zhu-ce-zhang-hao-guan-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机注册账号管理">手机注册账号管理</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/jing-wai-lu-you-xue-xi-ru-he-shi-yong-fu-kuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="境外旅游学习如何使用付款">境外旅游学习如何使用付款</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/tu-shu-guan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="图书馆">图书馆</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/bei-you-2022-zhao-sheng-xuan-chuan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="北邮2022招生宣传">北邮2022招生宣传</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/ge-ren-du-ju-zhi-nan/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="个人独居指南">个人独居指南</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/zheng-quan-cong-ye-zi-ge-kao-shi-ji-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="证券从业资格考试记录">证券从业资格考试记录</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/zhuang-xiu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="装修">装修</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/shou-ji-xuan-gou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机选购">手机选购</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/gan-xing-qu-zheng-shu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="感兴趣证书">感兴趣证书</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/chang-yong-ruan-jian-lie-biao/"
+           data-tag="Java,github,python,PHP,C++"
+           data-author="" >
+            <span class="post-title" title="常用软件列表">常用软件列表</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/kuan-dai-jie-ru/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="宽带接入">宽带接入</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/ru-he-shi-yong-liu-lan-qi-cha-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="如何使用浏览器插件">如何使用浏览器插件</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/kou-qin-xue-xi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="口琴学习">口琴学习</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/xin-xi-su-yang/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="信息素养">信息素养</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/07/15/xiu-shen/sheng-huo-ji-neng/how-to-give-a-good-presentation/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="How to give a good presentation">How to give a good presentation</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/mian-shi-wen-ti/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="面试问题">面试问题</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/ji-ti-hu-kou-xiang-guan-shi-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="集体户口相关事项">集体户口相关事项</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/jin-rong-gong-si-xin-xi-ke-ji-gang-wei-xin-zi-yi-lan/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="金融公司信息科技岗位薪资一览">金融公司信息科技岗位薪资一览</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/bi-lei-gong-si/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="避雷公司">避雷公司</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/she-bao-he-wu-xian-yi-jin/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="社保和五险一金">社保和五险一金</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/ding-ju-sheng-huo-fen-xi/"
+           data-tag="Java,github,C++"
+           data-author="" >
+            <span class="post-title" title="定居生活分析">定居生活分析</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/ding-xiang-xuan-diao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定向选调">定向选调</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/15/xiu-shen/gong-zuo/gong-si-fen-xi/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="公司分析">公司分析</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/ju-zhen-yu-shi-ji-sheng-huo-xiang-lian-xi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="矩阵与实际生活相联系">矩阵与实际生活相联系</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/li-shang-an-ge-qu-dui-bi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="李上安歌曲对比">李上安歌曲对比</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/xue-xi-gan-zhi-ji-hou-de-xiang-fa/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="学习感知机后的想法">学习感知机后的想法</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/guo-ren-quan-qiu-da-jiang-tang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="国任全球大讲堂">国任全球大讲堂</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/guan-yu-yi-shi-xing-tai-he-wen-hua-guan-xi-de-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于意识形态和文化关系的思考">关于意识形态和文化关系的思考</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/07/15/xiu-shen/qi-si-miao-xiang/2018-11-4-lun-xue-xi-he-ying-shi-jiao-yu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2018-11-4论学习和应试教育">2018-11-4论学习和应试教育</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/shen-qing-qi-ye-zhang-hu-wei-xin-xiao-cheng-xu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="申请企业账户微信小程序">申请企业账户微信小程序</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/zhu-xiao-gong-si-liu-cheng/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="注销公司流程">注销公司流程</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/fu-wu-qi-yu-yu-ming-gou-mai/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="服务器与域名购买">服务器与域名购买</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/kuai-di-dai-qu-xiang-mu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="快递代取项目">快递代取项目</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/wei-xin-zhi-fu-ping-tai-de-kai-tong/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="微信支付平台的开通">微信支付平台的开通</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/wei-xin-gong-zhong-ping-tai-ren-zheng-wei-qi-ye/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="微信公众平台认证为企业">微信公众平台认证为企业</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/chuang-ban-gong-si-liu-cheng/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="创办公司流程">创办公司流程</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/jue-ce-mo-ni/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="决策模拟">决策模拟</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-gui-ze/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛规则">企业决策模拟比赛规则</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛总结">企业决策模拟比赛总结</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛">企业决策模拟比赛</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-si-ci-pei-xun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中英创业项目第四次培训">中英创业项目第四次培训</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-er-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第二次培训">中英创业项目第二次培训</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-san-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第三次培训 ">中英创业项目第三次培训 </span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-yi-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第一次培训">中英创业项目第一次培训</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/07/15/xiu-shen/chuang-ye/ge-ren-cheng-xu-qian-yi-wei-qi-ye/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="个人程序迁移为企业">个人程序迁移为企业</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/07/15/xiu-shen/san-sheng-wu-shen/nan-ren-de-zi-wo-xiu-yang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="男人的自我修养">男人的自我修养</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/07/15/xiu-shen/san-sheng-wu-shen/wu-ri-san-sheng-wu-shen-zhuang-tai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="吾日三省吾身-状态">吾日三省吾身-状态</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/07/15/xiu-shen/san-sheng-wu-shen/wu-ri-san-sheng-wu-shen-shi-jian-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="吾日三省吾身-时间线">吾日三省吾身-时间线</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 "
+           href="/2022/07/15/xiu-shen/zui-ji-zhao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="罪己诏">罪己诏</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/jin-qian-guan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="金钱观">金钱观</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/zhuan-gu-jie-zhi-shi-shi-me-yi-si/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="转股价值是什么意思">转股价值是什么意思</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/gu-xi-gu-li-yu-chu-xi-chu-quan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="股息股利与除息除权">股息股利与除息除权</span>
+            <span class="post-date" title="2022-07-15 11:15:03">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/zheng-fu-yu-suan-xu-yao-guan-zhu-de-shu-ju/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="政府预算需要关注的数据">政府预算需要关注的数据</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/fang-di-chan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="房地产">房地产</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/hong-guan-liang-hua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="宏观量化">宏观量化</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/hong-guan-jing-ji-shu-ju/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="宏观经济数据">宏观经济数据</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/ji-jin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基金">基金</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/chang-wai-ji-jin-he-chang-nei-ji-jin-shou-xu-fei-bi-jiao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="场外基金和场内基金手续费比较">场外基金和场内基金手续费比较</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/guan-yu-wai-hui-he-jing-wai-mai-fang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="关于外汇和境外买房">关于外汇和境外买房</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/ya-zhou-98-nian-jin-rong-wei-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="亚洲98年金融危机">亚洲98年金融危机</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/zhong-guo-shi-zheng-fu-yu-suan-de-bei-xi-zhi-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中国式政府预算的悲喜之路">中国式政府预算的悲喜之路</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/kk-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="kk总结">kk总结</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/07/15/jin-rong/jin-rong-zhi-shi/fintech-jin-rong-ke-ji-de-chuang-xin-chuang-ye-yu-an-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FinTech+金融科技的创新,创业与案例">FinTech+金融科技的创新,创业与案例</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 行业个股 "
+           href="/2022/07/15/jin-rong/xing-ye-ge-gu/zhong-guo-ping-an/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中国平安">中国平安</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 行业个股 "
+           href="/2022/07/15/jin-rong/xing-ye-ge-gu/zhong-gong-jiao-yu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中公教育">中公教育</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 经济周期与宏观调控 "
+           href="/2022/07/15/jin-rong/jing-ji-zhou-qi-yu-hong-guan-diao-kong/qi-ye-wei-guan-jing-ji-zhi-biao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业微观经济指标">企业微观经济指标</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2022-04-05/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资记录_2022-04-05">投资记录_2022-04-05</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2022-01-21/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2022-01-21">投资记录_2022-01-21</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-10-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-10-13">投资记录_2021-10-13</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-10-09/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-10-09">投资记录_2021-10-09</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-07-16/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-07-16">投资记录_2021-07-16</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-07-05">投资记录_2021-07-05</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-01-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-01-08">投资记录_2021-01-08</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/07/15/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2020-12-30/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2020-12-30">投资记录_2020-12-30</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/tou-zi-sui-bi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资随笔">投资随笔</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/tou-zi-li-nian-shi-tiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资理念十条">投资理念十条</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/ding-tou-ce-lue-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定投策略思考">定投策略思考</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/jie-zhi-tou-zi-vs-ji-zhu-tou-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="价值投资vs技术投机">价值投资vs技术投机</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/wei-shi-me-bu-yao-jin-jian-gu-qun-he-gen-zhao-gu-piao-da-v-zou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不要进荐股群和跟着股票大V走？">为什么不要进荐股群和跟着股票大V走？</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2022/07/15/jin-rong/tou-zi-li-nian/bu-yao-ba-tou-zi-jiao-liu-dang-zuo-tou-zi-xue-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不要把投资交流当作投资学习">不要把投资交流当作投资学习</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-windows7/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装windows7">安装windows7</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-reactnative/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="安装ReactNative">安装ReactNative</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-mysql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安装mysql">安装mysql</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/xue-xi-githubaction/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="学习githubAction">学习githubAction</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/zai-git-zhong-shi-yong-de-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="在git中使用的问题">在git中使用的问题</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao-er/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号二">一台电脑配置两个github账号二</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号">一台电脑配置两个github账号</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/typora-picgo-pei-zhi-ben-di-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="typora+picgo配置本地笔记">typora+picgo配置本地笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/git-xue-xi-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="git学习笔记">git学习笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-pei-zhi-yu-ming/"
+           data-tag="github,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP配置域名">WAMP配置域名</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-yuan-cheng-zhu-ji-she-zhi-xu-ni-zhu-ji/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="WAMP远程主机设置虚拟主机">WAMP远程主机设置虚拟主机</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-she-zhi-xu-ni-zhu-ji-hou-bu-neng-fang-wen-wen-ti/"
+           data-tag="github,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP设置虚拟主机后不能访问问题">WAMP设置虚拟主机后不能访问问题</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-da-jian-ti-shi/"
+           data-tag="github,PHP,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP搭建提示">WAMP搭建提示</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-tong-yi-ge-fu-wu-qi-pei-zhi-duo-ge-wang-zhan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="WAMP同一个服务器配置多个网站">WAMP同一个服务器配置多个网站</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-guan-yu-lian-jie-shu-ju-ku-shi-bai-de-ke-neng-xing/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="WAMP关于连接数据库失败的可能性">WAMP关于连接数据库失败的可能性</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-jeesite-yun-xing-huan-jing/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="配置Jeesite运行环境">配置Jeesite运行环境</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-weibo-daily-hotkey/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="配置github项目——weibo_daily_hotkey">配置github项目——weibo_daily_hotkey</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-ccks-kg/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="配置github项目ccks_kg">配置github项目ccks_kg</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pei-zhi-senta/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="安装配置senta">安装配置senta</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-tensorflow/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="安装tensorflow">安装tensorflow</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pytorch-yu-dao-de-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装Pytorch遇到的问题">安装Pytorch遇到的问题</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/vscode-pei-zhi-kuai-jie-jian-yun-xing-python-wen-jian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="VSCODE配置快捷键运行Python文件">VSCODE配置快捷键运行Python文件</span>
+            <span class="post-date" title="2022-07-15 11:15:02">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/python-pei-zhi-yi-ge-guan-yu-pil-de-wen-ti/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="Python配置一个关于PIL的问题">Python配置一个关于PIL的问题</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/python-an-zhuang-bao-mu-lu/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="python安装包目录">python安装包目录</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 Vs2019 "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vs2019/vs2019-pei-zhi-lian-jie-shu-ju-ku/"
+           data-tag="github,C++,WAMP"
+           data-author="" >
+            <span class="post-title" title="vs2019配置连接数据库">vs2019配置连接数据库</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 sublime "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/sublime/pei-zhi-sublime-kuai-jie-jian-zhi-xing-html-wen-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="配置sublime快捷键执行html文件">配置sublime快捷键执行html文件</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/teng-xun-yun-fu-wu-qi-bao-ta-wordpress-an-zhuang-ge-ren-bo-ke/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="腾讯云服务器+宝塔+wordpress安装个人博客">腾讯云服务器+宝塔+wordpress安装个人博客</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-llvm/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="安装配置llvm">安装配置llvm</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-flex-bison-deng/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="安装配置flex+bison等">安装配置flex+bison等</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-wordpress-ming-ling-xing-gong-ju-wp-cli-lai-guan-li-wordpress/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装wordpress命令行工具WP-CLI来管理wordpress">安装wordpress命令行工具WP-CLI来管理wordpress</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-zi-ji-de-fu-wu-qi-shang-an-zhuang-git-fu-wu-qi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="在自己的服务器上安装git服务器">在自己的服务器上安装git服务器</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-bu-shu-jian-kong-gu-shi-jiao-ben/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="在云服务器上部署监控股市脚本">在云服务器上部署监控股市脚本</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/liang-tai-linux-zhu-ji-lian-jie-mysql-yuan-cheng-shu-ju-ku-shi-bai-de-jing-yan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="两台Linux主机连接mysql远程数据库失败的经验">两台Linux主机连接mysql远程数据库失败的经验</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-gua-qi-jiao-ben-zhi-xing-pa-qu-shu-ju-ren-wu-xu-yao-zhu-yi-de-dian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="《在云服务器上挂起脚本执行爬取数据任务需要注意的点》">《在云服务器上挂起脚本执行爬取数据任务需要注意的点》</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/centos7-an-zhuang-bu-tong-ban-ben-de-python-bing-she-zhi-mo-ren-python/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="centos7安装不同版本的python并设置默认python">centos7安装不同版本的python并设置默认python</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 IDEA "
+           href="/2022/07/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/idea/idea-an-zhuang/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="IDEA安装">IDEA安装</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/shu-zi-luan-sheng/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字孪生">数字孪生</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/xiao-cheng-xu-xue-xi-zhi-nan/"
+           data-tag="Java,github,PHP,WAMP"
+           data-author="" >
+            <span class="post-title" title="小程序学习指南">小程序学习指南</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/an-zhuo-kai-fa/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安卓开发">安卓开发</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/mo-zi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="墨子">墨子</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/pjsua2-python-ben-di-fu-xian/"
+           data-tag="github,python,C++"
+           data-author="" >
+            <span class="post-title" title="pjsua2_python本地复现">pjsua2_python本地复现</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/biogears/"
+           data-tag="Java,github,python,C++"
+           data-author="" >
+            <span class="post-title" title="biogears">biogears</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/07/15/ji-suan-ji/ruan-jian-kai-fa/b4talk-dong-tai-lian-jie-ku/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="b4talk动态链接库">b4talk动态链接库</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/ji-suan-ji-wang-luo-ke-cheng-zhi-shi-tu-pu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="计算机网络课程知识图谱">计算机网络课程知识图谱</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/jian-yi-liao-tian-ruan-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="简易聊天软件">简易聊天软件</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-7-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第7章">湖南科技大学计算机网络第7章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-6-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第6章">湖南科技大学计算机网络第6章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-5-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第5章">湖南科技大学计算机网络第5章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-4-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第4章">湖南科技大学计算机网络第4章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-3-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第3章">湖南科技大学计算机网络第3章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-2-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第2章">湖南科技大学计算机网络第2章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-1-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第1章">湖南科技大学计算机网络第1章</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机组成原理和系统结构 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-zu-cheng-yuan-li-he-xi-tong-jie-gou/cao-zuo-xi-tong-qa/"
+           data-tag="Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="操作系统QA">操作系统QA</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-ying-jian/zhuang-ji-zhi-shi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="装机知识">装机知识</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-ying-jian/shu-mei-pai-yan-shi-dian-ying/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="树莓派延时电影">树莓派延时电影</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-ying-jian/shou-ji-zhi-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机知识">手机知识</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/ling-san-shu-xue-zhi-shi/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="零散数学知识">零散数学知识</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/ji-qi-xue-xi-zhong-de-shu-xue-ming-ci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习中的数学名词">机器学习中的数学名词</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机图形学 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-tu-xing-xue/shu-zi-tu-xiang-chu-li-ke-cheng-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="数字图像处理课程笔记">数字图像处理课程笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机图形学 "
+           href="/2022/07/15/ji-suan-ji/ji-suan-ji-tu-xing-xue/ping-mu-huan-chong-qu-li-jie/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="屏幕缓冲区理解">屏幕缓冲区理解</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-yu-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="编译原理语法分析程序文档">编译原理语法分析程序文档</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ci-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理词法分析程序文档">编译原理词法分析程序文档</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ebnf-to-bnf/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理EBNF To BNF">编译原理EBNF To BNF</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/shell-xue-xi-bi-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Shell学习笔记">Shell学习笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/neo4j-tu-cha-xun-yu-ju/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="neo4j图查询语句">neo4j图查询语句</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/qi-ta/linux-ling-san-zhi-shi-dian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux零散知识点">linux零散知识点</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/python/liao-xue-feng-de-python-bi-ji/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="《廖雪峰的python》笔记">《廖雪峰的python》笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/python/python-xue-xi-shou-ce-bi-ji/"
+           data-tag="github,python,C++"
+           data-author="" >
+            <span class="post-title" title="《Python学习手册》笔记">《Python学习手册》笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/python/pytorch/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="Pytorch">Pytorch</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/python/python-ling-san-zhi-shi-dian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python零散知识点">python零散知识点</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/python/python-hou-duan-xue-xi-lu-xian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python后端学习路线">python后端学习路线</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 PHP "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/php/php-yu-yan-bi-keng-zhi-nan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP语言避坑指南">PHP语言避坑指南</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-he-xin-ji-zhu-juan-1/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="《Java核心技术卷1》">《Java核心技术卷1》</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-ling-san-zhi-shi-dian/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java零散知识点">Java零散知识点</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-xue-xi-guo-cheng/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java学习过程">Java学习过程</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-xue-xi-lu-xian/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="Java学习路线">Java学习路线</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-can-kao-zi-liao/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java参考资料">Java参考资料</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/java/java-yu-c-de-qu-bie/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="Java与C++的区别">Java与C++的区别</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/jing-tai-cheng-yuan-han-shu-fang-wen-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="静态成员函数访问问题">静态成员函数访问问题</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/guan-yu-gou-zao-han-shu-he-pu-tong-han-shu-de-si-kao/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="关于构造函数和普通函数的思考">关于构造函数和普通函数的思考</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/cprimeplus-xue-xi-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="《CPrimePlus》学习笔记">《CPrimePlus》学习笔记</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/c-ling-san-zhi-shi-dian/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C零散知识点">C零散知识点</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/c-yu-yan-chang-jian-xi-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言常见细节">C语言常见细节</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2022/07/15/ji-suan-ji/bian-cheng-yu-yan/c/cmake/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="Cmake">Cmake</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2022/07/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/xing-ye-shu-jin-bi-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="兴业数金笔试总结">兴业数金笔试总结</span>
+            <span class="post-date" title="2022-07-15 11:15:01">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2022/07/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/int-p-5-yu-int-p-5-de-qu-bie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="int p[5] 与(int )p[5]的区别">int p[5] 与(int )p[5]的区别</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2022/07/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/apriori-suan-fa/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="Apriori算法">Apriori算法</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2022/07/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/32-wei-ji-qi-he-64-wei-ji-qi-cc-ge-lei-xing-suo-zhan-da-xiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="32位机器和64位机器CC++各类型所占大小">32位机器和64位机器CC++各类型所占大小</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/pei-zhi-github12306-xiang-mu/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="配置github12306项目">配置github12306项目</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="记录一次关于菠菜爬虫教育门户网站">记录一次关于菠菜爬虫教育门户网站</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/ji-suan-ji-lun-wen-fa-biao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="计算机论文发表">计算机论文发表</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="编码方式-ASCIIUnicodeUTF-8UTF-16辨析">编码方式-ASCIIUnicodeUTF-8UTF-16辨析</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/pa-chong-pa-dao-de-shi-shi-me/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="爬虫爬到的&amp;#是什么">爬虫爬到的&amp;#是什么</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/07/15/ji-suan-ji/zhen-qi-ta/eeg-shi-yan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="EEG实验">EEG实验</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter9/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter9">Speech language aprocess Chapter9</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter8/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter8">Speech language aprocess Chapter8</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter7/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter7">Speech language aprocess Chapter7</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter6 ">Speech language aprocess Chapter6 </span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter3">Speech language aprocess Chapter3</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/gao-ji-ji-qi-xue-xi-hw2/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="高级机器学习hw2">高级机器学习hw2</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/gao-ji-ji-qi-xue-xi-hw1/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="高级机器学习hw1">高级机器学习hw1</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/shen-jing-wang-luo-bp-suan-fa-xi-tong-kai-fa-yu-yan-zheng/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="神经网络 BP算法系统开发与验证">神经网络 BP算法系统开发与验证</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/san-chong-sou-suo-suan-fa-jie-8-shu-ma-wen-ti/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="三种搜索算法解8数码问题">三种搜索算法解8数码问题</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/pytorch-kuang-jia/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="pytorch框架">pytorch框架</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 "
+           href="/2022/07/15/ji-suan-ji/ren-gong-zhi-neng/xue-xi-ji-lu/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="学习记录">学习记录</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/kai-fa-ba-gu-wen/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="开发八股文">开发八股文</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/ying-yong-ruan-jian-ji-kai-fa-huan-jing/"
+           data-tag="Java,github,python,PHP,C++"
+           data-author="" >
+            <span class="post-title" title="应用软件及开发环境">应用软件及开发环境</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/bao-ji-kuang-jia-jie-shao-ji-shi-yong/"
+           data-tag="Java,github,python,PHP,C++"
+           data-author="" >
+            <span class="post-title" title="包及框架介绍及使用">包及框架介绍及使用</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/typora-shi-shi-me/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="Typora 是什么？">Typora 是什么？</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/leetcode-shua-ti-zong-jie/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="leetcode刷题总结">leetcode刷题总结</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/15/zui-jin/leetcode-shua-ti/"
+           data-tag="Java,github,python,C++"
+           data-author="" >
+            <span class="post-title" title="LeetCode刷题">LeetCode刷题</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 真其它 "
+           href="/2022/07/15/zhen-qi-ta/distributed-representations-of-words-and-phrases-and-their-compositionality/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Distributed Representations of Words and Phrases and their Compositionality">Distributed Representations of Words and Phrases and their Compositionality</span>
+            <span class="post-date" title="2022-07-15 11:15:00">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2022/05/10/xue-ke/ying-ping/2022-05-10-er-shi-wu-er-shi-yi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="十五二十一">十五二十一</span>
+            <span class="post-date" title="2022-05-10 00:00:00">2022/05/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2022/01/08/xue-ke/she-hui-ke-xue/2022-01-08-pin-qiong-de-ben-zhi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="穷的本质">穷的本质</span>
+            <span class="post-date" title="2022-01-08 00:00:00">2022/01/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2019/11/16/xiu-shen/qi-si-miao-xiang/2019-11-16-zhu-guan-shi-jie-he-ke-guan-shi-jie-de-tao-lun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="观世界和客观世界的讨论">观世界和客观世界的讨论</span>
+            <span class="post-date" title="2019-11-16 00:00:00">2019/11/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2019/07/05/xue-ke/ying-ping/2019-07-05-tian-cai-qiang-shou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="才枪手">才枪手</span>
+            <span class="post-date" title="2019-07-05 00:00:00">2019/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2019/07/05/xue-ke/wen-xue/2019-07-05-tai-si/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="丝">丝</span>
+            <span class="post-date" title="2019-07-05 00:00:00">2019/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2018/09/08/xue-ke/wen-xue/2018-09-08-xian-yi-ren-x-de-xian-shen/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="疑人X的献身">疑人X的献身</span>
+            <span class="post-date" title="2018-09-08 00:00:00">2018/09/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2018/08/28/xue-ke/ying-ping/2018-08-28-peng-ran-xin-dong/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="然心动">然心动</span>
+            <span class="post-date" title="2018-08-28 00:00:00">2018/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2018/08/19/xue-ke/wen-xue/2018-08-19-liao-bu-qi-de-gai-ci-bi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不起的盖茨比">不起的盖茨比</span>
+            <span class="post-date" title="2018-08-19 00:00:00">2018/08/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2018/08/18/xiu-shen/qi-si-miao-xiang/2018-08-18-nan-nu-sui-tan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="女随谈">女随谈</span>
+            <span class="post-date" title="2018-08-18 00:00:00">2018/08/18</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-真其它/Distributed Representations of Words and Phrases and their Compositionality" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Distributed Representations of Words and Phrases and their Compositionality</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="真其它">真其它</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-07-12 11:26:19'>2022-07-15 11:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality"><span class="toc-text">Distributed Representations of Words and Phrases and their Compositionality</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%BD%E8%A6%81"><span class="toc-text">抽要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Skip-gram%E6%A8%A1%E5%9E%8B"><span class="toc-text">2 Skip-gram模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Hierarchical-Softmax"><span class="toc-text">2.1 Hierarchical Softmax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%B4%9F%E9%87%87%E6%A0%B7Negative-Sampling"><span class="toc-text">2.2 负采样Negative Sampling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E9%AB%98%E9%A2%91%E8%AF%8D%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%8F%96%E6%A0%B7"><span class="toc-text">2.3高频词的二次取样</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%9E%E8%AF%81%E7%BB%93%E6%9E%9C"><span class="toc-text">3 实证结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AD%A6%E4%B9%A0%E7%9F%AD%E8%AF%AD"><span class="toc-text">4 学习短语</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1Phrase-Skip-Gram%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">4.1Phrase Skip-Gram实验结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%8A%A0%E6%B3%95%E5%90%88%E6%88%90%E6%80%A7"><span class="toc-text">5 加法合成性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%B8%8E%E5%85%AC%E5%BC%80%E8%AF%8D%E5%90%91%E9%87%8F%E8%A1%A8%E7%A4%BA%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">6 与公开词向量表示的对比</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E7%BB%93%E8%AE%BA"><span class="toc-text">7 结论</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality"><a href="#Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality" class="headerlink" title="Distributed Representations of Words and Phrases and their Compositionality"></a>Distributed Representations of Words and Phrases and their Compositionality</h1><p>原文链接：<a target="_blank" rel="noopener" href="https://proceedings.neurips.cc/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf">https://proceedings.neurips.cc/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf</a></p>
+<h1 id="抽要"><a href="#抽要" class="headerlink" title="抽要"></a>抽要</h1><p>最近引入的连续Skip-gram模型是一种学习高质量distributed vector representations（分布向量表示）的有效方法，该表示可以捕获大量精确的句法和语义词关系。 在本文中，我们提出了几种扩展，它们既提高了矢量的质量，又提高了训练速度。 通过对frequent words（频繁出现的单词）进行二次采样，我们可以获得明显的加速，并且还可以学习更多regular word representation（常规单词表示）。 我们还描述了一种用于替代分层softmax的简单方案，称为negative sampling（负采样）。</p>
+<p>word representations（单词表示法）的固有局限性在于它们漠视单词顺序并且无法表示idiomatic phrases（惯用语）。 例如，“Canada”和“Air”的含义不能轻易地组合为“Air Canada ”。 受此示例的启发，我们提出了一种用于在文本中查找短语的简单方法，并表明可以学习数百万个phrases的good vector representations。</p>
+<h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h1><p>通过对于相似单词的分组，在向量空间中的Distributed representations of words（单词的分布式表示）以可帮助学习算法在自然语言处理任务中实现更好的性能。 最早使用word representations（单词表示法）可以追溯到1986年的Rumelhart，Hinton和Williams [13]。 此想法自那时以来已应用于统计语言建模，并取得了相当大的成功[1]。 后来被用于包括 automatic speech recognition（自动语音识别）和machine translation（机器翻译）[14、7]等各种NLP任务[2、20、15、3、18、19、9]。</p>
+<p>最近，Mikolov等人[8]引入了Skip-gram模型，这是一种从大量非结构化文本数据中学习单词的高质量向量表示的有效方法。与大多数以前使用的用于学习单词向量的神经网络体系结构不同，Skip-gram模型的训练（参见图1）不涉及密集矩阵乘法。这使得训练极其高效：一种优化的单机实现可以在一天内训练超过1000亿个单词。</p>
+<p>使用神经网络计算的word representation非常有趣，因为学习过的向量显式编码了许多语言规律和模式。令人惊讶的是，这些模式中的许多模式都可以表示为线性平移。例如，向量计算vec(“Madrid”) - vec(“Spain”) + vec(“France”) 的结果比其它word vector都接近 vec(“Paris”)[9，8] 。</p>
+<p><img src="D:/mdCreating/img/image-20210327102344681.png" alt="image-20210327102344681"></p>
+<p>图1：Skip-gram模型架构。 训练目标是学习擅长预测附近单词的单词向量表示。</p>
+<p>在本文种，我们提出了几种原始Skip-gram模型的扩展。我们表明，训练过程中对于requent words d的subsampling很明显地提高速度（大约2倍-10倍），并提高了less frequent words表示的准确性。 另外，我们提出了一种Noise Contrastive Estimation（NCE，噪声对比估计）的简单变体[4]用于训练Skip-gram模型，与之前使用的复杂的hierarchical softmax相比，该算法有更快的训练速度，而且frequent words的vector representation也更好。</p>
+<p>Word representations 天生受到不能表示非单个单词组成的idiomatic phrases的限制。 例如，““Boston Globe”是报纸，因此它不能是“Boston ”和“Globe”含义的简单拼接。 因此，使用向量来表示整个<strong>短语</strong>使得Skip-gram模型的表达能力大大提高。 其他通过组合vector word来表示句子含义的技术，例如recursive autoencoders(递归自动编码器)[15]也将从使用phrase vectors而不是word vectors中受益。</p>
+<p>从基于单词的模型到基于短语的模型的扩展相对简单。 首先，我们使用dada-driven（数据驱动）的方法识别大量的短语，然后在训练期间将这些短语视为单独的tokens。 为了评估短语向量的质量，我们开发了一个包含单词和短语的analogi-cal reasoning task（类比推理任务）测试集。 我们的测试集中有一个典型的类比对是<em>“Montreal”：“Montreal Canadiens” ：：“Toronto”：“Toronto Maple Leafs”</em>。 如果<em>vec（“Montreal Canadiens”）-vec（“Montreal”）+ vec（“Toronto”）</em>的最接近表示形式是<em>vec（“Toronto Maple Leafs”）</em>，则认为答案正确。</p>
+<p>最后，我们描述了Skip-gram模型的另一个有趣的特性。 我们发现简单向量相加通常可以产生有意义的结果。 例如，<em>vec（“Russia”）+ vec（“river”）</em>接近<em>vec（“Volga River”）</em>，而<em>vec（“Germany”）+ vec（“capital”）</em>接近<em>vec（“Berlin”）</em>。 这种可组合性表明，通过对word vector representations（词向量表示）进行基本的数学运算，可以获得non-obvious(非明显)程度的语言理解。</p>
+<h1 id="2-Skip-gram模型"><a href="#2-Skip-gram模型" class="headerlink" title="2 Skip-gram模型"></a>2 Skip-gram模型</h1><p>Skip-gram模型的训练目标是找到可用于预测句子或文档中surrounding words的word representation。更正式地，给出训练词$w_1,w_2,w_3,…,w_T$，Skip-gram模型的目标是最大化对数日志概率：<br>$$<br>\frac{1}{T}\sum_{t=1}^T{\sum_{-c\le j\leq c,j\ne 0}^{}{\log p\left( w_{t+j}|w_t \right)}} \tag{1}<br>$$<br>其中<em>ｃ</em>是训练的上下文的尺寸（它是一个中心单词$w_t$的一个函数）。大的$c$会造成更多的训练样本，因此可以获得更高的准确度，同时训练时间也延长了。基本Skip-gram公式通过下面的softmax function定义$p(w_{t+j}|w_t)$：<br>$$<br>p\left( w_O|w_I \right) =\frac{\exp \left({v_{w_O}^{‘}}^Tv_{w_I} \right)}{\sum_{w=1}^W{\exp \left({v_{w}^{‘}}^Tv_{w_I} \right)}} \tag{2}<br>$$</p>
+<p>其中$v_w$和$v’_w$分别为$w$的输入和输出向量表示，$W$为词汇表中的单词数。这个公式是不切实际的因为计算$\nabla \log p\left( w_O|w_I \right) $的话费与$W$成正比，通常会达到$10^5-10^7$的数量级。</p>
+<h2 id="2-1-Hierarchical-Softmax"><a href="#2-1-Hierarchical-Softmax" class="headerlink" title="2.1 Hierarchical Softmax"></a>2.1 Hierarchical Softmax</h2><p>Hierarchical(分层) softmax与full softmax的计算效率近似。在神经网络模型的上下文中，它首先由Morin and Bengio [12]引入。最主要的优点是它在神经网络中得到probability distribution（概率分布）不需要评估$W$个输出节点，而只需要评估约$log_2(W)$个节点。</p>
+<p>Hierarchical Softmax用二叉树表示输出层，其中$W$个单词作为其叶。并且，对于每一个结点，显示地表示其对于子结点的相对概率。这些定义了一个可将概率分配给单词的random walk(随机游走)。</p>
+<p>更准确的说，每个单词$w$都可以从一条合适的路径从树的根部到达。另外记$n(w,j)$为从根节点到单词$w$的第$j$个节点，记$L(w)$为这条路径上的长度，所以$n(w,1)=root$并且$n(w,L(w))=w$。除此之外,对于任意节点$n$，设$ch(n)$为$n$的一个arbitrary fixed child并且令$[[x]]=1$(如果x为真)，否则为$-1$。然后分层Softmax定义了$p(w_O|w_I)$如下：</p>
+<p>$$<br>p\left(w \mid w_{I}\right)=\prod_{j=1}^{L(w)-1} \sigma\left([![ n(w, j+1)=\operatorname{ch}(n(w, j)) ]!] \cdot v_{n(w, j)}^{\prime}{ }^{\mathrm{T}} v_{w_{I}}\right) \tag{3}<br>$$</p>
+<p>其中$σ(x) = 1/(1 + exp(−x))$，可以证明$\sum_{w=1}^W{p\left( w|w_I \right) =1}$。这意味着计算$\log p\left( w_O|w_I \right) $和$\triangledown \log p\left( w_O|w_I \right)$</p>
+<p>的消耗和$L(w_O)$成正比，通常来说不会超过$logW$。此外，不像此外，不像Skip-gram的标准softmax公式会把两个表示 $v_w$和$v_w’$  分层softmax使用的树结构对性能有相当大的影响。Mnih和Hinton探索了构建树结构的一些方法以及训练时间和结果模型精度的影响。在我们的工作中，我们使用一个霍夫曼树（binary Huffman  tree），因为它将短codes分配给高频词，从而加快了训练速度。之前已经观察到，根据出现频率组合单词可以很好的作为基于神经网络的语言模型的一种简单加速技术。</p>
+<h2 id="2-2-负采样Negative-Sampling"><a href="#2-2-负采样Negative-Sampling" class="headerlink" title="2.2 负采样Negative Sampling"></a>2.2 负采样Negative Sampling</h2><p>分层softmax的替代方案是噪声对比估计（NCE），由Gutmann和Hyvarinen引入，并由Mnih和Teh用于语言建模。NCE认为一个好的模型应该能够通过logistic regression来区分数据和噪声。这类似于Collobert和Weston使用的铰链损失/hinge loss，他们通过对噪声上的数据进行排名来训练模型。<br> 虽然NCE可以最大化softmax的对数概率，但是Skipgram模型只关注学习高质量的向量表示，因此只要向量表示保持其质量，我们可以随意简化NCE。我们通过以下公式定义Negative Sampling（NEG）:<br>$$<br>\log \sigma\left(v_{w_{O}}^{\prime}{ }^{\mathrm{T}} v_{w_{I}}\right)+\sum_{i=1}^{k} \mathbb{E}<em>{w</em>{i} \sim P_{n}(w)}\left[\log \sigma\left(-v_{w_{i}}^{\prime}{ }^{\mathrm{T}} v_{w_{I}}\right)\right]  \tag{4}<br>$$<br>用于替代Skip-gram中的每个$logp(w_O∣w_I)$项。因此，我们的任务是用逻辑回归将目标词$w_O$从噪声分布$P_n(w) $里区分开，其中每个数据样本存在 $k$个负样本。我们的实验表明，小型训练数据集里$k$可以取5-20。而对于大型数据集，$k$可以小到2-5。Negative Sampling和NCE之间的主要区别在于，NCE需要噪声分布的样本和数值概率，而Negative Sampling仅使用样本。尽管NCE最大化了softmax的对数概率，但这个属性对我们的应用来说并不重要。</p>
+<p>NCE和NEG均有噪声分布$P_n(w)$作为自由参数。我们调查了$P_n(w)$的一些选择，发现对于NCE和NEG的每个包括语言建模的任务来说，将unigram distribution$U(w)$提高到3/4的幂次方(即$\frac{1}{Z}U(w)^{3/4}$)将显著优于unigram和uniform distribution。（具体报告此文未写出）</p>
+<h2 id="2-3高频词的二次取样"><a href="#2-3高频词的二次取样" class="headerlink" title="2.3高频词的二次取样"></a>2.3高频词的二次取样</h2><p>在非常大的语料库中，最常见的单词很容易就出现数亿次（例如，”in”, “the”和”a”）。这样的单词通常比其他低频词提供的信息值还要少。例如，对于Skip-gram来说，观察”French”和”Paris”的同时出现(co-occurrences)是有益的，但观察”French”和”the”同时出现的频率并没有什么用，因为在一个句子里几乎每个词都会频繁地和”the”同时出现。这个想法也可以反向应用: 高频词的vector representation在经过几百万个例子的训练之后并不会显著变化。<br> 为了抵消罕见词和高频词之间的不平衡，我们使用简单的二次抽样：训练集中的每个单词 w i w_i wi​将有一定概率被丢弃，概率由以下公式计算：<br>$$<br>P\left(w_{i}\right)=1-\sqrt{\frac{t}{f\left(w_{i}\right)}} \tag{5}<br>$$<br>其中$f(w_i)$是单词$w_i$的频率，$t$是选择的阈值，通常在$10^{-5}$左右。我们选择这个二次抽样公式是因为它主动地对频率大于$t$的词进行二次抽样，同时保持了频率的ranking。虽然这个二次抽样公式是启发式选择的，但我们发现它在实践中运作良好。它加快了训练速度，甚至显着提高了罕见词所学向量的准确性，如以下几节所示。</p>
+<h1 id="3-实证结果"><a href="#3-实证结果" class="headerlink" title="3 实证结果"></a>3 实证结果</h1><p>在本节中，我们评估了分层Softmax，NCE，NEG和训练词的二次取样。我们使用了Mikolov等人介绍的类比推理任务。这个任务包含<code>Germany" : "Berlin" :: "France": ?</code>这样的类比，根据余弦距离，想解决这个问题，需要找到一个向量<strong>x</strong>使得vec(<strong>x</strong>)最接近<code>vec("Berlin")-vec("Germany")+vec("France")</code>（我们丢弃搜索中的输入单词）。对于这个具体的案例来说，如果<strong>x</strong>是<code>"Paris"</code>，我们可以认为它是正确答案。该任务有两大类：句法类比(如<code>"quick: "quickly" :: "slow":"slowly"</code>)和语义类比(如国家到首都的关系)。</p>
+<p>为了训练Skip-gram模型，我们使用了一个由各种新闻文章组成的大型数据集（内部Google数据集，有十亿字）。我们从词汇表中丢弃了在训练集中出现次数少于5的单词，最终词汇表的大小为692K。表1中列出了词类比测试集中的各种跳码模型的表现。表格显示，负采样优于类比推理任务中的分层Softmax，并且性能略好于NCE。高频词的二次采样使训练速度提高了几倍并且让word representation的准确率显著提高。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcwODAzMjMxNjE2OTIw?x-oss-process=image/format,png" alt="Table 1"></p>
+<p>表1：类比推理任务的各种300维Skip-gram模型的准确性。NEG-$k$代表每个positive样本的 $k$个negative样本的负采样; NCE表示Noise Contrastive Estimation/噪声对比估计，HS-Huffman代表基于频率的码的分层Softmax。</p>
+<p>可以说，skip-gram模型的线性使它的向量更适合这样的线性类比推理。而Mikolov等的结果还表明，由于训练数据量的增长，标准sigmoidal RNN(高度非线性)所学的向量在此类任务上可以显著提高，这表明非线模型也倾向于线性结构的word representations。</p>
+<h1 id="4-学习短语"><a href="#4-学习短语" class="headerlink" title="4 学习短语"></a>4 学习短语</h1><p>如前所述，许多短语的意思不仅仅是单词含义的简单组合。 要学习短语的vector representation，我们首先要找到经常一同出现但在其他语境中并不常见的单词。 例如，<code>"New York Times"</code>和<code>"Toronto Maple Leafs"</code>在训练集中将被独一无二的token所取代，而<code>"this is"</code>将保持不变。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcwODA0MTcxMDExMjk1?x-oss-process=image/format,png" alt="这里写图片描述"><br> 表2：短语类比推理任务示例（完整测试集有3218个例子）。 目标是使用前三个短语计算第四个。 我们最好的模型在这个数据集上达到了72％的准确度。</p>
+<p>这样，我们可以形成许多合理的短语，而不会大大增加词汇量的大小。理论上，我们可以使用所有的n元文法训练Skip-gram模型，但是这太消耗内存。 许多识别文本中短语的技术之前已经被开发出来了， 然而，比较它们超过了我们的工作范围。  我们决定使用一种简单的数据驱动方法，基于unigram和bigram的计数来形成短语：<br>$$<br>\operatorname{score}\left(w_{i}, w_{j}\right)=\frac{\operatorname{count}\left(w_{i} w_{j}\right)-\sigma}{\operatorname{count}\left(w_{i}\right) \times \operatorname{count}\left(w_{j}\right)} \tag{6}<br>$$<br>$\sigma$被用作折扣系数，防止形成太多由非常罕见的单词组成的短语。 得分高于所选阈值的bigram将被用作短语。 通常，我们逐渐减少阈值对训练数据进行2-4次传递，从而允许形成更长的短语(由数个单词组成)。  我们用涉及短语的新模拟推理任务来评估phrase representation的质量。 表2显示了本任务中使用的五类类比的例子。 此数据集在网络上公开提供。</p>
+<h2 id="4-1Phrase-Skip-Gram实验结果"><a href="#4-1Phrase-Skip-Gram实验结果" class="headerlink" title="4.1Phrase Skip-Gram实验结果"></a>4.1Phrase Skip-Gram实验结果</h2><p>从前面实验的新闻数据开始，我们首先构建了基于短语的训练语料库，然后我们使用不同的超参数训练了几个Skip-Gram模型。  如前所述，我们使用300维的向量和context size  5。该设置已经在短语数据集上实现了良好的性能，并且允许我们快速比较负采样和分层Softmax，无论是否二次采样高频token。  结果总结在表3中。</p>
+<p><img src="D:/mdCreating/img/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcwODA0MTczODUwMTI3" alt="这里写图片描述"><br> 表3：短语类比数据集中Skip-gram模型的准确性。 这些模型已经从新闻数据集中接受了大约十亿字的训练。<br> <img src="D:/mdCreating/img/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcwODA0MTc0ODM2NDUw" alt="这里写图片描述"><br> 表4：两个不同模型下，examples of the closest entities to the given short phrases<br> <img src="D:/mdCreating/img/aHR0cDovL2ltZy5ibG9nLmNzZG4ubmV0LzIwMTcwODA0MTc0ODU3MzQ3" alt="这里写图片描述"><br> 表5：使用元素加法的vector compositionality/向量合成性。 Four closest tokens to the sum of two vectors are shown, using the best Skip-gram model.</p>
+<p>结果表明，$k=5$时负采样已经达到可靠的精度，而使用 $k = 15$可以实现更好的性能。令人惊讶的是，我们发现在没有subsampling的情况下训练分层Softmax会得到较低的性能，而我们对频繁的单词进行subsampling时它成为表现最好的方法。 这表明至少在某些情况下，subsampling可以导致更快的训练，而且可以提高精度。<br> 为了最大化短语类比任务的准确性，我们使用约330亿字的数据集来增加训练数据的数量。 我们使用维度为1000的分层softmax和上下文的整个句子。 最终模型的精确度能达到**72%**。 当我们将训练数据集的大小减小到6B字时，准确度略微降低至66％，这表明大量的训练数据是至关重要的。<br> 为了进一步深入了解不同模型表示的token的不同，我们手动检查了各种模型的低频短语的nearest neighbours。 表4显示了一个这样比较的样例。 与之前的结果一致，似乎使用了分层softmax和subsampling的模型可学到短语的最佳表示。</p>
+<h1 id="5-加法合成性"><a href="#5-加法合成性" class="headerlink" title="5 加法合成性"></a>5 加法合成性</h1><p>由Skip-gram模型学习的word and phrase  representation显示了一个线性结构，从而通过简单地向量计算可以进行精确的模拟推理。 有趣的是，我们发现Skip-gram  representations展现了另一种线性结构，使得有可能通过vector representation的元素级加法来有意义地组合单词。  这种现象如表5所示。<br> 向量的加法属性可以通过检查训练目标来解释。 word vector与非线性softmax的输入呈线性关系。 由于  word vector被训练来预测句子中的周围单词，所以可以将向量视为一个单词出现在上下文的分布的表示。  这些值与输出层计算的概率成对数地相关，所以两个word vector的和与两个上下文分布的乘积有关。 该乘积在这里的作用为<strong>AND</strong>：被分配了两个有高概率word vector的单词将具有很高的概率，其他字将具有较低的概率。 因此，如果“Volga  River”与“Russian”和“river”一起出现在同一句话中，这后两个的word vector总和将生成一个接近“Volga  River”的vector的feature vector。</p>
+<h1 id="6-与公开词向量表示的对比"><a href="#6-与公开词向量表示的对比" class="headerlink" title="6 与公开词向量表示的对比"></a>6 与公开词向量表示的对比</h1><p>许多以前从事基于神经网络的单词表示的作者已经发表了他们的模型，以供进一步使用和比较：最著名的作者是Collobert和Weston [2]，Turian等。  [17]，以及Mnih和Hinton [10]。 我们从web3下载了他们的单词向量。 米科洛夫（Mikolov）等人。  [8]已经在单词比喻任务上评估了这些单词表示，其中Skip-gram模型以最大的幅度实现了最佳性能。</p>
+<p><img src="D:/mdCreating/img/image-20210327102138757-1618477511627.png" alt="image-20210327102138757"></p>
+<p>表6：给出了各种众所周知的模型的最接近标记的示例以及使用超过300亿个训练词对短语进行训练的Skip-gram模型。 空单元格意味着该单词不在词汇表中。</p>
+<p>为了更深入地了解所学习向量的质量差异，我们通过在表6中显示不频繁单词的最接近邻居来提供经验比较。这些示例表明，在大型语料库上训练的大型Skip-gram模型明显优于所有 其他模型的学习表示质量。 这可以部分归因于以下事实：该模型已经训练了约300亿个单词，比先前工作中使用的典型大小多了大约两个到三个数量级的数据。 有趣的是，尽管训练集要大得多，但是Skip-gram模型的训练时间只是以前的模型体系结构所需的时间复杂度的一小部分。</p>
+<h1 id="7-结论"><a href="#7-结论" class="headerlink" title="7 结论"></a>7 结论</h1><p>这项工作有几个关键的贡献。 我们展示如何使用Skip-gram模型来训练单词和短语的分布式表示，并证明这些表示呈现线性结构，使准确的类比推理成为可能。 本文介绍的技术也可用于训练[8]中引入的连续的bag-of-words模型。<br> 得益于计算效率高的模型架构，我们成功地在比之前模型的数据量高了数个数量级的数据集上进行了训练。  这导致了所学的单词和短语表示的质量有了显著的改善，特别是对于稀有的entity。  我们还发现，高频词的二次抽样导致了更快的训练速度，并且使罕见单词的表示得到了显著的提升。  我们文章的另一个贡献是subsampling算法，这是一个非常简单的训练方法，可以学习准确的表示，尤其是对于高频单词。<br> 训练算法和超参数的选择得由具体任务决定，因为我们发现不同的问题具有不同的最优超参数配置。 在我们的实验中，影响性能的最关键的决策是模型架构的选择，向量的大小，二次采样率以及训练窗口的大小。<br> 我们工作的一个非常有趣的结果是，使用简单的向量加法可以有意义地组合单词向量。 本文中提到的另一个表示短语的方法是，简单地用一个single  token来表示短语。 这两种方法组合出了一种强大而简单的方法，用来表示更长的文本段同时具有最小的计算复杂度。  因此，我们的工作可以被看作是使用递归矩阵-向量操作来尝试表示短语的现有方法的补充[16]。<br> 我们将实现本文技术的代码发布为了一个<a target="_blank" rel="noopener" href="https://blog.csdn.net/u010555997/article/details/code.google.com/p/word2vec">开源项目</a>（即word2vec）</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎在评论区中进行批评指正，转载请注明来源，如涉及侵权，请联系作者删除。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <script src="https://utteranc.es/client.js"
+            repo="pengber/pengber.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="comment"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2022-2022 pengber
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 622px;
+    }
+    .nav.fullscreen {
+        margin-left: -622px;
+    }
+    .nav-left {
+        width: 200px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 552px;
+        }
+        .nav.fullscreen {
+            margin-left: -552px;
+        }
+        .nav-left {
+            width: 160px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 552px;
+            margin-left: -552px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
