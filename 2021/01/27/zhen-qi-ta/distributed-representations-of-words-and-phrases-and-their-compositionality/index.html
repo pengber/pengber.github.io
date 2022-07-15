@@ -1,0 +1,3699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Distributed Representations of Words and Phrases and their Compositionality | pengber&#39;s site</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Distributed Representations of Words and Phrases and their Compositionality | pengber&#39;s site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="pengber&#39;s site">
+<meta property="og:url" content="https://pengber.github.io/about/index.html">
+<meta property="og:site_name" content="pengber&#39;s site">
+<meta property="og:description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-15T11:15:27.280Z">
+<meta property="article:modified_time" content="2022-07-15T11:15:22.204Z">
+<meta property="article:author" content="pengber">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>pengber</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/pengber"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:pengber@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(254)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="计算机">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        计算机
+                        <small>(113)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="计算机<--->编程语言">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        编程语言
+                                        
+                                            <small>(24
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言其它">
+                                                        
+                                                        其它
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言C">
+                                                        
+                                                        C
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言JAVA">
+                                                        
+                                                        JAVA
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言PHP">
+                                                        
+                                                        PHP
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->编程语言Python">
+                                                        
+                                                        Python
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->集成开发环境">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        集成开发环境
+                                        
+                                            <small>(37
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境IDEA">
+                                                        
+                                                        IDEA
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境linux">
+                                                        
+                                                        linux
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境sublime">
+                                                        
+                                                        sublime
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境Vs2019">
+                                                        
+                                                        Vs2019
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境VsCode">
+                                                        
+                                                        VsCode
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境WAMP">
+                                                        
+                                                        WAMP
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->集成开发环境windows">
+                                                        
+                                                        windows
+                                                        
+                                                            <small>(10)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机理论与数学">
+                                        
+                                        计算机理论与数学
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机图形学">
+                                        
+                                        计算机图形学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机网络">
+                                        
+                                        计算机网络
+                                        
+                                            <small>(9
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机硬件">
+                                        
+                                        计算机硬件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->计算机组成原理和系统结构">
+                                        
+                                        计算机组成原理和系统结构
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->人工智能">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        人工智能
+                                        
+                                            <small>(11
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->人工智能机器学习">
+                                                        
+                                                        机器学习
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="计算机<--->人工智能自然语言处理">
+                                                        
+                                                        自然语言处理
+                                                        
+                                                            <small>(5)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->软件开发">
+                                        
+                                        软件开发
+                                        
+                                            <small>(10
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->算法与数据结构">
+                                        
+                                        算法与数据结构
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="计算机<--->真其它">
+                                        
+                                        真其它
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="金融">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        金融
+                        <small>(31)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="金融<--->金融知识">
+                                        
+                                        金融知识
+                                        
+                                            <small>(14
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->经济周期与宏观调控">
+                                        
+                                        经济周期与宏观调控
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->投资记录">
+                                        
+                                        投资记录
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->投资理念">
+                                        
+                                        投资理念
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="金融<--->行业个股">
+                                        
+                                        行业个股
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="修身">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        修身
+                        <small>(65)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="修身<--->创业">
+                                        
+                                        创业
+                                        
+                                            <small>(16
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->工作">
+                                        
+                                        工作
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->奇思妙想">
+                                        
+                                        奇思妙想
+                                        
+                                            <small>(8
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->三省吾身">
+                                        
+                                        三省吾身
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->生活技能">
+                                        
+                                        生活技能
+                                        
+                                            <small>(10
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="修身<--->生活知识">
+                                        
+                                        生活知识
+                                        
+                                            <small>(20
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="学科">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        学科
+                        <small>(25)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="学科<--->社会科学">
+                                        
+                                        社会科学
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->文学">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        文学
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="学科<--->文学村上春树">
+                                                        
+                                                        村上春树
+                                                        
+                                                            <small>(4)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->心理学">
+                                        
+                                        心理学
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->影评">
+                                        
+                                        影评
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->真其它">
+                                        
+                                        真其它
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="学科<--->政治">
+                                        
+                                        政治
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="运动">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        运动
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="运动<--->足球">
+                                        
+                                        足球
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="真其它">
+                        
+                        真其它
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="最近">
+                        
+                        最近
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="254">
+<input type="hidden" id="yelog_site_word_count" value="390.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PHP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pytorch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WAMP</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/index/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="index">index</span>
+            <span class="post-date" title="2022-07-15 19:10:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/15/xiu-shen/sheng-huo-zhi-shi/indexs/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="indexs">indexs</span>
+            <span class="post-date" title="2022-07-15 15:51:06">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/08/zui-jin/shen-du-xue-xi-li-hong-yi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="深度学习李宏毅">深度学习李宏毅</span>
+            <span class="post-date" title="2022-07-08 19:57:13">2022/07/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2022/07/06/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/hexo-github-da-jian-jing-tai-bo-ke/"
+           data-tag="PHP,github,Java,python,C++,pytorch,WAMP"
+           data-author="" >
+            <span class="post-title" title="hexo+github搭建静态博客">hexo+github搭建静态博客</span>
+            <span class="post-date" title="2022-07-06 10:09:35">2022/07/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2022/07/01/xiu-shen/gong-zuo/mian-shi-wen-ti/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="面试问题">面试问题</span>
+            <span class="post-date" title="2022-07-01 16:56:21">2022/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/07/01/zui-jin/2022-nian-shu-jia-cheng-du/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="2022年暑假成都">2022年暑假成都</span>
+            <span class="post-date" title="2022-07-01 16:30:41">2022/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/07/01/xiu-shen/sheng-huo-zhi-shi/mi-xue-bing-cheng-diao-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="蜜雪冰城调研">蜜雪冰城调研</span>
+            <span class="post-date" title="2022-07-01 00:27:36">2022/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/06/27/xiu-shen/sheng-huo-zhi-shi/tu-shu-guan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="图书馆">图书馆</span>
+            <span class="post-date" title="2022-06-27 17:19:13">2022/06/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/06/23/xiu-shen/sheng-huo-zhi-shi/bei-you-2022-zhao-sheng-xuan-chuan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="北邮2022招生宣传">北邮2022招生宣传</span>
+            <span class="post-date" title="2022-06-23 17:13:50">2022/06/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2022/06/22/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/nao-ren-zhi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="脑认知">脑认知</span>
+            <span class="post-date" title="2022-06-22 00:23:58">2022/06/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2022/06/17/ji-suan-ji/zhen-qi-ta/eeg-shi-yan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="EEG实验">EEG实验</span>
+            <span class="post-date" title="2022-06-17 15:57:34">2022/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 真其它 "
+           href="/2022/06/13/zhen-qi-ta/ru-he-zuo-hao-ke-xue-yan-jiu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="如何做好科学研究">如何做好科学研究</span>
+            <span class="post-date" title="2022-06-13 17:45:31">2022/06/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/06/08/xiu-shen/san-sheng-wu-shen/wu-ri-san-sheng-wu-shen-shi-jian-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="吾日三省吾身-时间线">吾日三省吾身-时间线</span>
+            <span class="post-date" title="2022-06-08 00:40:11">2022/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 心理学 "
+           href="/2022/06/08/xue-ke/xin-li-xue/xin-li-xue-gai-nian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="心理学概念">心理学概念</span>
+            <span class="post-date" title="2022-06-08 00:33:28">2022/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/06/08/xiu-shen/san-sheng-wu-shen/wu-ri-san-sheng-wu-shen-zhuang-tai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="吾日三省吾身-状态">吾日三省吾身-状态</span>
+            <span class="post-date" title="2022-06-08 00:01:16">2022/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/06/06/xiu-shen/sheng-huo-zhi-shi/ge-ren-du-ju-zhi-nan/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="个人独居指南">个人独居指南</span>
+            <span class="post-date" title="2022-06-06 10:34:31">2022/06/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 三省吾身 "
+           href="/2022/05/24/xiu-shen/san-sheng-wu-shen/nan-ren-de-zi-wo-xiu-yang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="男人的自我修养">男人的自我修养</span>
+            <span class="post-date" title="2022-05-24 22:34:49">2022/05/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2022/05/21/yun-dong/zu-qiu/cai-pan-gui-ze/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="裁判规则">裁判规则</span>
+            <span class="post-date" title="2022-05-21 09:21:11">2022/05/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2022/05/10/xue-ke/ying-ping/er-shi-wu-er-shi-yi-dai-2022-05-10/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二十五二十一(待)_2022-05-10">二十五二十一(待)_2022-05-10</span>
+            <span class="post-date" title="2022-05-10 17:53:18">2022/05/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/05/05/xiu-shen/sheng-huo-ji-neng/chang-yong-ruan-jian-lie-biao/"
+           data-tag="PHP,github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="常用软件列表">常用软件列表</span>
+            <span class="post-date" title="2022-05-05 20:39:34">2022/05/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/04/22/ji-suan-ji/ruan-jian-kai-fa/mo-zi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="墨子">墨子</span>
+            <span class="post-date" title="2022-04-22 21:37:54">2022/04/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/04/11/xiu-shen/sheng-huo-zhi-shi/liu-xue-yi-min/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="留学移民">留学移民</span>
+            <span class="post-date" title="2022-04-11 12:14:10">2022/04/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/04/06/xiu-shen/sheng-huo-ji-neng/kou-qin-xue-xi-ji-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="口琴学习记录">口琴学习记录</span>
+            <span class="post-date" title="2022-04-06 19:58:36">2022/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2022/04/05/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2022-04-05/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资记录_2022-04-05">投资记录_2022-04-05</span>
+            <span class="post-date" title="2022-04-05 23:55:46">2022/04/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2022/03/13/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/yun-ji-suan-an-quan/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="云计算安全">云计算安全</span>
+            <span class="post-date" title="2022-03-13 01:31:07">2022/03/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/03/12/xiu-shen/sheng-huo-zhi-shi/bei-jing-pi-fu-yi-yuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="北京皮肤医院">北京皮肤医院</span>
+            <span class="post-date" title="2022-03-12 10:51:09">2022/03/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2022/03/10/xiu-shen/chuang-ye/zhu-xiao-gong-si-liu-cheng/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="注销公司流程">注销公司流程</span>
+            <span class="post-date" title="2022-03-10 08:34:44">2022/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/02/28/ji-suan-ji/ruan-jian-kai-fa/an-zhuo-kai-fa/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安卓开发">安卓开发</span>
+            <span class="post-date" title="2022-02-28 14:31:46">2022/02/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/02/24/jin-rong/jin-rong-zhi-shi/ji-jin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基金">基金</span>
+            <span class="post-date" title="2022-02-24 11:00:05">2022/02/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/02/24/xiu-shen/sheng-huo-zhi-shi/shan-zhong-yi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="陕中医">陕中医</span>
+            <span class="post-date" title="2022-02-24 00:07:37">2022/02/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 "
+           href="/2022/02/15/ji-suan-ji/2022-nian-zu-hui-hui-bao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2022年组会汇报">2022年组会汇报</span>
+            <span class="post-date" title="2022-02-15 21:07:52">2022/02/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/02/11/jin-rong/jin-rong-zhi-shi/hong-guan-liang-hua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="宏观量化">宏观量化</span>
+            <span class="post-date" title="2022-02-11 01:11:46">2022/02/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/02/08/zui-jin/ge-ci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="歌词">歌词</span>
+            <span class="post-date" title="2022-02-08 21:18:46">2022/02/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/02/06/xiu-shen/sheng-huo-ji-neng/ru-he-shi-yong-liu-lan-qi-cha-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="如何使用浏览器插件">如何使用浏览器插件</span>
+            <span class="post-date" title="2022-02-06 13:03:56">2022/02/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/02/05/ji-suan-ji/ruan-jian-kai-fa/shu-zi-luan-sheng/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字孪生">数字孪生</span>
+            <span class="post-date" title="2022-02-05 10:47:14">2022/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 经济周期与宏观调控 "
+           href="/2022/01/27/jin-rong/jing-ji-zhou-qi-yu-hong-guan-diao-kong/qi-ye-wei-guan-jing-ji-zhi-biao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业微观经济指标">企业微观经济指标</span>
+            <span class="post-date" title="2022-01-27 23:11:24">2022/01/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/01/22/zui-jin/finmanage/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="FinManage">FinManage</span>
+            <span class="post-date" title="2022-01-22 17:49:15">2022/01/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/01/21/xiu-shen/sheng-huo-ji-neng/zhuang-xiu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="装修">装修</span>
+            <span class="post-date" title="2022-01-21 18:51:33">2022/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2022/01/13/xiu-shen/qi-si-miao-xiang/guo-ren-quan-qiu-da-jiang-tang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="国任全球大讲堂">国任全球大讲堂</span>
+            <span class="post-date" title="2022-01-13 23:09:16">2022/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2022/01/13/xiu-shen/sheng-huo-zhi-shi/lu-you/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="旅游">旅游</span>
+            <span class="post-date" title="2022-01-13 20:54:01">2022/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/01/12/ji-suan-ji/ruan-jian-kai-fa/yu-yin-xiang-mu-ji-lu/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="语音项目记录">语音项目记录</span>
+            <span class="post-date" title="2022-01-12 14:23:32">2022/01/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2022/01/09/ji-suan-ji/ruan-jian-kai-fa/b4talk-dong-tai-lian-jie-ku/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="b4talk动态链接库">b4talk动态链接库</span>
+            <span class="post-date" title="2022-01-09 15:26:31">2022/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/01/08/zui-jin/kai-fa-ba-gu-wen/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="开发八股文">开发八股文</span>
+            <span class="post-date" title="2022-01-08 20:15:56">2022/01/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2022/01/08/xue-ke/she-hui-ke-xue/pin-qiong-de-ben-zhi-2022-01-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="贫穷的本质_2022-01-08">贫穷的本质_2022-01-08</span>
+            <span class="post-date" title="2022-01-08 13:30:59">2022/01/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/01/06/jin-rong/jin-rong-zhi-shi/zheng-fu-yu-suan-xu-yao-guan-zhu-de-shu-ju/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="政府预算需要关注的数据">政府预算需要关注的数据</span>
+            <span class="post-date" title="2022-01-06 11:47:23">2022/01/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/01/05/jin-rong/jin-rong-zhi-shi/hong-guan-jing-ji-shu-ju/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="宏观经济数据">宏观经济数据</span>
+            <span class="post-date" title="2022-01-05 21:22:01">2022/01/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2022/01/05/zui-jin/a-ren-sheng-zhi-dao/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="阿人生指导">阿人生指导</span>
+            <span class="post-date" title="2022-01-05 00:59:40">2022/01/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2022/01/01/xiu-shen/sheng-huo-ji-neng/gan-xing-qu-zheng-shu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="感兴趣证书">感兴趣证书</span>
+            <span class="post-date" title="2022-01-01 17:26:31">2022/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2022/01/01/jin-rong/jin-rong-zhi-shi/zhong-guo-shi-zheng-fu-yu-suan-de-bei-xi-zhi-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中国式政府预算的悲喜之路">中国式政府预算的悲喜之路</span>
+            <span class="post-date" title="2022-01-01 15:28:58">2022/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2021/12/30/ji-suan-ji/ji-suan-ji-ying-jian/shou-ji-zhi-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机知识">手机知识</span>
+            <span class="post-date" title="2021-12-30 22:38:10">2021/12/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/12/28/xiu-shen/gong-zuo/ding-ju-sheng-huo-fen-xi/"
+           data-tag="github,Java,C++"
+           data-author="" >
+            <span class="post-title" title="定居生活分析">定居生活分析</span>
+            <span class="post-date" title="2021-12-28 17:15:00">2021/12/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/12/28/jin-rong/jin-rong-zhi-shi/fang-di-chan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="房地产">房地产</span>
+            <span class="post-date" title="2021-12-28 15:42:43">2021/12/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2021/12/27/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/gao-ji-ji-qi-xue-xi-hw2/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="高级机器学习hw2">高级机器学习hw2</span>
+            <span class="post-date" title="2021-12-27 19:42:51">2021/12/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/12/20/zui-jin/leetcode-shua-ti-zong-jie/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="leetcode刷题总结">leetcode刷题总结</span>
+            <span class="post-date" title="2021-12-20 22:28:55">2021/12/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2021/12/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/xing-ye-shu-jin-bi-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="兴业数金笔试总结">兴业数金笔试总结</span>
+            <span class="post-date" title="2021-12-15 12:15:07">2021/12/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2021/12/15/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/int-p-5-yu-int-p-5-de-qu-bie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="int p[5] 与(int )p[5]的区别">int p[5] 与(int )p[5]的区别</span>
+            <span class="post-date" title="2021-12-15 12:14:58">2021/12/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/12/15/zui-jin/leetcode-shua-ti/"
+           data-tag="github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="LeetCode刷题">LeetCode刷题</span>
+            <span class="post-date" title="2021-12-15 12:14:43">2021/12/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机组成原理和系统结构 "
+           href="/2021/12/13/ji-suan-ji/ji-suan-ji-zu-cheng-yuan-li-he-xi-tong-jie-gou/cao-zuo-xi-tong-qa/"
+           data-tag="Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="操作系统QA">操作系统QA</span>
+            <span class="post-date" title="2021-12-13 18:45:14">2021/12/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2021/12/13/ji-suan-ji/ruan-jian-kai-fa/sheng-li-yin-qing-shi-yong-wen-dang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="生理引擎使用文档">生理引擎使用文档</span>
+            <span class="post-date" title="2021-12-13 17:10:29">2021/12/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2021/12/13/ji-suan-ji/ruan-jian-kai-fa/sheng-li-yin-qing-an-zhuang-pei-zhi-wen-dang/"
+           data-tag="github,python,C++"
+           data-author="" >
+            <span class="post-title" title="生理引擎安装配置文档">生理引擎安装配置文档</span>
+            <span class="post-date" title="2021-12-13 16:41:41">2021/12/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/12/08/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-windows7/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装windows7">安装windows7</span>
+            <span class="post-date" title="2021-12-08 20:52:36">2021/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2021/12/07/xiu-shen/sheng-huo-ji-neng/how-to-give-a-good-presentation/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="How to give a good presentation">How to give a good presentation</span>
+            <span class="post-date" title="2021-12-07 17:46:13">2021/12/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/12/06/jin-rong/jin-rong-zhi-shi/kk-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="kk总结">kk总结</span>
+            <span class="post-date" title="2021-12-06 00:11:57">2021/12/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2021/12/05/ji-suan-ji/bian-cheng-yu-yan/python/pytorch/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="Pytorch">Pytorch</span>
+            <span class="post-date" title="2021-12-05 15:22:54">2021/12/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/12/03/zui-jin/bao-ji-kuang-jia-jie-shao-ji-shi-yong/"
+           data-tag="PHP,github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="包及框架介绍及使用">包及框架介绍及使用</span>
+            <span class="post-date" title="2021-12-03 11:51:33">2021/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2021/11/29/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/gao-ji-ji-qi-xue-xi-hw1/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="高级机器学习hw1">高级机器学习hw1</span>
+            <span class="post-date" title="2021-11-29 10:31:43">2021/11/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/11/27/xiu-shen/sheng-huo-zhi-shi/she-hui-bao-xian-yang-lao-bao-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会保险养老保险">社会保险养老保险</span>
+            <span class="post-date" title="2021-11-27 20:28:50">2021/11/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2021/11/26/xiu-shen/sheng-huo-ji-neng/xin-xi-su-yang/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="信息素养">信息素养</span>
+            <span class="post-date" title="2021-11-26 18:46:10">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/11/26/xue-ke/zheng-zhi/si-xiang-hui-bao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="思想汇报">思想汇报</span>
+            <span class="post-date" title="2021-11-26 17:04:35">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/11/26/xue-ke/zheng-zhi/shi-jiu-da-dang-zhang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="十九大党章">十九大党章</span>
+            <span class="post-date" title="2021-11-26 16:43:08">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/11/26/xue-ke/zheng-zhi/ji-ji-fen-zi-dang-ke-xue-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="积极分子党课学习">积极分子党课学习</span>
+            <span class="post-date" title="2021-11-26 14:46:07">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/11/26/xiu-shen/gong-zuo/bi-lei-gong-si/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="避雷公司">避雷公司</span>
+            <span class="post-date" title="2021-11-26 14:15:16">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/11/26/jin-rong/tou-zi-li-nian/bu-yao-ba-tou-zi-jiao-liu-dang-zuo-tou-zi-xue-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不要把投资交流当作投资学习">不要把投资交流当作投资学习</span>
+            <span class="post-date" title="2021-11-26 11:41:11">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/11/25/xiu-shen/qi-si-miao-xiang/zhu-guan-shi-jie-he-ke-guan-shi-jie-de-tao-lun-2019-11-16/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="主观世界和客观世界的讨论_2019-11-16">主观世界和客观世界的讨论_2019-11-16</span>
+            <span class="post-date" title="2021-11-25 23:40:33">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/11/25/xiu-shen/qi-si-miao-xiang/lun-xue-xi-he-ying-shi-jiao-yu-2018-11-04/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="论学习和应试教育_2018-11-04">论学习和应试教育_2018-11-04</span>
+            <span class="post-date" title="2021-11-25 23:39:14">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2021/11/25/xue-ke/wen-xue/tai-si-2019-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="苔丝_2019-07-05">苔丝_2019-07-05</span>
+            <span class="post-date" title="2021-11-25 23:38:02">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2021/11/25/xue-ke/wen-xue/xian-yi-ren-x-de-xian-shen-2018-09-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="嫌疑人X的献身_2018-09-08">嫌疑人X的献身_2018-09-08</span>
+            <span class="post-date" title="2021-11-25 23:36:36">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2021/11/25/xue-ke/ying-ping/peng-ran-xin-dong-2018-08-28/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="怦然心动_2018-08-28">怦然心动_2018-08-28</span>
+            <span class="post-date" title="2021-11-25 23:35:28">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/11/25/xiu-shen/qi-si-miao-xiang/nan-nu-sui-tan-2018-08-18/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="男女随谈_2018-08-18">男女随谈_2018-08-18</span>
+            <span class="post-date" title="2021-11-25 23:35:00">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 "
+           href="/2021/11/25/xue-ke/wen-xue/liao-bu-qi-de-gai-ci-bi-2018-08-19/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="了不起的盖茨比_2018-08-19">了不起的盖茨比_2018-08-19</span>
+            <span class="post-date" title="2021-11-25 23:32:33">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/11/25/xiu-shen/qi-si-miao-xiang/guan-yu-yi-shi-xing-tai-he-wen-hua-guan-xi-de-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于意识形态和文化关系的思考">关于意识形态和文化关系的思考</span>
+            <span class="post-date" title="2021-11-25 23:32:18">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 影评 "
+           href="/2021/11/25/xue-ke/ying-ping/tian-cai-qiang-shou-2019-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="天才枪手_2019-07-05">天才枪手_2019-07-05</span>
+            <span class="post-date" title="2021-11-25 23:31:42">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/11/22/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/python-an-zhuang-bao-mu-lu/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="python安装包目录">python安装包目录</span>
+            <span class="post-date" title="2021-11-22 11:12:33">2021/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/11/20/xue-ke/zheng-zhi/gong-chan-dang-xuan-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="共产党宣言">共产党宣言</span>
+            <span class="post-date" title="2021-11-20 23:32:32">2021/11/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2021/11/18/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter9/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter9">Speech language aprocess Chapter9</span>
+            <span class="post-date" title="2021-11-18 19:10:05">2021/11/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/11/18/xiu-shen/sheng-huo-zhi-shi/zhi-shi-guan-li/"
+           data-tag="PHP,github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="知识管理">知识管理</span>
+            <span class="post-date" title="2021-11-18 18:44:23">2021/11/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/11/17/xiu-shen/gong-zuo/gong-si-fen-xi/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="公司分析">公司分析</span>
+            <span class="post-date" title="2021-11-17 20:15:37">2021/11/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/11/12/ji-suan-ji/bian-cheng-yu-yan/c/cmake/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="Cmake">Cmake</span>
+            <span class="post-date" title="2021-11-12 21:01:28">2021/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2021/11/04/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter8/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter8">Speech language aprocess Chapter8</span>
+            <span class="post-date" title="2021-11-04 15:17:53">2021/11/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/11/03/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛总结">企业决策模拟比赛总结</span>
+            <span class="post-date" title="2021-11-03 23:50:04">2021/11/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/25/xiu-shen/chuang-ye/jue-ce-mo-ni/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="决策模拟">决策模拟</span>
+            <span class="post-date" title="2021-10-25 23:01:41">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/10/25/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2022-01-21/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2022-01-21">投资记录_2022-01-21</span>
+            <span class="post-date" title="2021-10-25 20:13:14">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 行业个股 "
+           href="/2021/10/25/jin-rong/xing-ye-ge-gu/zhong-gong-jiao-yu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中公教育">中公教育</span>
+            <span class="post-date" title="2021-10-25 20:12:32">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2021/10/24/yun-dong/zu-qiu/ti-qiu-jing-yan-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="踢球经验总结">踢球经验总结</span>
+            <span class="post-date" title="2021-10-24 23:41:05">2021/10/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/22/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-gui-ze/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛规则">企业决策模拟比赛规则</span>
+            <span class="post-date" title="2021-10-22 23:07:51">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2021/10/22/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/pytorch-kuang-jia/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="pytorch框架">pytorch框架</span>
+            <span class="post-date" title="2021-10-22 20:54:44">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/10/22/jin-rong/jin-rong-zhi-shi/gu-xi-gu-li-yu-chu-xi-chu-quan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="股息股利与除息除权">股息股利与除息除权</span>
+            <span class="post-date" title="2021-10-22 15:13:04">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/10/22/jin-rong/jin-rong-zhi-shi/ya-zhou-98-nian-jin-rong-wei-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="亚洲98年金融危机">亚洲98年金融危机</span>
+            <span class="post-date" title="2021-10-22 01:15:26">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2021/10/19/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter7/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter7">Speech language aprocess Chapter7</span>
+            <span class="post-date" title="2021-10-19 14:42:58">2021/10/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2021/10/18/yun-dong/zu-qiu/yue-wei-pan-fa/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="越位判罚">越位判罚</span>
+            <span class="post-date" title="2021-10-18 00:01:37">2021/10/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2021/10/17/yun-dong/zu-qiu/zu-qiu-cai-pan-ji-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="足球裁判记录">足球裁判记录</span>
+            <span class="post-date" title="2021-10-17 20:50:04">2021/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/10/16/xue-ke/zheng-zhi/dang-ke-dang-de-guang-hui-li-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="党课党的光辉历史">党课党的光辉历史</span>
+            <span class="post-date" title="2021-10-16 20:25:18">2021/10/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/16/xiu-shen/chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛">企业决策模拟比赛</span>
+            <span class="post-date" title="2021-10-16 14:50:58">2021/10/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/10/15/zui-jin/mu-lu/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="目录">目录</span>
+            <span class="post-date" title="2021-10-15 15:57:23">2021/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/15/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/xue-xi-githubaction/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="学习githubAction">学习githubAction</span>
+            <span class="post-date" title="2021-10-15 13:34:15">2021/10/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/10/13/jin-rong/tou-zi-li-nian/tou-zi-sui-bi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资随笔">投资随笔</span>
+            <span class="post-date" title="2021-10-13 16:58:49">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/13/ji-suan-ji/bian-cheng-yu-yan/java/java-yu-c-de-qu-bie/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="Java与C++的区别">Java与C++的区别</span>
+            <span class="post-date" title="2021-10-13 15:58:11">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/13/ji-suan-ji/bian-cheng-yu-yan/java/java-he-xin-ji-zhu-juan-1/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="《Java核心技术卷1》">《Java核心技术卷1》</span>
+            <span class="post-date" title="2021-10-13 15:51:02">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/10/13/jin-rong/tou-zi-li-nian/jie-zhi-tou-zi-vs-ji-zhu-tou-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="价值投资vs技术投机">价值投资vs技术投机</span>
+            <span class="post-date" title="2021-10-13 15:02:32">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/10/13/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-10-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-10-13">投资记录_2021-10-13</span>
+            <span class="post-date" title="2021-10-13 14:53:15">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2021/10/12/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/ling-san-shu-xue-zhi-shi/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="零散数学知识">零散数学知识</span>
+            <span class="post-date" title="2021-10-12 11:11:27">2021/10/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 "
+           href="/2021/10/10/ji-suan-ji/ren-gong-zhi-neng/xue-xi-ji-lu/"
+           data-tag="pytorch"
+           data-author="" >
+            <span class="post-title" title="学习记录">学习记录</span>
+            <span class="post-date" title="2021-10-10 21:26:30">2021/10/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 行业个股 "
+           href="/2021/10/09/jin-rong/xing-ye-ge-gu/zhong-guo-ping-an/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中国平安">中国平安</span>
+            <span class="post-date" title="2021-10-09 15:46:55">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/10/09/jin-rong/tou-zi-li-nian/ding-tou-ce-lue-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定投策略思考">定投策略思考</span>
+            <span class="post-date" title="2021-10-09 15:32:41">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/10/09/jin-rong/tou-zi-li-nian/tou-zi-li-nian-shi-tiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资理念十条">投资理念十条</span>
+            <span class="post-date" title="2021-10-09 14:47:12">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/10/09/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-10-09/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-10-09">投资记录_2021-10-09</span>
+            <span class="post-date" title="2021-10-09 14:08:32">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/10/07/zui-jin/typora-shi-shi-me/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="Typora 是什么？">Typora 是什么？</span>
+            <span class="post-date" title="2021-10-07 23:15:08">2021/10/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/04/ji-suan-ji/bian-cheng-yu-yan/java/java-ling-san-zhi-shi-dian/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java零散知识点">Java零散知识点</span>
+            <span class="post-date" title="2021-10-04 19:44:31">2021/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/04/ji-suan-ji/bian-cheng-yu-yan/java/java-can-kao-zi-liao/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java参考资料">Java参考资料</span>
+            <span class="post-date" title="2021-10-04 19:44:22">2021/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/04/ji-suan-ji/bian-cheng-yu-yan/java/java-xue-xi-guo-cheng/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java学习过程">Java学习过程</span>
+            <span class="post-date" title="2021-10-04 19:44:08">2021/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 JAVA "
+           href="/2021/10/04/ji-suan-ji/bian-cheng-yu-yan/java/java-xue-xi-lu-xian/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="Java学习路线">Java学习路线</span>
+            <span class="post-date" title="2021-10-04 19:43:51">2021/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2021/10/03/xiu-shen/sheng-huo-ji-neng/shou-ji-xuan-gou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机选购">手机选购</span>
+            <span class="post-date" title="2021-10-03 14:34:46">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2021/10/03/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter6 ">Speech language aprocess Chapter6 </span>
+            <span class="post-date" title="2021-10-03 10:41:49">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机理论与数学 "
+           href="/2021/10/03/ji-suan-ji/ji-suan-ji-li-lun-yu-shu-xue/ji-qi-xue-xi-zhong-de-shu-xue-ming-ci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="机器学习中的数学名词">机器学习中的数学名词</span>
+            <span class="post-date" title="2021-10-03 09:34:06">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/03/xiu-shen/sheng-huo-zhi-shi/shou-ji-zhu-ce-zhang-hao-guan-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机注册账号管理">手机注册账号管理</span>
+            <span class="post-date" title="2021-10-03 00:15:58">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/03/xiu-shen/sheng-huo-zhi-shi/tuo-hang-ji-hua-mian-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="拓航计划面试总结">拓航计划面试总结</span>
+            <span class="post-date" title="2021-10-03 00:14:25">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/02/xiu-shen/sheng-huo-zhi-shi/bi-ye-lun-wen-jin-zhan/"
+           data-tag="github,Java,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="毕业论文进展">毕业论文进展</span>
+            <span class="post-date" title="2021-10-02 19:06:41">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/02/xiu-shen/sheng-huo-zhi-shi/bi-ye-lun-wen-si-lu-he-can-kao-zi-liao/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="毕业论文思路和参考资料">毕业论文思路和参考资料</span>
+            <span class="post-date" title="2021-10-02 19:04:15">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/10/02/xiu-shen/gong-zuo/ding-xiang-xuan-diao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定向选调">定向选调</span>
+            <span class="post-date" title="2021-10-02 19:01:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/10/02/xiu-shen/gong-zuo/she-bao-he-wu-xian-yi-jin/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="社保和五险一金">社保和五险一金</span>
+            <span class="post-date" title="2021-10-02 18:59:33">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/10/02/xiu-shen/gong-zuo/ji-ti-hu-kou-xiang-guan-shi-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="集体户口相关事项">集体户口相关事项</span>
+            <span class="post-date" title="2021-10-02 18:58:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/neo4j-tu-cha-xun-yu-ju/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="neo4j图查询语句">neo4j图查询语句</span>
+            <span class="post-date" title="2021-10-02 18:52:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/02/xiu-shen/sheng-huo-zhi-shi/yan-jiu-sheng-jie-duan-zhun-bei/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="研究生阶段准备">研究生阶段准备</span>
+            <span class="post-date" title="2021-10-02 18:51:31">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/c/cprimeplus-xue-xi-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="《CPrimePlus》学习笔记">《CPrimePlus》学习笔记</span>
+            <span class="post-date" title="2021-10-02 18:39:39">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/c/c-ling-san-zhi-shi-dian/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C零散知识点">C零散知识点</span>
+            <span class="post-date" title="2021-10-02 18:35:53">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/linux-ling-san-zhi-shi-dian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux零散知识点">linux零散知识点</span>
+            <span class="post-date" title="2021-10-02 18:32:34">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/python/python-ling-san-zhi-shi-dian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python零散知识点">python零散知识点</span>
+            <span class="post-date" title="2021-10-02 18:24:43">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/python/liao-xue-feng-de-python-bi-ji/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="《廖雪峰的python》笔记">《廖雪峰的python》笔记</span>
+            <span class="post-date" title="2021-10-02 18:23:27">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/python/python-xue-xi-shou-ce-bi-ji/"
+           data-tag="github,python,C++"
+           data-author="" >
+            <span class="post-title" title="《Python学习手册》笔记">《Python学习手册》笔记</span>
+            <span class="post-date" title="2021-10-02 18:03:10">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-reactnative/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="安装ReactNative">安装ReactNative</span>
+            <span class="post-date" title="2021-10-02 18:01:21">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ci-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理词法分析程序文档">编译原理词法分析程序文档</span>
+            <span class="post-date" title="2021-10-02 18:00:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ebnf-to-bnf/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理EBNF To BNF">编译原理EBNF To BNF</span>
+            <span class="post-date" title="2021-10-02 17:59:24">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-yu-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="编译原理语法分析程序文档">编译原理语法分析程序文档</span>
+            <span class="post-date" title="2021-10-02 17:58:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-she-zhi-xu-ni-zhu-ji-hou-bu-neng-fang-wen-wen-ti/"
+           data-tag="github,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP设置虚拟主机后不能访问问题">WAMP设置虚拟主机后不能访问问题</span>
+            <span class="post-date" title="2021-10-02 17:53:26">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-yuan-cheng-zhu-ji-she-zhi-xu-ni-zhu-ji/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="WAMP远程主机设置虚拟主机">WAMP远程主机设置虚拟主机</span>
+            <span class="post-date" title="2021-10-02 17:45:44">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机图形学 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-tu-xing-xue/shu-zi-tu-xiang-chu-li-ke-cheng-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="数字图像处理课程笔记">数字图像处理课程笔记</span>
+            <span class="post-date" title="2021-10-02 17:02:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机图形学 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-tu-xing-xue/ping-mu-huan-chong-qu-li-jie/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="屏幕缓冲区理解">屏幕缓冲区理解</span>
+            <span class="post-date" title="2021-10-02 17:00:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-7-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第7章">湖南科技大学计算机网络第7章</span>
+            <span class="post-date" title="2021-10-02 16:55:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-6-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第6章">湖南科技大学计算机网络第6章</span>
+            <span class="post-date" title="2021-10-02 16:53:02">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-5-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第5章">湖南科技大学计算机网络第5章</span>
+            <span class="post-date" title="2021-10-02 16:50:27">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-4-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第4章">湖南科技大学计算机网络第4章</span>
+            <span class="post-date" title="2021-10-02 16:28:40">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-3-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第3章">湖南科技大学计算机网络第3章</span>
+            <span class="post-date" title="2021-10-02 16:23:11">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-2-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第2章">湖南科技大学计算机网络第2章</span>
+            <span class="post-date" title="2021-10-02 16:22:28">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-di-1-zhang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络第1章">湖南科技大学计算机网络第1章</span>
+            <span class="post-date" title="2021-10-02 16:21:43">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/jian-yi-liao-tian-ruan-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="简易聊天软件">简易聊天软件</span>
+            <span class="post-date" title="2021-10-02 16:19:29">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机网络 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-wang-luo/ji-suan-ji-wang-luo-ke-cheng-zhi-shi-tu-pu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="计算机网络课程知识图谱">计算机网络课程知识图谱</span>
+            <span class="post-date" title="2021-10-02 16:18:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-tong-yi-ge-fu-wu-qi-pei-zhi-duo-ge-wang-zhan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="WAMP同一个服务器配置多个网站">WAMP同一个服务器配置多个网站</span>
+            <span class="post-date" title="2021-10-02 16:11:44">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/teng-xun-yun-fu-wu-qi-bao-ta-wordpress-an-zhuang-ge-ren-bo-ke/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="腾讯云服务器+宝塔+wordpress安装个人博客">腾讯云服务器+宝塔+wordpress安装个人博客</span>
+            <span class="post-date" title="2021-10-02 16:10:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 PHP "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/php/php-yu-yan-bi-keng-zhi-nan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="PHP语言避坑指南">PHP语言避坑指南</span>
+            <span class="post-date" title="2021-10-02 16:08:42">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2021/10/02/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/san-chong-sou-suo-suan-fa-jie-8-shu-ma-wen-ti/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="三种搜索算法解8数码问题">三种搜索算法解8数码问题</span>
+            <span class="post-date" title="2021-10-02 14:56:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 机器学习 "
+           href="/2021/10/02/ji-suan-ji/ren-gong-zhi-neng/ji-qi-xue-xi/shen-jing-wang-luo-bp-suan-fa-xi-tong-kai-fa-yu-yan-zheng/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="神经网络 BP算法系统开发与验证">神经网络 BP算法系统开发与验证</span>
+            <span class="post-date" title="2021-10-02 14:44:53">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-guan-yu-lian-jie-shu-ju-ku-shi-bai-de-ke-neng-xing/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="WAMP关于连接数据库失败的可能性">WAMP关于连接数据库失败的可能性</span>
+            <span class="post-date" title="2021-10-02 14:41:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 Python "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/python/python-hou-duan-xue-xi-lu-xian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python后端学习路线">python后端学习路线</span>
+            <span class="post-date" title="2021-10-02 14:36:40">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2021/10/02/ji-suan-ji/ji-suan-ji-ying-jian/shu-mei-pai-yan-shi-dian-ying/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="树莓派延时电影">树莓派延时电影</span>
+            <span class="post-date" title="2021-10-02 14:26:28">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 其它 "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/qi-ta/shell-xue-xi-bi-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Shell学习笔记">Shell学习笔记</span>
+            <span class="post-date" title="2021-10-02 14:21:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 IDEA "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/idea/idea-an-zhuang/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="IDEA安装">IDEA安装</span>
+            <span class="post-date" title="2021-10-02 13:16:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-da-jian-ti-shi/"
+           data-tag="PHP,github,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP搭建提示">WAMP搭建提示</span>
+            <span class="post-date" title="2021-10-02 13:00:30">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 WAMP "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/wamp/wamp-pei-zhi-yu-ming/"
+           data-tag="github,WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP配置域名">WAMP配置域名</span>
+            <span class="post-date" title="2021-10-02 12:04:50">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/zai-git-zhong-shi-yong-de-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="在git中使用的问题">在git中使用的问题</span>
+            <span class="post-date" title="2021-10-02 12:02:22">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/c/guan-yu-gou-zao-han-shu-he-pu-tong-han-shu-de-si-kao/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="关于构造函数和普通函数的思考">关于构造函数和普通函数的思考</span>
+            <span class="post-date" title="2021-10-02 11:59:36">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/an-zhuang-mysql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安装mysql">安装mysql</span>
+            <span class="post-date" title="2021-10-02 11:56:10">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 sublime "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/sublime/pei-zhi-sublime-kuai-jie-jian-zhi-xing-html-wen-jian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="配置sublime快捷键执行html文件">配置sublime快捷键执行html文件</span>
+            <span class="post-date" title="2021-10-02 11:54:55">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2021/10/02/ji-suan-ji/zhen-qi-ta/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="记录一次关于菠菜爬虫教育门户网站">记录一次关于菠菜爬虫教育门户网站</span>
+            <span class="post-date" title="2021-10-02 11:54:03">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/10/02/jin-rong/jin-rong-zhi-shi/guan-yu-wai-hui-he-jing-wai-mai-fang/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="关于外汇和境外买房">关于外汇和境外买房</span>
+            <span class="post-date" title="2021-10-02 11:44:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/10/02/jin-rong/jin-rong-zhi-shi/zhuan-gu-jie-zhi-shi-shi-me-yi-si/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="转股价值是什么意思">转股价值是什么意思</span>
+            <span class="post-date" title="2021-10-02 11:40:12">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/10/02/jin-rong/jin-rong-zhi-shi/chang-wai-ji-jin-he-chang-nei-ji-jin-shou-xu-fei-bi-jiao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="场外基金和场内基金手续费比较">场外基金和场内基金手续费比较</span>
+            <span class="post-date" title="2021-10-02 11:35:56">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/02/xiu-shen/chuang-ye/shen-qing-qi-ye-zhang-hu-wei-xin-xiao-cheng-xu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="申请企业账户微信小程序">申请企业账户微信小程序</span>
+            <span class="post-date" title="2021-10-02 11:33:42">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/02/xiu-shen/chuang-ye/wei-xin-zhi-fu-ping-tai-de-kai-tong/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="微信支付平台的开通">微信支付平台的开通</span>
+            <span class="post-date" title="2021-10-02 11:31:00">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/02/xiu-shen/chuang-ye/wei-xin-gong-zhong-ping-tai-ren-zheng-wei-qi-ye/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="微信公众平台认证为企业">微信公众平台认证为企业</span>
+            <span class="post-date" title="2021-10-02 11:26:01">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/02/xiu-shen/chuang-ye/ge-ren-cheng-xu-qian-yi-wei-qi-ye/"
+           data-tag="PHP,github"
+           data-author="" >
+            <span class="post-title" title="个人程序迁移为企业">个人程序迁移为企业</span>
+            <span class="post-date" title="2021-10-02 11:24:08">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 工作 "
+           href="/2021/10/02/xiu-shen/gong-zuo/jin-rong-gong-si-xin-xi-ke-ji-gang-wei-xin-zi-yi-lan/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="金融公司信息科技岗位薪资一览">金融公司信息科技岗位薪资一览</span>
+            <span class="post-date" title="2021-10-02 11:16:32">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/liang-tai-linux-zhu-ji-lian-jie-mysql-yuan-cheng-shu-ju-ku-shi-bai-de-jing-yan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="两台Linux主机连接mysql远程数据库失败的经验">两台Linux主机连接mysql远程数据库失败的经验</span>
+            <span class="post-date" title="2021-10-02 00:38:58">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/10/02/ji-suan-ji/bian-cheng-yu-yan/c/jing-tai-cheng-yuan-han-shu-fang-wen-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="静态成员函数访问问题">静态成员函数访问问题</span>
+            <span class="post-date" title="2021-10-02 00:37:23">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2021/10/02/ji-suan-ji/ruan-jian-kai-fa/xiao-cheng-xu-xue-xi-zhi-nan/"
+           data-tag="PHP,github,Java,WAMP"
+           data-author="" >
+            <span class="post-title" title="小程序学习指南">小程序学习指南</span>
+            <span class="post-date" title="2021-10-02 00:33:40">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pytorch-yu-dao-de-wen-ti/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装Pytorch遇到的问题">安装Pytorch遇到的问题</span>
+            <span class="post-date" title="2021-10-02 00:32:27">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/python-pei-zhi-yi-ge-guan-yu-pil-de-wen-ti/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="Python配置一个关于PIL的问题">Python配置一个关于PIL的问题</span>
+            <span class="post-date" title="2021-10-02 00:28:38">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/02/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/vscode-pei-zhi-kuai-jie-jian-yun-xing-python-wen-jian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="VSCODE配置快捷键运行Python文件">VSCODE配置快捷键运行Python文件</span>
+            <span class="post-date" title="2021-10-02 00:27:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2021/10/02/ji-suan-ji/zhen-qi-ta/pei-zhi-github12306-xiang-mu/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="配置github12306项目">配置github12306项目</span>
+            <span class="post-date" title="2021-10-02 00:18:43">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2021/10/02/ji-suan-ji/zhen-qi-ta/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="编码方式-ASCIIUnicodeUTF-8UTF-16辨析">编码方式-ASCIIUnicodeUTF-8UTF-16辨析</span>
+            <span class="post-date" title="2021-10-02 00:12:17">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2021/10/02/ji-suan-ji/zhen-qi-ta/pa-chong-pa-dao-de-shi-shi-me/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="爬虫爬到的&amp;#是什么">爬虫爬到的&amp;#是什么</span>
+            <span class="post-date" title="2021-10-02 00:10:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao-er/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号二">一台电脑配置两个github账号二</span>
+            <span class="post-date" title="2021-10-01 23:57:10">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号">一台电脑配置两个github账号</span>
+            <span class="post-date" title="2021-10-01 23:53:37">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-weibo-daily-hotkey/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="配置github项目——weibo_daily_hotkey">配置github项目——weibo_daily_hotkey</span>
+            <span class="post-date" title="2021-10-01 23:50:36">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/git-xue-xi-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="git学习笔记">git学习笔记</span>
+            <span class="post-date" title="2021-10-01 23:50:15">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 Vs2019 "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vs2019/vs2019-pei-zhi-lian-jie-shu-ju-ku/"
+           data-tag="github,C++,WAMP"
+           data-author="" >
+            <span class="post-title" title="vs2019配置连接数据库">vs2019配置连接数据库</span>
+            <span class="post-date" title="2021-10-01 23:47:48">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-llvm/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="安装配置llvm">安装配置llvm</span>
+            <span class="post-date" title="2021-10-01 23:46:27">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-flex-bison-deng/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="安装配置flex+bison等">安装配置flex+bison等</span>
+            <span class="post-date" title="2021-10-01 23:43:46">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2021/10/01/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/apriori-suan-fa/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="Apriori算法">Apriori算法</span>
+            <span class="post-date" title="2021-10-01 23:41:14">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-jeesite-yun-xing-huan-jing/"
+           data-tag="github,Java"
+           data-author="" >
+            <span class="post-title" title="配置Jeesite运行环境">配置Jeesite运行环境</span>
+            <span class="post-date" title="2021-10-01 23:32:06">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-ccks-kg/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="配置github项目ccks_kg">配置github项目ccks_kg</span>
+            <span class="post-date" title="2021-10-01 23:28:59">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/centos7-an-zhuang-bu-tong-ban-ben-de-python-bing-she-zhi-mo-ren-python/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="centos7安装不同版本的python并设置默认python">centos7安装不同版本的python并设置默认python</span>
+            <span class="post-date" title="2021-10-01 23:27:20">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/an-zhuang-wordpress-ming-ling-xing-gong-ju-wp-cli-lai-guan-li-wordpress/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装wordpress命令行工具WP-CLI来管理wordpress">安装wordpress命令行工具WP-CLI来管理wordpress</span>
+            <span class="post-date" title="2021-10-01 23:25:41">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-bu-shu-jian-kong-gu-shi-jiao-ben/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="在云服务器上部署监控股市脚本">在云服务器上部署监控股市脚本</span>
+            <span class="post-date" title="2021-10-01 23:23:07">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-tensorflow/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="安装tensorflow">安装tensorflow</span>
+            <span class="post-date" title="2021-10-01 23:19:16">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-gua-qi-jiao-ben-zhi-xing-pa-qu-shu-ju-ren-wu-xu-yao-zhu-yi-de-dian/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="《在云服务器上挂起脚本执行爬取数据任务需要注意的点》">《在云服务器上挂起脚本执行爬取数据任务需要注意的点》</span>
+            <span class="post-date" title="2021-10-01 23:16:51">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 算法与数据结构 "
+           href="/2021/10/01/ji-suan-ji/suan-fa-yu-shu-ju-jie-gou/32-wei-ji-qi-he-64-wei-ji-qi-cc-ge-lei-xing-suo-zhan-da-xiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="32位机器和64位机器CC++各类型所占大小">32位机器和64位机器CC++各类型所占大小</span>
+            <span class="post-date" title="2021-10-01 23:15:19">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 VsCode "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pei-zhi-senta/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="安装配置senta">安装配置senta</span>
+            <span class="post-date" title="2021-10-01 23:11:15">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 linux "
+           href="/2021/10/01/ji-suan-ji/ji-cheng-kai-fa-huan-jing/linux/zai-zi-ji-de-fu-wu-qi-shang-an-zhuang-git-fu-wu-qi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="在自己的服务器上安装git服务器">在自己的服务器上安装git服务器</span>
+            <span class="post-date" title="2021-10-01 23:10:24">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 编程语言 C "
+           href="/2021/10/01/ji-suan-ji/bian-cheng-yu-yan/c/c-yu-yan-chang-jian-xi-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C语言常见细节">C语言常见细节</span>
+            <span class="post-date" title="2021-10-01 23:02:58">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/10/01/xiu-shen/qi-si-miao-xiang/xue-xi-gan-zhi-ji-hou-de-xiang-fa/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="学习感知机后的想法">学习感知机后的想法</span>
+            <span class="post-date" title="2021-10-01 23:01:26">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2021/10/01/xiu-shen/sheng-huo-ji-neng/kuan-dai-jie-ru/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="宽带接入">宽带接入</span>
+            <span class="post-date" title="2021-10-01 22:58:33">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/01/xiu-shen/sheng-huo-zhi-shi/gao-shu-shu-xue-zi-liao-de-xuan-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="高数数学资料的选择">高数数学资料的选择</span>
+            <span class="post-date" title="2021-10-01 22:51:16">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/10/01/xiu-shen/qi-si-miao-xiang/ju-zhen-yu-shi-ji-sheng-huo-xiang-lian-xi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="矩阵与实际生活相联系">矩阵与实际生活相联系</span>
+            <span class="post-date" title="2021-10-01 22:48:21">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/10/01/xiu-shen/sheng-huo-zhi-shi/kao-yan-jing-yan-fen-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="考研经验分享">考研经验分享</span>
+            <span class="post-date" title="2021-10-01 22:47:45">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2021/10/01/xue-ke/wen-xue/cun-shang-chun-shu/guo-jing-yi-nan-tai-yang-yi-xi-cun-shang-xiao-shuo-xun-li-qi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="国境以南，太阳以西——村上小说巡礼七">国境以南，太阳以西——村上小说巡礼七</span>
+            <span class="post-date" title="2021-10-01 22:45:00">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2021/10/01/xue-ke/wen-xue/cun-shang-chun-shu/nuo-wei-de-sen-lin-cun-shang-xiao-shuo-xun-li-wu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="挪威的森林——村上小说巡礼五">挪威的森林——村上小说巡礼五</span>
+            <span class="post-date" title="2021-10-01 22:44:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2021/10/01/xue-ke/wen-xue/cun-shang-chun-shu/xun-yang-mou-xian-ji-cun-shang-xiao-shuo-xun-li-san/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="寻羊冒险记——村上小说巡礼三">寻羊冒险记——村上小说巡礼三</span>
+            <span class="post-date" title="2021-10-01 22:40:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 文学 村上春树 "
+           href="/2021/10/01/xue-ke/wen-xue/cun-shang-chun-shu/1973-nian-de-dan-zi-qiu-cun-shang-xiao-shuo-xun-li-er/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1973年的弹子球——村上小说巡礼二">1973年的弹子球——村上小说巡礼二</span>
+            <span class="post-date" title="2021-10-01 22:39:55">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/kuai-di-dai-qu-xiang-mu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="快递代取项目">快递代取项目</span>
+            <span class="post-date" title="2021-10-01 22:25:44">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-yi-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第一次培训">中英创业项目第一次培训</span>
+            <span class="post-date" title="2021-10-01 22:04:37">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 奇思妙想 "
+           href="/2021/10/01/xiu-shen/qi-si-miao-xiang/li-shang-an-ge-qu-dui-bi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="李上安歌曲对比">李上安歌曲对比</span>
+            <span class="post-date" title="2021-10-01 22:02:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-er-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第二次培训">中英创业项目第二次培训</span>
+            <span class="post-date" title="2021-10-01 21:58:04">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-san-ci-pei-xun/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="中英创业项目第三次培训 ">中英创业项目第三次培训 </span>
+            <span class="post-date" title="2021-10-01 21:55:43">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/zhong-ying-chuang-ye-xiang-mu-di-si-ci-pei-xun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中英创业项目第四次培训">中英创业项目第四次培训</span>
+            <span class="post-date" title="2021-10-01 21:54:19">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/fu-wu-qi-yu-yu-ming-gou-mai/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="服务器与域名购买">服务器与域名购买</span>
+            <span class="post-date" title="2021-10-01 21:42:58">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 创业 "
+           href="/2021/10/01/xiu-shen/chuang-ye/chuang-ban-gong-si-liu-cheng/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="创办公司流程">创办公司流程</span>
+            <span class="post-date" title="2021-10-01 21:36:31">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/09/30/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-07-05">投资记录_2021-07-05</span>
+            <span class="post-date" title="2021-09-30 00:39:02">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/09/30/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-07-16/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-07-16">投资记录_2021-07-16</span>
+            <span class="post-date" title="2021-09-30 00:38:55">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/09/30/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2021-01-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2021-01-08">投资记录_2021-01-08</span>
+            <span class="post-date" title="2021-09-30 00:38:44">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资记录 "
+           href="/2021/09/30/jin-rong/tou-zi-ji-lu/tou-zi-ji-lu-2020-12-30/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资记录_2020-12-30">投资记录_2020-12-30</span>
+            <span class="post-date" title="2021-09-30 00:38:12">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活技能 "
+           href="/2021/09/30/xiu-shen/sheng-huo-ji-neng/zheng-quan-cong-ye-zi-ge-kao-shi-ji-lu/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="证券从业资格考试记录">证券从业资格考试记录</span>
+            <span class="post-date" title="2021-09-30 00:34:31">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/09/29/jin-rong/jin-rong-zhi-shi/jin-qian-guan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="金钱观">金钱观</span>
+            <span class="post-date" title="2021-09-29 00:49:05">2021/09/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 投资理念 "
+           href="/2021/09/28/jin-rong/tou-zi-li-nian/wei-shi-me-bu-yao-jin-jian-gu-qun-he-gen-zhao-gu-piao-da-v-zou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不要进荐股群和跟着股票大V走？">为什么不要进荐股群和跟着股票大V走？</span>
+            <span class="post-date" title="2021-09-28 21:39:53">2021/09/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 人工智能 自然语言处理 "
+           href="/2021/09/22/ji-suan-ji/ren-gong-zhi-neng/zi-ran-yu-yan-chu-li/speech-language-aprocess-chapter3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess Chapter3">Speech language aprocess Chapter3</span>
+            <span class="post-date" title="2021-09-22 16:55:45">2021/09/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/09/21/xue-ke/zheng-zhi/xue-xi-gong-chan-zhu-yi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="学习共产主义">学习共产主义</span>
+            <span class="post-date" title="2021-09-21 15:23:58">2021/09/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 政治 "
+           href="/2021/09/21/xue-ke/zheng-zhi/ru-dang-shen-qing-shu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="入党申请书">入党申请书</span>
+            <span class="post-date" title="2021-09-21 15:23:55">2021/09/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 金融 金融知识 "
+           href="/2021/09/20/jin-rong/jin-rong-zhi-shi/fintech-jin-rong-ke-ji-de-chuang-xin-chuang-ye-yu-an-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FinTech+金融科技的创新,创业与案例">FinTech+金融科技的创新,创业与案例</span>
+            <span class="post-date" title="2021-09-20 12:14:55">2021/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2021/09/18/yun-dong/zu-qiu/zhu-li-cai-pan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="助理裁判职责">助理裁判职责</span>
+            <span class="post-date" title="2021-09-18 23:55:14">2021/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 运动 足球 "
+           href="/2021/09/16/yun-dong/zu-qiu/di-si-guan-yuan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="第四官员职责">第四官员职责</span>
+            <span class="post-date" title="2021-09-16 00:04:38">2021/09/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 真其它 "
+           href="/2021/09/14/ji-suan-ji/zhen-qi-ta/ji-suan-ji-lun-wen-fa-biao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="计算机论文发表">计算机论文发表</span>
+            <span class="post-date" title="2021-09-14 19:11:31">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 真其它 "
+           href="/2021/09/14/xue-ke/zhen-qi-ta/hao-ju-zi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="好句子">好句子</span>
+            <span class="post-date" title="2021-09-14 19:03:54">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 真其它 "
+           href="/2021/09/14/xue-ke/zhen-qi-ta/kai-nao-dong/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="开脑洞">开脑洞</span>
+            <span class="post-date" title="2021-09-14 19:03:17">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 真其它 "
+           href="/2021/09/14/xue-ke/zhen-qi-ta/xiao-hua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="笑话">笑话</span>
+            <span class="post-date" title="2021-09-14 19:02:50">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 真其它 "
+           href="/2021/09/14/xue-ke/zhen-qi-ta/qi-ta/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="其它">其它</span>
+            <span class="post-date" title="2021-09-14 19:02:21">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2021/09/14/xue-ke/she-hui-ke-xue/xiang-tu-zhong-guo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="乡土中国">乡土中国</span>
+            <span class="post-date" title="2021-09-14 19:01:01">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 学科 社会科学 "
+           href="/2021/09/13/xue-ke/she-hui-ke-xue/she-hui-xing-dong-wu-wei/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会性动物(未)">社会性动物(未)</span>
+            <span class="post-date" title="2021-09-13 22:25:00">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2021/09/13/ji-suan-ji/ruan-jian-kai-fa/pjsua2-python-ben-di-fu-xian/"
+           data-tag="github,python,C++"
+           data-author="" >
+            <span class="post-title" title="pjsua2_python本地复现">pjsua2_python本地复现</span>
+            <span class="post-date" title="2021-09-13 22:20:53">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 最近 "
+           href="/2021/09/13/zui-jin/ying-yong-ruan-jian-ji-kai-fa-huan-jing/"
+           data-tag="PHP,github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="应用软件及开发环境">应用软件及开发环境</span>
+            <span class="post-date" title="2021-09-13 21:26:05">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 软件开发 "
+           href="/2021/09/07/ji-suan-ji/ruan-jian-kai-fa/biogears/"
+           data-tag="github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="biogears">biogears</span>
+            <span class="post-date" title="2021-09-07 21:36:47">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 "
+           href="/2021/09/07/ji-suan-ji/2021-nian-zu-hui-hui-bao/"
+           data-tag="github,Java,python,C++"
+           data-author="" >
+            <span class="post-title" title="2021年组会汇报">2021年组会汇报</span>
+            <span class="post-date" title="2021-09-07 21:28:12">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 计算机硬件 "
+           href="/2021/09/07/ji-suan-ji/ji-suan-ji-ying-jian/zhuang-ji-zhi-shi/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="装机知识">装机知识</span>
+            <span class="post-date" title="2021-09-07 20:54:21">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 计算机 集成开发环境 windows "
+           href="/2021/09/07/ji-suan-ji/ji-cheng-kai-fa-huan-jing/windows/typora-picgo-pei-zhi-ben-di-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="typora+picgo配置本地笔记">typora+picgo配置本地笔记</span>
+            <span class="post-date" title="2021-09-07 20:17:11">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 修身 生活知识 "
+           href="/2021/04/15/xiu-shen/sheng-huo-zhi-shi/jing-wai-lu-you-xue-xi-ru-he-shi-yong-fu-kuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="境外旅游学习如何使用付款">境外旅游学习如何使用付款</span>
+            <span class="post-date" title="2021-04-15 15:06:10">2021/04/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 真其它 "
+           href="/2021/01/27/zhen-qi-ta/distributed-representations-of-words-and-phrases-and-their-compositionality/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Distributed Representations of Words and Phrases and their Compositionality">Distributed Representations of Words and Phrases and their Compositionality</span>
+            <span class="post-date" title="2021-01-27 19:38:27">2021/01/27</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-真其它/Distributed Representations of Words and Phrases and their Compositionality" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Distributed Representations of Words and Phrases and their Compositionality</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="真其它">真其它</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-07-15 17:55:34'>2021-01-27 19:38</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:6</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="4347e1f61a7f7738e838e25b31151a93b756ff5f150d03121fd44fa9eb90acc2">1209d4e9609a7a6965961d8431e08315a1f6c6fd406a04488f3511581ca5be69f795428d0c967635e5522cebf11de689029c088c3709a1ad8a2e58d4818fa1b90c194e481f79b7ae19a05eab74d6526989e8ccd17edda03d015ce65971e1249ad670b1d74915cac0443b978977bb957d251fe02e92bfdabff59b7ee2d7a580313c051de9cf61ca6ce2b382aaaf5ddbf51893ecf585e4956810dc3831145d3a05fafb46ca882eda2b7b935beb5a41b3da4fcc3ca767bd5170063c0470c9b735a433341f87c581921a842f12a0d6949af5a9894bbbcd8cda946b54a3db6b85b82dcb3ee3aba52ba5cbf79ee8161288952b6b29de700789e474147fade48864be18d146832d66a529069040a044d0eeedef7629c4cd79a68115b5f3cc4d7b337d135d576f074999dbdcd592c7bd6e5df29498ac930412a1bbf0061c985617466a2f3e35e00fb90e0c2cd975ca64146c7e6d6b571d6bd6c0cead6188e4fbd6aa29293009071ae7445f7d16447bb8809a4093ae8a08b6c1db2d150995bbcb3f0abf155bd1650d95d311b0e39e45366ba51cc332928843c2c50c18ba6ec16825247adec4c648f127731e4c769fec2edf94019e7f8be60b808c02a504080f15eb99091619961c27906b152214aa2dc655885883707834ea78906d021bf1bfe50f4ebffb123d937b4b6eb4700c29b0ca1ec7d717ebed5ed7447427055de220f6908dd7516f2d11170b3cc3e109842faa01e08529e4100de5bae8663b172ca3c5672081b4ed7bbadd34aa4ca0cf42538eddbbbf38ab6897c8ee854fa219eb70ba6908d982b4944bd168a4349e936d7e4a6f7fa3ed8d5229ae567f1032ce2014e06ee0bbacd440a639bbed3291daf3132409437778b7b18f6dec8812ffae43dbccaaac1c479967c2fd8490f2be15bbe574167f95ea8d6a3dd5ac43f787ea3aac074764a5f3a6d758531bf08def96df7b7f457c9f818b634a301012ac63ccedecc852af56e4f4982ff2fa5dc1f23d30664a25148f1b659720751e73b8d93f81ff0eb6d3527117041cc4eb2c6e1a182a6fb7617ef5b9d17e541dddbcdcc717eb494f4ac8acf812c600ebed3734351c383c1e95b9e72e53180c55a133a60a161b24472190175a06ef5c9246a71b8be6b79aede589f2ebe782c6b8fbfabe29065c8d92c3941b71314cae5a327f37f23a5da7c2ae7d13d384d814138c083c1052659292cad95c9e71387b09ab0edb7f36df42521e3f685bda4c6d2dd654cdbb248b1fe9d2e7cff5be88a9d9530bd3933877640d81f466b5520200996b2c38fd7a8946a419f520089287024ee307ff79fce6c59988a472a8b248bb24b232a154685f4e8e63f50a7ae15bcf4e10260944cee8f16688dd409822ec61f8fba35a9bdd01265eea7d9b9018162cb81d330a37b09b38f0b2c9c2c17d1c42e60e235c48fb02516ab5332e9d9cb5bb30f521d2edb7ccc5bdcb730821fbb1eb3305e6f9d93771558c1249ec9d433807efcfb6e14e66676d1faadc6416620b62fa06c31eb4644f5fd70fff26784f971eb48d32a2e305a38cfd997f6acaacf7821ed7ecf8c7cfeff705af18e2544d2eae0a6280bf4055094287f765da24003c0bb5979ef14ecc084d861764ff5e6b2101b88077137d95a2d0a04b67d8d65e079144330f665cb94d68c38b871ed0c0eb34dc22e1a4b212cc9d89caf733df794f95110e2ed60183a3b489a75923129cdbd07d70df1b08b02b64fcaabe99a2912d82358d05f4f33dbbbe1ef6a0e3a857241a24309cbe0aa5f1bed96424cfa9541861d7fbaba6971fd2a190fe36fb38594f09170556ab63e064a203b418305a2cf08379ecbfc5b6d4ec51cbe7191c0c20f05ed9c49d92f8cba2b5d40e57c139f95ba8af85a1d1d4a176c67e25c200cea11422a2521dfbfd6600e1729e602794f5d9a8506158460007bdd736bc697e14ee9ce5c205a242ea556ac80eb4157966922e1d913066d54b1fe6257504047dc79ca5bbd585ecff3776e73483c0714f76e2f034ff1ea8d191783af9611c25285f48d1552c1ab7ae0b7a20f8fd806270fdf9adfdcc573fc97b7570046a63a91f8c8c35659909096c67591c15396fc736262dc8ef390f89ad24cfba26e5c70aca12fb9571e4b64deaa551b1fde83ba85805273f597a813716d9bd77dbdfd77f960fc8eba495934e76a14dbb0a4865aaca7b8cd7e3afbbd6dcbea450eead3febd844ea865e35012be8f9e51de2f96dd9d2bc16407570e65b80a5a5387d46d52ca8b568b804385e3d4ea4d995ee140d00b3fae242af900fda03aa581151c9899e948219b95e653e2c89c9241537096dca45074149b9a2f46f6e66cce79ceea495f2ea93cd4e82f3001f7a915508836372c7615219c8b18ebf280ab70b3fda0cc97229ce1d80aefa4fe75e5239666c06950922b4b6382488595548527f5e62b2aa2a68b59e6fb7f1ecfba242c5a32e3a7f27836f9a4ecaa7286dd9067166962d55e926fbdbbed752cc14cd5cd57b4156aa082c6aedf632d50a0c229766d51f47c7a65fe9b7e91e43df8a56353f38c0a543b26444166784bf01724f44ae7c373d486e7f2925147a627834346debadbf344b5215ae44f6a4897d8b78f4c01ea660f7bca1a420d8ba09e925de212993bbfe6d25e7829c9eddd887faef09a04c5d08197edee4b5991c9b5190dc38a00e63362711807f86d965dee44fbb22a84f594dc3de266fc5cc94ad1d0fa4efe8c6b0694c1f7ff53d75dbdc45d0cf2b5b8b575527fb65ef009be20a8f2721c59f58f7600ee5ee0416575b12ae7e5b3d3cb91fa51c6c3612b828e28cebf4d002dfdbfa938971fad9edf96efc3fcce7fba2e776e6ebcd45a60a0808a91e04addf1ef741d1dd43a8b21d43fd4cac0fb4d640816ec1ed0f8c19c0c794db00d72387df4f915cc2ab5f3240d502c44d820126dabc261b2141cb05f222e2e05803f8e7dd7da5f75db6e9b89ed95d4bb0364632bda91decacac543eee0697dd8c23e0eebf13e4577d0587e22cc2484b0e25298c68fb2fcd959fa10daf1c56d8532f8da32f3647862ef2ef12f70483bc60d3b72401b9fc4d8b18230af30fe1b84cc5e19e1d519139ca8fcfe78e21e9cd868dc2528a5d71de0e07611433fca579847efac351cb3f8e9e97908009ec3373ce2cf0c760c47e3ad1bc22aaa1b510ecbc969a56cc575d0af8f94f3bb226ae43ae9bfbe63d16520b4b85c82396dba2cea8e713e9d5de97270edd7348c38fd18bda75b26aad94b15b5634b7f0877cb9a46bf76f279a07a9bef44a128959d3d5bcad36287470986439f8a4cd275e3281f0ae24c27eb533808bc73823481b8ef81ba46990f8269f31753f3954e7006b2b608bf4545922a2f27eb4be7625e9e65f8e4d2e8d8d798995656da068b92fbdfcf58676e73573f2ffc9801964a44685b3b977fa3cfb9e9cf2dfb74dfabe75166af02c7801a647a1b699a1cf991adfb820710ce6971bf0d09e82827e70cf0b1edc24cdc23cb04f239356a714dc8876bb267723bc8b207b4c008c0ec6e6d7ada6697fb3d858f5ed3c95cb20e596170f17fe6a77f17b721459b8969678c8ddeb9e6b54b0fc748e6158a6fe91d1991516913632e1b75908336b1fd27725114114c2bbfdc1abfe1a7bbd922aa9db9084fad2633c35d964acc25497de66e94ae24f34c9285f31eded30a8f6b86903ed63cd85e5f3c84de7aeb7aff36b06ec0d584a106bda0e3bedd4ffbd7ce22071d9efce9549ac183dfe602ba6fce94beeb2933d136a6dc11d6b8657a7daf7a2bcb58f25e178a236b87f12ed4b91d4f282894244f0c67d850a0d946b54d2106170f2b2e9b8d4534fba37e8abca2656a82b610f65c6e45d8813a9dde8bfd382643648c40f2bf7b1e4540d00bda10ca685084649fa3b861370aec20dd05c86f3040135dce8e7bcaaa1e22de618c09fd4a40ad3aa172866887a3badeea26f856871f9a3e67c455f1474fd916c15be3d6ecfa0c5305a726b6600fda81fdcc4a52b3d652c1c6baf18e69ca2dfd22f8bc451085fbe8793b55aa491b6144efad9a3fbaae5085929d3d15937ad0591f68088c385e413386c61bd4ef9f7ec729c7522cac3f7ee49ba43867384690625a89d23ea928508718b7ee5ee9139eaebb4f81de9be53b1092b88058fa2c5c869de4080bd47ea087ddd9192e5e67ee2b1732b66f6e69790ef85e6c2402088883bc50151dbabcfdff50aa8153acd47930447ffd084558bd8989e50f0ad2080d327c0aae6b4314b161bd7e699a0c607727d9d1f184938729a22002f3f0449386dcdca30b606f9d13ffa6f0b9b849d1473c2cd7ae77347cad2052ef383969b9ad13fc4eeef9d529ea80a0205eeb2e433240ab0cff6a8d2e0ba49aaac49a8ccb3ef57b4dac5c3f8299741c504789ea84cf7c865b06f2c1729e4a9b24dc0749421ab6b3febfa50a397ef31098aed4c4b50780c779aee4ef365e24ff90de6260c1700aa00409ed6c6e8b38052bbdc39b48c3f993ecbe0aab59d9287c194a3ecae1dda509c69d4441ec99c9fbbbadbf61706fb3c9becec52af5613e462b408d31f1d6fb0a210c6577741450d66bf4edce818c5d2eaeb2f050f8357c3e36e354cc8a16a403d95a13ad2c3f7ca76bac7e93414a2065adc066c597405f2c7090c67ab8db277e2c1bbc5d3a9746aa6d6537ff6a4aa517a23658bb1b7a67230ac83cf0bbd77c6e8be11e80ea6ec9b35e279bf2a1d27e999c35de80b9410296a8ac8836e9cae5c9193cc42059537438b6859f0001d17302bcf203a332ae76f75fe77c9da83e7351f7ecbb5144345841e07a3aa0c42e6424f15970bcba0bd1fc8fbd767adb1e59fca5df4ea86cb7b9fb08cd6ea3afddf26396a45f4d886c1d9cfb505c1841b74b0e3c78dcfdbe65fd931a4ccdfffe331cc21460c4456bdf512eb0afacd37cf28057432a2788d55e45f50e715363c16c1c164cbad9fa19791be6b2b53205a5ac39b5c8cae3f0c1940480bdc12c8e4fc466832f0aea9ddee5e00775555cd8d83c1bb769e844348cd23630b46a9bbed947ab4ca3af740071bd2bf7e59eee2e97f0b69a6e09d6fefbeba635f33bb4d5dd814d7af726d52f832e691435930e881119afcbf434a7d6c9b65dc3e9f5d9557a8aefdf6220d4b08c1c9032ad703ae4001825a4ff609c41dec7ee35512866c7c6f01872002af532521fb1baa208ae02e6f1d83a9ce9adeed7fc95d3a0e689de8317f359fa4c1d4c4a99b00dca8d963d6d46b81df990715eccaaa52ccd7a98baae3071887463cf6546ba1f1596b8d4f45a3df57d5196e1c73419b8f10edbdcb2726e6d3f2278b08c96c9864ec79d2e7475333c147cfde6e86efd4676b98663534bbd6d5ea0026488f43bd93aa0d6adcad6c5c6479ed839049257171ab2ca5b479d0f1ee5f90e1f48fcf91021acf03dc5268f057e3bd0c08cc0f3738c031252432eda28f5fbb4c3f26eb186c0ed51dd4ef3650e93a549355015d13de60784b60598c43f0c420a036af89bbef8e79523a350d65c8da69467a3b9cdac35ef72a8f3d0eb0b49de22117892bc724f7ec4a3ebca98f19c3737f57534265aa4624b01c41cba5b46e239987d94f4d5ac07a119549ed1235209c61af25e488076e653cd5bf2653de2a79b9dac80957f9c1f8dba99b338b25b5c961d927fb1472f59a79d2738d984135ad023bfc9d77e6d65c8dc15c7a9223b3976f569a5e17960f24c8c651bdb015939c1d1f6e0f9f850d25a6f82a7517361fb614e6f9188ddf2f804e8889ecfd11739d271ba6c0cc09f02000d3f9af31c7c5d09b1011bd66868638b2e7e758767904c19c92a18922e7c5510e5d11b1e3a5634466a615e067677138d81c924f8d6acdbe5b596d4258709647b5fb25a65a04fd27949a6a7df479e6d2c82cf9d7dcac075cde164fb63b2c1cfeeb620e50004cc0938fef777dfdeed9c37641fcd84af057301245cb6a16bf5e00e8ca5eca7f69476bd0557d47b732d4d4620ea171af1ddb63c434cb1a8248744ea5eb70198b935c293fe55fa5ce7c34b4287daaf4fda235805a1923aeff3e1f19d265c94826007da0629f63d6b6a0f2129e6484bb92fc8df828bbf0c4ea451fd33d29b8c191b5810681d24245f840e13fc94929eb4c7ea595c7877f8c58fbde56010a446d17170d693c39920bada1cfe60562be79cfd261d29c920718181ecccfa7950018855cc814fc5335a689236bbdb243c0f037ee55c21318e8a0c20120ec3bc42fe1151574665114337ce40cae2791db8339da31589b2cd4768d3f51e3039d7b6573410993d246583db6121ced66c2a9e5ff22a187bde423a33af3a0127feb1e6e4b1b1ad1a7b82b09a918341d57d98535b153bc1228a4eaeada52903207fb2db9a31ea7a1c587770fe3587351eecd78440187d18953b3bad36f10f8eb519c47a113e9f14a044c809828c0881230577834f7affa080eff46a48e3d0523171a2d01967b5aab1fbe8a996a082551f330e61300971a7fbf7b67d00c49609816dc6725a2feb847488c649bd8a20481258759ee4e2c09552bf3baec1393be85c42310326feea0a04ab115045c0fb8cbd5393ed6f8713b38eea274f34781a98c0a2a67d96eb10027c4f17e10a16b9c74d3a7a0913da276780509d494d362c73cb4f8dba74b94a338738c6ba74b6325347882cd82ec234cb4b0850925f73ed6ce26376741271e58971885145c29cdf925e436c4e1c64d3b36c46b40fb195ed7d5a110f80205a88c6750ad25091206709f074d628457559820606ee267c41f3b328ec538cf929e4eeb8db45a27fdba104c54ddbf52a920391a6c5b23306f1a764afe2c8e2f3e65973edcdbe80d4c58a8469744a7bf31cce39e07cf7bba8ec8074e7a19522728083a6c91d7c30ea7426ae7ce58e3039d4de648d0d8f51bd1b8f9043eb0dc6b3dca72845d02ef5e1574baf33ee460a1e716a7c1ad6ef8e5fea70efa859f2d965f6bc1f9012de1cc9897a2b48773c766a9d14340d965065a505aa9b8325590c4976b98b785ce50d16d2e6efa09fb395da3aec68ab56c77cbfb0ba79e46d29287a0a610bc5ad44cd4f3703aeedd3e787fb89f9daf262e2929105698bc382cb675a387545b965f64d717fa27871c24417c4286b8460b272bafdf7df6ed885733832ab9efabcfec88f0ddc5b68133ccc2c96e69edbf7d7347804acbc7df745bf4cc7d64ed877cacf280b704866b2849ae94a50cb2b63b15598115166a8e96a5a172c345465d1ecae7a3a72eeb4272f77952b677e4785ebe2e1becd62850f31069f7a1d6b534962ad95dd59c7f6451f51ca9ce1bfddc5e829ec8ad8764f6b0f4556dfe4793c44666e63f6c1d9e895722c0f4bf1489601d0d72cb558591286c22a0593663063cad2e9e53a52ef572d8d7609d00cfffe0f8b76ddf56315253015b342c1508cd6145e658af05852a17e6824ba0f78b06fc727863d3dabe013d1949025e4c04d55ff308eaf2c896a379b6a18573436d51f7c26e03d448a93c692834a97878ac722d37ac377040b2ec74120e71d7cf6caa9128cd994acd772042c0a71362ca05773bf70a9fe0037a623b12e04ac1338f14fec2927bca57a307705be257316e5ec5c7e0a85dc12f828b10c5b42553b47db3aca2f0c9c721475bb2434ae139fb700bbd15388568dc1176675d786f6990595fd29dc653cbb5ed61a8b14a0445d71bd9a6673f61813e8a7bd1f55f4f5bbd18214371be33b69b5eb6b23fa059a0ed06ab40e2ea78b583bc37064e40cf46410280a6aa357c8377d7fbbd1be5f2943b83ca2e613333fc796cd8de14add984480958633488a794d4967f1ea1b95efdb716442829c419989bbe5774427c90430bed31c3820933ec2cc7b48ac6457e367a9ca40f8e10efb612b8759c31a201fb4869a6997e3a6c582bcf7b32e31ccbc6ce63302ffdc82b4d928d8c708d30a2350b6d8d6f384e22393589b3ba27889fa231ab7404640f87e74299a94095e35f09842fe9b298eb267859798a168a560a60e20b8b564e330ab04b2c6872b38b783aa36b36146423b56ff924fc0e070b949f168351ce19a894914949d2906ca99bcb6e4e7403e077e4e04c14fd8cc0a40451aef788e3a3a9d6d5cba651527b525d6c5525395d1554ae93847f28907bedd2d35f20379dad3edc6c31ab9e0e539b2545499050bdfb1b7c077effd7e023850dc01a56b5c4ad41090277857042ecb1b3d36fb65110901804f5c67509b861e6d10abcbec7bda97d8292b3b599657e73e950412ab7d07b429045a6807d8c77eeaef451ed16de8fcf6317abc89e32d9685ea60cf0dc3162cf3a3ca43ae41428f5c5945c55d2ea0e4e89921b400994ca8ece2082d193db5d1169e33937bd9d82f4d0a39c76d41e4ce296bfdcb7d8031630ef5c644e80f79883ad139a9bcc35b585d25dda83bac1899a7f7a9f33db949dc8d16e0ba6585b0474faabb5906a00e015d40af48a2b4720c922355ccb1ba67b54b826a183314e3ae10a9fe20360582a6a3a75f80bbbd4ee60816e7f6f8734080209b8068ab77f42ba7e48bf2af33bc1f6ec74355bf4df0457baecdb1fde5a44ca73d0065326072401bd44ac2d8e4282eba61d16b34f164b91ac5bbf01f8d35e3eb35ceb656383c83c55b90e2bf22f2d1714e49dff2c773172a32311cfbd5ab6097730d96728a2e72a87aed005e1b35da806e9aaca0e3fa4a4b5c934286f879a69f9d1e303af154879d5be4b4b62b5954e122479a7d5ec98e5e4ac582bc2d550e3f8d4282babcae37fbf3c8905e1f38a5b241675a50b19d1ced0464dae1e55fba6e9ecf2968c64387467ff4d4783974d154465829033e1600ae84d6d08f60dd4d640b4e3c062bb450f233ff59fc1064f0a5134538f125c1138fad0cce0267036f554a33ed20258ed61f9871b08962313b35c8d8d5b5793acbd7cc76badb265150f1d88eeaf2f03872418573a78d44bf9b015967bb6d9081141294803435d94d1624bae71003925ba6aa32dcb424d8b5913cc86dd3a41f348987f2fc847e9f360cfbe36ffb4d4db796fea71af52fa122bfbe7516ca0f41a7f440a39c3ebe09ad6c229f34559752cf2cf6a68209159c678723383431b8095d5a291b5a3210b51810af3954961c7810a431a022500fb3a2e05655eb0d81bd31dd6b015367e41b302484d657ae92f3def9d9a320b0ba331858a98e2aab88911edc56fd180dc5237fda1b96b6b7d1fdf251aeb8222b6a7b748a922ee39b9e96bc647caf4c1c30f630c96d50fe57f07ebfa0bc23e90b04cc80bf8785cf6847c5d776ba9a9d9c059b8f8549158efba4d2971b2398ffe67f444cc52ffca9e74ea4db5529653ad6ae2b314391704c2892a71ce21ca0fb08656e6336809c2f329744fa9cfd1134765951d6fa8c991f91972bbb2506c49065de5c98a42aa7bf7af91cebc5a8a334a8818c9bafbb4ebe19421e604d84c995f29a369f6d0408fbdd193820fcc19fee64e963cd5676efdd2e64839bc1b409bb6bcd9c442864b9cf3a4a7a0289129366bb1cbc2d1f1a3d33c33264d638e1e54a53e25573e50398a7f6f397ab7f0fa6bbbbe24405d9652c0d819383e8bb330073513e3929c6581b0e46e077422bc191316c16bd5bc5ae0457329c17f3503af391ef26880e5fec243766b173fc91a659de0550d60e26f70b8429f78a13e9bc545abda77732ae1f7b75ddb6fb68d09ae286e5c1a7cbb84140ef01b0de0729062db6591e7af5059e075967756c1cc8decd0405279ec9344ecb76496f8790540254001d8038a117c847c62e00b3aa7732ca98695c9304404ff8066874ff9d1ebebafd856591994e6c1c5a48244f6b5010f7268787f0c5a858f3f5cf34be36d9ec343471a5d381b45d9dc1c6f415f3f63e65bef028557210905e4acf09ef9e22d6ad4e1cf39337786158968cfe28b0b8bb53bad6dfa6dfe8ee705b6b4c8be26ba2a7e2928cba32f8d8ca5d51cfc7ed02fccc76bbcd62239fa4f9a0ea761f41ad504e8568a43d5085517da8eafe794441c490c460fba19f859da8e4ad2c10eb68fc4e5a24e20028119ba311cf60618893085ac39d4d56a02ebbefc563b7c0b880fecdbb7cb7f0e0f8efe8e4168ba3128ac0a0704f0d27bea37b93be108071db13a1e477263854acbc3a6bb77c9103675145a32e8be375208081058d8df6a1163cd15e6a409c859b9148a1c8027620dd80473269125b7b97329f5ce6b8448447f3f01b627010bfaa4ef944cf4d27fcacd88dc8276795ca86dc9533b5a0a522a841bc95184ae877296eb518ffff536515efcbaa6b100b6f1dd6a133f0faa77bfe23dcd5068ed56b6e119fc9ef1f2f57c90a5c673fdcf4e9f97f071138276fe1e60c4e13845344b76127576599d66dcf1e6a90147772a3a824d93a26e23013a32d11db106e2b6feaadeac624f62ad95198ea7801bf8f2d89f714e3aa571fb8eb86787fd1b4a245d9b793f5cd18e80f411d092aa5ef77517175b4c39e194fd32121ee20e2e2980dff22bf96434be871d8f243d3a59b251060657e3bedd9f15f1027f0872c0fe828642d0ef81ee0f2efa850fa9075ab51f4add563931e679037532b8209eff4abc04e7ad16c4f1670b567d18e895e0d31c75d1ebbe03fece3108bff4ab6b02a734c0a5e2eacd98c76cfda86dfb8be9647f8b46b1961847decffeecdaec0a68fcb2fbb9a4b73bb4c69b739abe91d4fa15046a96fd4a362d5f588e53bfcd592ea126696a4b5b215912a36661e61eeffc1b81d9cc159ffdfe678653cdbb0855a4b80a178dc81727360bfcae06cc96848ac9c2c76a5c4d777df8b229837250955bb589c003a610dc462ec56ce9d9764c1f665ad86254b2ba1b942a812a7bfd1b542cd03835ebc496c8b0a8937de54bd425e0de9c7fe46487b483d9ac609817baf36b3253e9523258e86a198daf5ece33b4b646d9ac6f96844663ff26644ef4479a2b8af66ffb1b03b067a8489a14ac2607cd8061a49a5c137033805fba4c28b1e487aeeb08709a579826ce81fb2097f0f293104fd0f32b0f6063675d0f99eee4430464b38922d4c2c9fa4d56fe0ca7788ba18442661e68d9349a5f769a8cab9c621a3ff21d5fb887b1fe73572f57da2a38483cddcffc1c3c4995dda119ae080146d1e60982d663ce62f6e95aa26e44e51c06e371ad389c9d9b6a29ff7dda4bdbe91a23129df6f4162a9461928b05f8c3cf32aa7b740add351e4a782695106e289ccf3f050e6b4d9d2269f00b0ae78cd9857edd83fb79e7a89acb5c30907c35f2dc7b73151f6a5058b7f17152dd927459980200fb37514ab56532833e7dc5c6e2d42abd57e088549a7229940c52c411e260de4cf09cd0d487d11aed9af5d3e6940f5972454cb365af3324efb8fc8f2f51846d0c80efad04295e399a9ca8c8ce832fb3731ddaa8c9456878deae8921bdd86d389609fd1916746909a3eec5f45f8080a41a9948cbb738e91a9c649af6debfaf380ae90de3506612e3695fda60f902507fcffa6c6b062b2ca2c330e6784981c95ecb1014d5c91585817b31383ee50e1462f996266ac63e8ed2fbc987234aabfb21f4d5ace1663ae160396b857a096a35b9cda16497543310d1d839c250c6fe06a6d2021eef8f63ccb33bb9419ab140585b1ec522555e04e5e5951ce26166b096f05be10813c3033b5ed84d808b6c59949090984606e128bd2395082d7b03ff5f413271b26d92736ff1bc667c184d8940ca3a00e35291e0d603ddeb0d84e7834cca61fce8135185fb6c7d6cb409e4ba59d1eda4ec0b684a5ef7af50fab0ce82989cfc133ac11bbcc590fec9a2583cddbadbdf50cb257c204f1e358ec9479bc0f818ef79fbfcfe04c32971a3ebafb6a55f31401e99c1ac3f798905ede0e691c526ed147a7b449509519d5892d3186a3fc929357995f496750021c2e2825934f768717a10bb39a8d5a60203a70db42f74af3927aea9b0dba4a890a27789e59d3eca8c101d710af4513504315f19d2f342987e91c0613b9d89d4019d8600227740b7da6075905e087c43903b89411fe34fb11326963e69d81b7a1eb9b6e6e57b59be82aa3421d925aeef5c80b320d140a82f026ae121af360df36c9aa64e8fe1a503d570a5dbe7dc5a227d1226eb66a4082685d8c2f1f65396f5ac2f4ba26bb12c7b1c21275224bd07bb908448f474b9d702c76f58ccdad845c7fa9f45ea55c8db954c77a59396c65db5efd0ebd77850fee0e85413662059cfa384bed5eb4a0fe3412a7627d847028246023386b8e028e6a18d7e39891ae1c6154f93b4bcd034324967104969014fcf4d15b570f24bfb078bd5b3647a40b624782cb06d59a5f7c44b31090ff1d04b74ea85b5c41125d0aef1638dbe579b1f837686ac869d0f8c6a1e508846ce54555ec671a36bb162d493bd4a120fa00291224164239904d7fadea06ab1bf6c238c427ad287981ba8b0dc781560aaa409f01594096ab3e2f4f61445cf11dc52e713ded925e6cf07d1f1fed38a1a0800bb388501f125220532d39fef0c7ae9a591b76531cbbb008c36a05fc88e4d75fe4cb22d55f56c25b344c2cb14bb6c25bd596c9a36976eed2ff8fcc682b6f5c5f649cf639a365229213a1d56b1fee372cb157113c1a5820f35c589a11e8e3ecfceeeed9ba47d82d6a55352ae05da142c27e9a870624f753d3bd51c72446bca5efc436149cf674da8d13621be6fde646332a0519799eb2ee1fa05d5ac09a99f511ae3fb1b2a8c39116a184f1d8c6e5cf35cc98a41da70ca33baddf4ae89b4a1e20a5e6cf4ae3bba757ce4f4749ba116c6f79c3a30dbe1d157a791a62c381f306eae3ef87f9a7f1b862fe66038d5ff257cee8b56ac5c062c8c4ec34f4b708d2b4e3ffaf7be5e4afa59bba3ff0b003f42f91a4fafd63bd96eb7a124f8d76f2f7ed52f85f2bc77a5b23d093d611e6bf95de8d811830ca1c84771b76682fa3cf7d72cb3c57ce856e788000e092477d3dac2bf69b91eb7446bbf300e9f6ecc78e38dbec70509ed9be48a4ed19f6679a3f9f63c252e50dd16bedafb15676ec787d32557305ba77ddc5666afd4ec4db2833e65f104e746b709074034e880de69d027fbcc71bc72f1691720752baab07df03df36d58b44752e69b9d1afe8107241e07ec8b74e1b9e9adb759bacb8fa8fbf7067b724f717c1ea965628413f1c9c6ac96ddb168a500ab6d62fcdf5440b21aa5ec4fa655db5bbbb324ea5971d2497bce103075c0275024794bc84ff7310fef628707387d43da7fdcfebc70281f4feaba9412e1973cb541e90bf21c8c7d2a6d0449c752120abf98c6594830f79ad4abff3ca126631f6cc0a4088deb8335540545790adab2cbf1b5ef41eb9a55eb21926827cdb47b90c73076c8a2a398c7f40608ea157b0e9b915c7044b0516ed7d5ce904743f0b3ab298f8394c3ad5e9f5d488c01a6252ab38e57a90d67dfc2299d8bb4745d77cf3ea21aeb6403b11a2179a1954c1e0aa50557dceb97c5bea1cefc5c84866f9d171211f4853013e11db90049851310d6ee80174f086720fb5df28f7c04455c8ab6c876667826a16a83498ac393a3281fb82d75f5b1413ffdae54a6615045edf04462818e04b9605cdf006962cbb21b7d57514a89139b79d72f1fc80166a33457f2cfe32b99b6ef54ec14fb10111ce7fdf42dbd865bccca77d62bbcfebf5314ca560538850ac140cf9aea6c1ae456066fe892f37a36b2ca89d7ef19d051e7645250553d8393f90a273888303564ea1cddfc885022312bc8da679ecf2d4eed4936da8629f98c6711dd663a4cd697158d9c4927a934b48e7efd3a5739b41bb20a4fd780628172ff46fcc4ca8aa896e172b962f08e0ea7becddb3dfd39ac0fa4265b4889b77cbd4cd357e91295b78a69eca7ad24e0cc7d54546f38f9a36aec9c17c09ebd6170d07168da297e0512baf80c60202ae02c45edabfb08ee4b00e002bd4ca1e2d990e92349e4a8224eecd92b659e83bd57f2e3815696ef1bf38196baff0975b5e108ddedac80e5a18efdcfd2636353b466870452cdb4391ad2b822cfd352a4acb1181cc0ad3075076adbf06022061043460e4337d3d8a53ca5c3df60c16db1435aa203c398a9bbe000dd653ab1dada38a142be164cbd00b1bf7f9dffa9d4da14c56e91904125a3e1108767bded0054aaf2e5365e814881d46ea8830d602cb4f444a1d8a3cae163a983b9d248a984b6731182c603d65e40fbbbd7ea57937663dfa96f0fd07b35ec50aa16b27534399c5f1ae2dc3cc6ab9e16dcfd1a14b742487a376dcf1acdcdf8df257114098945f222c9c54fa27f5312b6688a1793d029f2f4a208b150af9606f0f537afa877c0db70768038b4ec084bcba722756133cfe99ab5dbc18f1035b3cf594ce57b1973a095e01743d0cd801e322211a49337a7ab5151d614aebb00cb4ae9398c54d6bb405583e6cf35e9a53c444c70b7db76f9d02d7041f20e3362fdd4358cefbd25ce1b1aba9c80a4c1120a3f8a7edaa2b1e1702944eeacd18b3e9b753c67bcdbeb2b2472ffb70a7d11534318278e65903618a6140d740af0a0f167537c1acfd4eb1f810c1eeb97891971d2c126e1a1397115302d82c97d4f43b24d2d6e9eedbf0108ed6eb8803a62983707a268e07dd2539d14ce1f08da917937ac3e3e8cb1aa0cae1bd5f2f01e52310796a8580742923bd4d4eda9c45dd3829b29890afbbcfd528a79c42fdc0e5d28f3fe858cc754adb17235b5750bee1d80808cc34da51c39ddedc05710749307ec7ea8d496f5e4ab29ab6ede36223c434d46b267f1c440540694c5f2ead6dd5cc138dea2afe2db7e40600f077de236e7c757f1f8c08d8580ad3827b6e2a834fb0a8a5ca4e09663c890119959c2c396f45ec864ac43c5c212f3301a8b635a61f24befea419b971ba142fa41336a8027e8155d54e3461e8e9870bcf9961b212ff56ed83b0330237edee311e641f58ab044890fa745d1112f33c3ea541242abbe6838ddeab6c34253c1a46b054646ef391477444f41ead2c63d0703af31a8fad945abe3dbb03e399efa270014cb7bbbe8852a3e3c5dd4e396dfc6a6725277f5afe59528240d2f81943e5d721a0e59ca9568ab52539ec0f7f20864ac4a73dab8b6516aae2a8ff166e1e1124fdb9b8a391d5d6bf604d101c80468ceb2e18aab86449d6fa5c5a9d4d8846eabe67f11688e67a30220337fa5dc0495680fd4329ffa3b6886c6907b29b39399e7e093d2670b938ab7db2aab14e9be3695efe123f3e9466a24250b584e9a7bdfa00b7c6af3cd9718964de039491be15e98111a574493ba4662659b83bdd7c73a332be6d7e242ba3e9d4ffc99ebd1ab4e148588509f8fabb1fda9beb352e4429afad8c7478e22b86d42335ee6f7f3cc6480b2052e729b9cbcf463d7ceac88dd45daf75afd52e09a9a3800b02d8ec1631424b4adeb0bed136688520c8b17d859ba5a7d532bc756cd439981eda238edb7e32fbcd9259141343ef5899257f3a144bcfe48118fb3a0f459075028192580dd7028a2f25b5779641ffee71e18e807d76f4b59660da3ce651d72cdb9f34984c74b2fec5d97524d936e61fc7859635c585fcd0ced0199099d97f3016172dd222d5c535c7ce031c80fdde16a2a2e45486b82879d0ff22b002326f3cb85492f8dec61fe64d96bbd4e325c7b3fda43c5d130f60dffb397b75b2db67e67bdede102344da81543e4e4f372612808517b47ad8927e8ed98dce5e58d44f00017b06fafed64a6d4d6123b8a68759d3896d6da676bcc8c32767f5700409ff8666d45e41ccf4bb7ae9fc0b07ac3dff01c0d16d271bb9a5e9588234f2373b209db1e9ef278eccfbad811f60768d6d576861901fe955650d2887c5e65eb19168e4e2b54bf3e969d3ac51b87729046ee0bb53317b7bcd579c155ddbc3300744acfb8ada320ba7300b34f7a5fafeff20a6603bf70b5e14bfd46c377782839a6987e11d7d3bbc36cca0cdfb14827eae7796a3d5036f3a065f3af98c2abb0a241aa57a5b6673444725ffd23c1b23c13e53576f2f0e957e234dec3f8dc4b77b76e63e8c4af26d40ab9e9a5c89a8c1c853af821ead0b195103290b1034032a551269e27d5fcd2139306820df34011bc749e479f0b296cbae7ef54d14e890aa7b4546d2ed41417dca1002a72fa5d8f8818fdf047b10016789928064af87c65bea56095a76b7be6a70358cb7feae79ca39dd8dda60e08454c9bfeb8f0a40dde7e64bc8acbc898d53580504b2588d3cafccda2d49dbef9bf54674a2f6e91742a37d348addb0e6a16181939a7231a30e8325668e1ca81ce4985ce1b28ed909c4a64e2ef810e3ad1c6a97e06e0428acf2213b21e1d291e1ddcdc7ac98cb1cea9020ab356eedc075b6ccda4aa6ce88cbacf738733c209a5649629122650d9fcb7b1a40852ef1bbeeed46e304172a1fd91129aea7047e3a50abcf8c63d17165995fc053c810ac64119c52cf52bc691071e15fa1c7422722538bddb58c9aec8718451df4819dc8b36e207333c111a2340de416225bd1032ebef24cab7db18eb5889367e393064fc283bfa84e6463a6dec52bafaa9e7e0805b6ef26ac16069f7cdb62da871922077766789cb23e553e2acc2e569a01e91be90cdc12fa2144431a084113b89eb8e01f081cfbf48fd58986570f496190f0929999865bf8884d6a2a4ac86f83e333e810234eba73821e3504b3845d5910a28585f9c418957e42b4911ef3922fc51c24c74b85efbb2127188ad1fe439846c086a10c15de782f782e432dab8ec9cdd2f7386b4cfc719359f25802b137a6470999f1528f3a7f47b2d19d9cb6fae1dae325b530ddb44a5751fc2c8b3fe01292de919ef26b300f132b63640ee0351fecc21ff04df5bad23ec100943c2a6e7e6fd4bfa22e2a0a330cef7de92fcb85f43702e4ada5834c90846271b740468129c36c5025f556bc97c0b541e90d334ee1e9206f4fe9e398f22c219ca146508d3322a8c98497f3d2ae293199c50bfbf027c15b39f50c02a441ccb6d0211a06e0c195b9808ac7eba1c9fa1712249861e08912dc9abd5d960a8eb50eeb00a6d3dc9bc1ec13fd1b5d7efc8caa413b782ef9ded190354184251ba7c8d05582858660ac5bee5118dea7836142f144c970dd4142e60321bae23971b6b464eaa0eeddcfbc8fc727c240fcdaa6eedfcaffb488c58eae9fd2b7e367a5edeb96ca9060d8af93fb3a306818abfb7cd00ff6b9a8e0c449585d54646ebb90b6167afd06428f044fd53dc7fedc7eae2b93e183b04f3542d3e04f83347398a1b27851384891a4fa745f2acdf82d7d222c7f8e2d929af354b3771d3c2b2c0efec9cf961c6cb471c4035fc74f12601edc4b4790a1f2604e2bd0f1c26769d9ff00118f60ade937ede52ea511a6375463430d2cb057918a8327cf4ca98501c23d01cae5dce4ce42ff6653b9b94df8a126a9ea611a3c29cf79ddea79dcac53d57f14c6934bcbbacb9e7cab07d3b073e31c63c8ee583b0a06b4b1ff428546001b049d33cd81d4c048fe37282325aa3f9cc0c5af416cd3fb769c64281d2cdeeedd3432bc95abbad69c2747365922764dcc1cb1eded11bbe18d5ec317d9b697d80087272717e37d62f6137713544177a3061418ae86575cb77ad7cdbb4c357ba20298e90476e8f9525bcea0aba4f8f49df4931a8edacc86878df6cc439571b8428d06b9b80e02822851252d09b4c4f984028228c738efb88706d6b4ef656c4d0dfc01c917e3cf0db3e1327ef2cacf78d69062fbcc9b3b0a4d58d4e2c3b89f3cc89f1db15fbab204ca143db16dd2fe75e782ab0cc00ca28dba1f15dcf457411f17db97c215ca5ffa34210fc11d238a978bbf3afbbcde1aef80c189c1fd0b09ba4b8c6c197803691a282535d9c55782c34a248fba66d3c56c42a5460c93896f073a767c055e97188df1f5821b163c8ec9d64fb79f9d932fc0bdbf2b074572018fcbb70be9361ba76bcc15bf4f166305403a920066e7063f144dbbeb4a81abd88d2ab50bfc4a37918bb795e7cf1a78677dda034dddc664167b65bc64fe4959b7f776192f1f48720aec0b843949cbde98ab304421b70c7abee41ebfedbbf1b9c8bd8f25a617d19af8809cb30ec5f4a5071f9e1d16b4bbf6d822614761975666eb0c0bdd94aa9277d2123e99771344cf6a2a0f2145d4219c240bef5bb6fb3a07fc8a4ddf56a6800e70178976df8a8b225569ec8b842c23cfa668bcfc2cdabf17a0fb44614c0c038113d66135e4b640572a3a8ec690106cc74c56ac2dcdd8584cabdf485391f0c3e50ffb50432d9d9d6890b827be04f2d1ad60c20abcb337fc658eb44f3b9fa1cfb0392dda6009a7fc515e2181c8ddf785b3ae1e48c8663b851aefa8ba9005a29ff0ad2c8e5562a40dfda586852e6e4694b8e5ce0f084810fb19b60693a60c7fe213efbcb94fe339e69512a393c5c1b85ee11df8ca6ef3550de2f9d4bd98d125e21482994c350a8fcabbc00e2f8bdfa93d61e8c3ecdaf142e956a5ee1bd32c89a1d5ad2c248defd9eac7e778a3a10bca28249e869f49b656e38bf059505669fb828931bd66b2a2ce1e76c423a36de9cab13012eed0a3a56a5528fe4745a4a71c0d46cdf3ccb2b7d9c9f32df6f535547fc80c64be7a0bb8c1a7c6cfa5fc55ae98a23d9714d8f1e834e49b21a4b402cee5bf3e230f5d2784e0c39b3e9bac3a0d47112c53812c61e0253ca6f4d2eef7fbc0be468ff260cbee0f04d9654580f401ad558080b54fed7a1c3f3b402f25766b2cd7f7cf86b0695defebd5e31f65f593bdcf33f509cef4b484f248c5f88ee4a7a98f584d8c4781a51266887a3d95ad769a54ae5fa1d5f09bf10d96700fa3c4992a3bcbff0f52e536a479f72091365c4d52e5ff8c129f5ad9a2a541056918704ed607f8deb7be24067dbcf984b5ae1626288156096cdb748bbd6c6fb114f1bae247e728e2ceded70c16656229f7c10144c796139f6eb63afaa38af69554861adea755bf6c1008e7c9e729ed5233dd85dd9eb0f2a5ce4c6cbdd8c446dd893c2602f58ef6d3efc9fa3b5def244295135418d605e5b9eb766e2588c0a6511392ff8be4b89e2cad554c10d72590da3ced0a60775a4adafd27ffebf2ac63025cefe881cbc04bf3932495098000f7c0d14dc48de399948e69c0ea83387bb02875038d1008ce33f7919157b2ded9bd6d19967f4028a588912aea5f1fdf4f3066ee14776011eec5b233f62a0cc6f64a71c31b0681d23f69251144cab9d5814b32dbcc9a99a48a2156d7b68c1556f88d38ae2d4e48e47bda6f75684471bbc7b2889e1a2a4e2226a3a93a27ea96587b701efaf1a90433b50beeea8172b3cddcdaa685504080f159fa32289525d05cef3e3bc4bbe43c055cc90bd9302c9eff5a3977b26cdc351ed0a1bff8936f88c98190d4db8f300698353b662cb11860d5942d645304ddce3320cd1aeccdb7efdc6f76bb8cd39cafaaf5781177859e2189843df3ede08c2d051a95b1128a352edb9f5dbfc23a19dafabb099c9de07f80db1116e40e079179ccc6e8cded97c985300736d8ecf1cc5be8af539c6bfa2d3284869f21b6cacf6aadc5a90f74cb1a4d07bcccd44489cd690fa6db5f84a151d32b7eb3942fd76b45d45c6a0bd9a44bb4cd5c95248107a997bc5df8f32d7553355bb894194f705397c56d137579dbada74e02c0596805b312202062dffd480aed7fccb0a4eab11eab08d7884bff20bf3b19d34235cd734d312f3541fb63e787147b47cd18b1b35a18105e3ad1d527ec03f6fee240c27ffaa2b1795c3b7fa9ba1bac35d242bc31d7901519fb550b8c3e3166d9bcad3f37aa3736ab64748c3c20dc4659f66ebfee9dc620ee659992672925f939414a344d264711bed90bc35171b7b711205795400864e89c368be49a4119a3fc9d760d363eedb95e7b13bf8d810088c474057b1a94659234edff00aa1da64e88c5c0b27fe05475e981123a73a47997a10d525d2d2bcf86614b8b801854424289c07dfab473ea11a13f73eb256be1c94296b6fa7430026050a33ec9001939f91196b7616a1ddfa1c9b0b5547805b1bbf9ad47f68115b52b600416b63de67bb7af176105b1baf5001d475d58f4a6c6dd7874459e43ea1667424c9f6f0725113db94708ad18b1254998f6d78e6fc49f12665453844f9a0833e5a480fa21791b3ef52a219f5e99e947cddf6f3fe118f3f1ab1be28b615afb610e6f03f854b017849c7a8fa2180ee5deb9eee0cd1c4a543a90b6e4ae0be0096b80cb2cc29265ca10ae9ec5ebde2fd734113aaf50476954975693136bd3ac327898595e9ea025340f0c0d8379a7e6c67102b68988fbd5fbafc413fff7c1d97f5b002f8251298b53d6235bb49a666496cab1085fae5e8f2e20523bfb5cd37eded670f701fc2611f221685fba0b67f679b15c141c75cf83e13b8bf55343ede8d317bd5b4dfae301a71070ce75db947e22e0f525dc0f57d538a650877e710abab214ced0166895ef2841c3d8fd00a3d8dd7aa364c7d5fabb7328c4757a68722cc1f503fb4dbf950f18e430f4401b37297dedfc1dee353c4db8823f5acbff0dcfd35da14f25a2c74b55ffde2709bdbc7f3158c8f079413c36a83599ff2b1ba09c7cbe1e2e89472b880cdc8d766b44bbf5dcfd357e551396a117b1eab7629d33e96a79e6edf75b6921e948b2a6d9317809b170f725af8574fa3da71359d98cf19d08214b22836908409629d2117e66f19f22c6a910a770379d02c5f02a479540f2b92277de0b53cd6293f185d1761ba790f3160a1fdaf22620c3c0f271fe53b203753fe4754c93f1b919c4f7cb8851987521654e7c18c0c5c2ce9bc6d2c4d9927f48e07cabab120516654673cfcdf4ea5ffe2de05ba614d5d71cd35efa666845863bc1c0935b34ebd84add06e60f9c12e323d38b8037662833427a79b48d9944374ff4a4dfc125bf5c36ef5faac4458d2af14b3c12c4f717eb97c54d60a6dcac2a217574143cc7fef2ea61ee18a13cba9dd503b72b5a70f774ee3e1744319117de0d1fe092d7780c0dbf6e91ba53c361612969de8364eb65c84e9ad818b7bb567dd4cee5bc1127a1ab4753df3f69426993e0ff3169cb9161f75cfa429d1b475fc81691642d5f877c391b4ce07ba95b54aa8caa40ce90f0d45c32d1d8b5d51504d5297bd0ab074a1d0bd110874d79199ec3eafcd1c8dd1e960c6747d617597e1df37d9a5c65e5a28776273cd57e3028e1e624a75dcc230284d1c2d52244cabca80ca3b72ce75b9b6d5c2358952cd1e13f9794452fcaf9af50f8cd0e075618126d3be6d86c25eb4a6aad0c62b505bac05db4707817f605a56110a289e4b3bcf8e02d53f0ee702c27b330696b0fd6f763b40e8a67d54f68aa9d8489d7182ecab7a9a288cc6ca05f0eb2d2153705e34df6bd8219ba4d7a0ae65fb79dbb80433926c654db4c5e7299295c9e1aeddc9c22607a54606e360b3edde1275676ddc9090df0bdc8e2081865d915a06d792211ae6f7a23a64b8a409a6c5b1ceda850a968d89537bb7d86accee3d458bafaecc6d2cdfe52faf5d682769f256db1010ab80adfada649a28dd709b64e966ecd1425ad207c8eb9b7f68aad9b60121087ade3bb7f05672b96177db79e123de2a689e0e71cc47a7d7fe82a3c0a30b83dc7c4b190cb4a51b93339188acaebc435e9dd2317d49d8de7d8d28978a054a546b52e0c8a4d97c506e177893ccb68beb9fb1a595ebd35e65cf9448c640e1bf5b98436d1adf6a4584c24b9b89f878b14a689a4f867afd6503e402380a2c4af390a3fc1b6d2ff7612a2667554b5d28c41faca07f8d350a1466a186ed58126f1051de25d7ecf510cdf39c338f6a73f793f55a2c1df3903353936dc650628fb2b753f76d21ed71aef2420469b9cd23f59fa832d003a4b1d3d93c3ddb7b00f8412bb32901ae4004765c180a527ce2d0f2230080c0be9c81558d16b9358263320b366f295a43364dda4d68854b3ef40c3f92c57827dddf272752e385f0be044d329a229ff882bc1334cb4c9d85f33e9d255b503c1abd31c0b4984128ddfc9f4396cd08b76a9a7f12d531db5aaa4eaadde066131ab5b8f8c9d6d792bb793ff28bf7b91ab35a430ffe557872440a9d5ac3220df422b4a2639a50a775408e65428ee54b247159a00d9fc356ec231593897858bcdf5e627c07ca5e71744828849b42d5c5256527d404e3aece24b3f61e4c1953b66016400c557c58bee277ec70124b243aa54857ee7f96e754360f925ad470856c3d11e2fe647f185ee526a8f7f9e6945d7873d1f2b77fea94a1d1f83f39577179f4b2fc35f6eec56d2f04b19bc62f574e4cb225e59ac976a46e7ede3d11683b5d29a9d4d11c03cabbc6685bf0a63ad7f69ecb9fade391ed54abba6405c40d7fa422c1572bdd823965ef31659b214b43b6290c364b89bae04f9ff02cd515991f8865d59b11d41bc3aa45199b3d4cb1911e519cfce90cdc8925411e5b85e747b0da1a3e60af9154d8f75a3a7045167b9b6e8142f47129f8b6caccbe7b7a2dd81fe6777640c6c406c364c13e9ddecfa75878f3beac73045d500950127e6ba5c4de3681c3f69319a92be5936d293a9910600ebd87c14324447b5f93dd1543fe7554d0a0bb41d60d36ca4b54478bdf4e85344a88a2c950b923c1a4a190468ac774c007b0c53ef3c9d0f199d3f88fdee2092d9d7f5c8309b4fdacf41011ff1d9ca1de1cfd79fd901ad030c2dcd3fbf597f8ca821304237ee7aacbea1951d19d659f69e266a137e97e0df99b4a407453e6e7a43565aed83d41688a2307fa71d423ea7819832ec0ae75194f6ff4faf44bcdb8cff77d2b9b360dd19a0485f109dba3471b1c756402f44b7bfa6dc524218de027b3662e99c90ff163017a8ecea28efadae183548e78f85cb7f148684af2f76498d93bb0886971c1a676f208c0986c70705d88f3c44f5ee3a23e7783eb52e58a251de9f40ac918882b7892f4703c7c54b2fbe85e98e5fc329f34e146446d6465ae6a5bd16fa5baafb5dab7d92cbfdfdeae595b3796f66675a5d8c7d6bab7ab308e1ea05278d022129c4367f8883a34a1980e63acbc078c33d3dfc8558cc83e4fddcd63cebe09c4f14ab8e7462f7636638d50549a609404ed878555d78444447087351dd08ae2f2887f0c3aee55b2ae1cbe9750be59710bf79e8e7f153b694a40e5baa1fc6759d8b1da68b0144b17fe7e934354fe74bc6e13fa3ead7775cb4f2a686b5f93c0f773fe35416d53200a9957c1eabeea4e9aa8ea60a5a03209d51842ba5000f09181911ef6a42c66123b96289c27729842cf45feae55cdc60816194c9e4c6a6f66a7bd4ab561a25f17452e4033e3940941f0e592256d06a26cdb0d526ec20f01b56575f542f265a2140f7c0e2a46647dcb73973481ffa5684f55d3a21e65f0cf6ad926eb9630b8de99d0bfd4c009c64eeebc936ec42a1534a23bc9399195ec655f96fae9c0c8fe5be84942a239bae6a77d40a19857d159eb0508f6b376e498749eaffdc2b347912a76d14da129ef7ee85084587871e4fa70225e664dacbc35b26b23c0df72cd0a7da4ad2565bec5249a6481ac9a4f271c18072f2e1ef4f66c6c1f053a9e394503c4195217e2f6c85f98bdbe882e05cbac87cf78b51ba709dd3ced98f85179495a739c9744e8052e24e0ae42e912d72367b6991f8a2425649589616728393f0051b3fd2098f2ad39530867cb0d716fc73987d43d1bfb541849f9be5163fe08f28c0157ad86c6773169f3670ba770276218d419bc6adf791014ca3092c474593c072fec6194a4c1a7211b6debfdfa1fa0dd5e157e1e814f5e487ca726720a903af1739f6cd28e9bdda1303cf3ec1030b2cd5a6e310f076ea399a4df41df57801584543204ac88b60b6c92e50537ce9cb4744af2ca5df5fc139bfbe00cb6ea88ae64509a4ca24e7aa0a0eade63d43fa446299c9c3048c6b7c3b2b66c1aab5c9f94b64b1617f6a9612532a02b13afdca077dfddc0d3e2d59d4be092378d3a5f6bbbef7ed0b77641e6dce595ed5bbdee8873fc0b51fe5e2a686cb5555323978e52a070dc9e0c7ae36b4c1c0d86784ebf78260e51d7b1fade669aa7f797fe0ff5f34943d5357a6e2a3f38dfaf22c80bb8f1814afbb176c9db7392d568033e7f85cc5cf590650d8b9cebab0cd4587af22aa8e9ada03e936d001d6a157b0b091167ad068db6c921aebcd65f077a82908a2ee675cecbd9291c13ef1c2a3c8fbb4b110135508a939b8f62228be5be9e17cf3aedf2b7d522691f14016daf959a1fc94265ef2a83e12d93303f08cfb80da751b7050b399736d31421610100fd5f18c4071676d2402938e807785dd89465c5b3b3e1fb009f920fff44465da0cee714df800bac582a3c372101c674e0ac01369209600585671cc1bc949f609777218b28a7371d5f6239ebb40cf0442b3e5d308573a1237a1d4f6af846dd18ba4b85bf5ff86bc35903df78f33cc3d3bd5b1cf3d833de84ef2573be180c58bdf3431b3f0280a421155fd3601a37a75b4e782e4d0a79b9f2b066887e713e033fdcd987cd68a3632e0971c4c5c9e7d558cb7515001c044f526a2e712c64322dcdb4f534436d414d9846378e9d0dabd508c1c3d895013da4eee445e4f017ffa9e7e3faf5bec851d0d9a6b2454e222add5f53a67b41ac76d705e4b00f9d9abfdc300db20ae63a6bf81515570654c751f1bd5fe32dd03a7f270ff6482b7ce988e872ef56a14b47e6ea50bf2233cc8c5495ce2b2af9c2b04c790e47cd9433dc5b088d2689cef966c27309dc978e0e49d235e71d901fb346a27c23458b6eee0a3cc1230fc720ad7e53cc3cf76847be1cb4a177ada0d577c531d1e5d00dfb6e99fde771747c57e61186e6092cadeb82d2a0b72a3bb87ff919a480f873e336f307bae647c8065d28b54e31e368182b35da72836c050d3935445780fe0e4628d7e6b6a9b84cc1d4d1f17495fd4648b351ca0cb66150015f2a67b13ab55b221475e37595abeacbb4380b0a9ce1145e8207e766507d1f5e1a1ea56025f8b22e370f666fc2b69cd67a6f6329058d3066e0fe5b1ab9919638b8aa86e8a0c5c0aa4ffb242edf79af0153d6c354294f9812acb7b6389486939556bed3d9c99a0ab12fb83d043122cfce1f9944ac9d18ac203d3914f87821e80cb4f2e6572bd01d22f0299ba6168bd6b8b36cd266005dd38a67efcf3a8e815b765351bedd5a88df592e36c5da61084f38a7485ce6917870c9653d1ef603a8dc438ade4eb4d9420fbd69ba0df09bd62498f81abdf1a70b5688796547157cd8a82971fe3e468b25c9bb62c4f7a2eae6fcd57bc76739694ee8a9f41a98c23924cd9832caaa321d52f68e3c953d4a77e3f6272afbd791aa283141f24214086ce6a39cea4b7337e38ff192bd4aab9b6180c4d2127e32e492f42abfa0d70e2553e4b7838defe70aeb918cd4b3bd4bd693ab34233f172574b1be179fbc313243fab9badfba1d100fe355932aa6e8d10eceb3e113d6fd6debc5c5384a9fdee4c53e224489274b0722d2d2f954e4a690f10fae54f869081e8f1bcaa8b0b29476a4542a8cf9f2c6ca6ae436e40629e9b08cf56fd7a6fcb87605bf43eb1dfa9b3d53dc46a6df39a35531e35deb28ab403b0ea06da6195af227c7aa6eec02b09f6d002d040b701a922120b9b8cb3c10d8346e90ec52ad4de995ab3fc3504d07b13a8e5d51dc85280311a2ab6258bc0da5a127d2a29bbe2940ef9317b916d7260ff8de79b0fae581607d32a18296a1a016fe0690b685c829b24de50dac52a6bdc0555410f94a7f69b1606a880e292ec76153ae31be11792ec0558dc45ceb6a54f4e0fbac56ce59018888875215a902d7682558aab83d9918558fe78f701bf52b675ebba75f22a501eadfdc6bb9403d96b286abff28302aec7e4553a2c64f7007694a558f05f17d705101245f0798de731bfb4025675c44c8be781e9dbe2b2c13af775bbcb04404be630f8b2f6ce2961879487311953efa155921810dbbf4af6aff137103e9f0fe7fbe5d61723a0557a8482e3a38af2bb0def5216454f192c32ee2bc4a51c6d17f6c3d8dba0518f1d6f1bd34cde75eb16bd1744ee2770a762cbe646c397f358c29d8c80128c20ff64c3a97e0c5ad54b05a7fb6a324d9387cb593f85ab940bb28024823b1398e68fdc179a92dee60ed5593806db38104ead716b6c356ae0d750e07fc5f221829c185a67a1427ea9242950ca0c8c4636e643aacc79ad1c69c4d5217a7d5a7895a716b843685a50c1fa8a4615105adce7267573e6f0eec8f457f08e45e18c1f853fd4f43bb916663d8bf664ea80fddf755831c3636b609b7cdac5b7df2afb37a82d13e077c986169389758fdde4605f9e9f84fdb4dea502be0c9322f10992d32792dc355f56a483a678ab573e1be6294705c074c1459c900a26a15cb29ab5d0e9658f13d6421fd80d56a3cd64d0d31e9d0557aee96c64665b3f8491b7be5adaa82329f6f1aaedc5f13544252b098acee6a6d5a8b1cbc64668e434fbd8f28d265e5618f4eb07f5b87276156d4ad6d4051804fabb2b0c58a3369d6ed5ea24071c9043d8e211e483fecd83333559a8b09a8358accaab90b36aaf761e4e521b9e3586ef1634d9d691f11a00e8354bf708cd90ca95f6cf1ddd5153f799a335c4fc62f8e510449d69100ffe10ed2bffbd8af2c5271fa547a2c7252a40fbe83ab60f4367864b06e93a62ba3a67c7df8098010080a37cc482de4b4c1b0dd12956328bdf4754df264c32e4d03efce5a52dd6b8df7a8c3713d0357233fa877bef9f6156a3524d3ba90afe5f29736436c3e4a188edf1b4200327cfbd89c49268de64d453f785e5ce117bdb33d927f9019bca3285dcf88714b69ee3ace43ad42cafe16a54f293cc25ee88bccf94d1a1b4c22b52469569176a2f71a2e122682a73df2996da9731abc09a3e0df984a17fabc1f7f45c30ee914d6868228963d82d69dcf622b54e85d38e122fec8f81968d5231075e12a626eef431bf8562bc1b7086096be8dfbbe041d6c7e774f2b64c2b180f7606c32339f4ac058461f2f06099ebd30cd603b70b932c5653d9841551e7bb7f04178047449e2f92c3939ef00f7709ebeaf956f14a268b153bcd31cd3f7014cb71495804c55eb0cc52eacafea7fe2f0d8be1742e80a3ccd15c3f08629173b493a3f55e6110e981740ab266b21175a1ff5f692f042d5ea9268376ec7de4966f76fc31a14b63b456e0bc50d43398033878f0e4f3e604119afc6077841ebebaa8d3124d7480740f6c7db153119a837be070123f5d25aca54a1a2b8112951f303567a4cc768ae64780841754b76ae52ad54e6936cfaf7fc39633aba449d21452a2cad0beed4980217687b7a3287c23130a0748323a5f9fc12c9caadf8c6278cd5f2de44fa528a14d12f6ac034775d3fd15cb15c843abc80634653e0881cd65954953ea76b13253e2f81ffd806b03058e2a595857ef29d6b8282c27014aec8d18d6abfce82f8467b041d1f1538328fbdd06076a9fa5fdc2d7c3ea41de15d4c44f8b8ca6f4716f21b1065bc8c74fb418256a4a75c2a4384eaa05cb4fe7d6e895e5dab9fce27c83979256d6c9db2e2751bb00ee009f5e928169cba2cca77fc477d49ed4dfd3b8bf13c89e190eaf97442010e19e4c6dc2ad0b53fa597b149cdb3ef7543eaf9ad7ea1350faae5412cfdc6650d929b0b8b37518cbfaee7944d94d8d64aa4710294da895cd40e91eff0f71915825e5c68730b053e9f781b7187463546462e3a19a58016d3fbf3ed79ed11aaf46b14f99afd6b677b1a740aff115ea840eba8e5ce7ff3cf9fb34300da8c2585407e09cf4a3ee2cf446cd63475ab9a9e59081572a49c2db6069e82f0a911f8e655da0e40892923b5e092b73453333c7b82a72fd34b99290252d81bb06d33b16274a6326e5d0419cc7abb26b6123b514daceede0ab2de954d5ce4f57c8257b453dfd4b2e9096124fc6af028fddaa9d345e8c859f80ed397da41eb0ab9eed31dc4c0f07f6c1825367e4b7ab5ebca4fcfd35a1fe2a58dcc6b463c6df8641476ab1ec64637b93facef55c16c502912c09d58f9c8cb71a089f37ca5c7a7199bc72416bdd42f1b477c93fe25509eec038471149c93841c653388651264b0ac197810de9d0fe9a578d5b259c385c4def1ecd8e7050aae1eafb38c622a56369e4702401503055ed0d599a6481a2aa5a5d2fce39117181ccf54974cec4e224b6f8bf70bdd28fe9f77f7badc6ec6508844f160270aa27baa7e3b6a3cd0a251e82d09648c5f08b0ddc9d6ba5c874091e34e2d2ddfa3d9f0313cc656845d955315e48993082207ea8f6fb1c455afabc076de97826b877d69162b166e6d62e9342aa05723986ef765293f4e54c070429af391dbba50ef196070082c63547c32424586336137c4a94540ca3d1416f15f02a761f8c4b5dc36856641cd23054ec3c0d7615dd9b52b8a2bd0ff21f025020f439d967098367b4bbd53b5c1e84569e935e24f34e4e92014c611fedfbe3a9797cf6ce68a89e8376b58d48c19accf706ede4aa11b37127fc58ece25f583ee33f1134702657d188f26dc9d1a5fc65f02ac8248f20ff218a818546e82045c8d7007ab8caab1accb0a24a184bf09baece82bc41e9148b2ff1fb87db7e37dc6c3732200fa4f10acb653ad7297a281cf48651ebc38394fff30394f0dace32399246e82e6c2492c4ec7edefcb4f11f80a7da20e3281f5a9cbc252f6019026991a21977dece69c7699203b847551e4c0c889ee44884ebd3d24b5b4b05ad79c10b49048dce1af2056c13cf0e7141e53871daa152ef1e5e6e4b0694dc55f16671afa63d33f81b764eb976e8aeabc3cedf8a211dcf23c13aa1e4c8f90413db317a7adc668afc275c091b03054aec9401fc45dde7a7a9f43b5114b8c646d6277aba58ee278b7acc4efa083219653d171b7b9d2a387d021cda10f428e34d30137297a1aa4c88e28c999e6c06ecec31f22305b4063c9dc4a5184c823d4b2a044e88707f4c2e4c22ebfb207d8f031ec0edbc353fe9474b3256d8e305063631f31edc30c9d41377fddf8274f7623d37fc26b0ee65f377182bb5b8de6318e4dca4905893edaeecaaffbb72cef28bf11af8f65a0350e9024e44a40fe95ae300f0511c77e931fce547cdda495641876f558f449f80914f9da13148661bf1e43341141a5fc00b7ee6520f71bd2125746f25196ff30f89be48d8185fb6c55e55b824a5231b3089fac1524086ac9b0ea2e3ea424ebdcc843bdb655adb270458b284a82f8451f38b574d4bddc498ddd6df3a338b52f0ab9fad5877570cdd375124847c0632bf8955a2c2eeadc501676aa8bfcdb5eb756a657b9e53ec461a3f010db05481209bf3f85f311695050efe9405cbe9406cd372418473a433250fc905232f72f91ae78a73e6a7464968a05c4fbbf63b38c63129e0acf8dfc6b13672cef2eea2787879004a7a290b6c46500f05670a375b5f12dba643c3a079be43c569486c339ee8f4310bd3757a7dde6b23d207c5dc1a01b2854e1fa34e62b0b0dc749c840043fc1aae740102e6afe1c6e2e44cdaf36dbcd3b625522cc5768dad3e952778b66377afeaa34354592e93d9205e2c28860812eb6e5103b6fc267443e0305165fe7cec096c797e025e49fce7834df938ed45a8f0c31996d753ae73d2dd0e7feda405fdfd54982e42fc1bef15f593ad139ec3fcbb9570085a7dc2409d0c5165c57710af59cabdcfa753af2379f46a43994e1907862d98342e765809e565c99aaadb497ffe1c3c0a50330f422d6e837112765b668983428cf5a57d98b612c020d877b5c46382c022901a015a66a1debc620642de3b4428260e093fd86022257df11614d78e2d76020169c5d68ab324cc8fd071b0175699bc768283763b7a4c30fb245c7444d2c7a6ada97d34349e2043a35201b2cbff10b99fcda701f03362bd92bbb9457c376818e60a6c96eec302ba9917d714606429dfdc0866c6bbec354c82a0c812640dfaf703105e2b00652b3560ead5813518e08a7502e549f2ff49dec09da9187f4815f0cee7fac56f13c1064c121dfe30389ad58b0b0dd4987bf342d28f052825c5a989d2b3db1360ca77f07156adcc475b2b4c38097abfea146f6f5722e43d23c375e2db9b442061b9b98127399f201f41692db4f5d3733ee26b5d33f06ff634be3fd79bf3e92e11606a2c29417f04814fca4caadb6a615e4504f742ece4803cadb622b4ec3bffb5bc60482b9f7f08624aadd4d579bb37efd42b8129f2bab23ab30f210ace948993d70d5d0042bf484494e1ed91c1cb20038c12bf9a4b871f612b874e41efa0e992db89805e66774a1a2689c9794ba4263b8a91632773433c7ecd7e9afcb0ea0c87669f7030ca1158804b033562caaf951f3a6169359d1c2ace6ab80e76fe376543f56cafd9296956217934a7429d2bc58fa4cb8348ce6c9c2f0e2aa67e11131f24a0cd5488ca67555b45d7bd1225cbfd0f7a5327efc02d7ddcb0e00c8dabd39c0814b007af03f808968019c1542e63a5a338a74a63593e0fc0def5a900efd7ee32f3081608091a01b7aff7ef7e9198815685e175a88f4fb8fdc80dc57f84a9bc21d76c526f2494a6909a3ed32942bef229b1fe83b81438df5e49b060a001c3cc4b50fdd03ef191754dc213835d106b5028c02b26bce99210d612e6375cf661f9d9e15b25434ee3479ddc728fb906508eb683445f5d35fcd6f34d444be24e06ca89a0645df1b9d5d4b8d2231b90d189c6344f09aaabe29ed1ed1957dc6319d34927b777431b39a59b6563ce0d0ee71576f31d0dc80f2b4b5c4a8f9083806eec45b50c44de18e10dd7579833ef3a3ad058b2cda9a3a73ce543c715f3e7bf13f62212550f71880e6fe2603be07706e5d8305991aeac760ffa7e5e005d83afbcdc13340718b9512b3043b9ff69d897d2842d534cc827acf289d37ba408419a77e52b47357ea6d81ac9972158cf6a236e03b1cffe51c375b8a943c51c9742a719e863619069ba30cf3b7a639dde10179cbabec2800263b13a206284acd79ed800be9c0f9f053c60b5fba763fd31cb7678c529a1065cbaa1bb3da7c4960459cb7252d4e4f118cab51c8821e9ea5575b28e233cd005b9efe55b4b1961e89763104c47f2da083fca57be93c604c38b57f7c013a13117230830cafc9e196edf660535679f11b641e38ff9137a7a188d64b08cf9902eff3187c4f97884d6529bf825ff51cd292b354095c4f2fd2f7cc384de5c3b988c29de31401e28f38eb13b38478ed5f5a798f4f25a74ecfc5102c0c49bfd8cdfc68de991cb7930ebc1915e6e4171d201744069472231059aaf5b7a8de6aaa0c062efab71e3030654496414ea70455ee5e574d830864c53d8c8352e036bf9d3201f6345cbb379c07f6119ce55971ad9ecd8ac84f183d004196ebbf36c2b7c0ffbc5398759a0d86f301a7765efed14547621c7aace66d5243ccd95398510a383d301dd85be7aca6ff48ce7ae3782eeb187d9b20030e238f65538f8e7496acb73d24bcb3f5c99ef9eed063e9fa5f4796e9ea37f1b7dc6547e9a6aefca0c8fe4ac9cc1e06c8022121f91b9c6cc78dac73f2fd98a09ae02b3046955647e169e3fc9a0e951c594d1931e584180113799acf5938c44fa4f02ebe245260ce1689e666a0a863f633fe1c9854f24e8945ca057f93d82ddc6f55a633568e784b1af4d8f3d0f5d802015c9429c6e2f07425ff2f8cca9034071ac615d4556f9cc3fe7ef83c1dcfdb5919cf3b6b624696bcae2032034fc34fe4c26ca318d6b226d613e24e77ce68010510c8235684206e5d80c0eb4cdd8427b7fe287e4600b6fac6cb590b1398d1aadc910e652acd0291218e6a9f92d907a93eda15fb25eaed1f77cf24d3a7ae5fd7d73e8b3caeef37c3fecf8b04583af51d414efdf7258382cfe4d63506b98fe01eaa96f9bee473904eef8fee7c76bd4e88ff7a6c7f766e9bffda1849739410a05498b058f5ac5072781ef7ded7bfe819beda271c17416fc44af4710cb94658244f9f3236a75c4065dfe81c67be27d690a10ce2865a4f9e22163668dbcc964750c88c9231cbb6c5ce8352bd001ce3718f492a3c12a0bd6797699de06bbe578adae2206c5110096c3034518191930f40d401669f253cdf1e88906fc5d8647a3ebac3065e194ab6542ee765c282c3ee0a14b9d8f97bb15521a41932a4d2f307aa1f5456af3c75771544949bc61d08f873260eaeb5ca4996555799afe6d635d6ba62bd618f8fba27897fd79c1c72c9ba9496615db464fde1b57c0695f053b244603b6c13557b3c9791b97cc998854674952de06245d869d470f7ebaae9491d222a0ff89aa4d89cc24009cb2baf4b4d25596793936932459a7fda2e2db4cb569f9f7b39ae15d35d8f998cf6f247163c5fc22e3fd7fccc12df94465ad6968df0f8c8b4b51074bca6a3ded25c913866ee77e67085e2e0de78b29f06cddd7e4a4064f2c244d43efe2fa45a416f21481415c6305411facd72c020bfbf8801a735a52a22481427f503a9ee8eb3a535335df860051cda716e1dae80e2bbffe5aa4642ece50baa136df9009f5112c1bc7edc21e2466db3442280defbf99c669c042f56cd2454f0af11ae76ff617e498b63e39b43a20943c367034fa54b0fc130e8d294d54639a211bf2d0b06a1688cde6ac0e71fe1cef6d3835021755796e5492317a2cc3cb37db8cb955aba0a3e8e4773ba22dc0e6244893c843de3c5557888cf0d0c22329e55266da0909924bd87d5016edae5d996633e24795532dfbbfcef6468c83f65f4d59bdadae55b3b5269bda0c22ad82264ec25e2c47fcb811c81c740a0c25a6c38e50c71389b9cdda10e3e59570c5ea439a256f28c6f70f6cf76e4ae11604dc9dc03a7ec84551dbea726272dc44418c6f11d3cdc61bd4326d3b5eb27adc71d9319fdbd68ed421d75d00bbb530db5155efaa29c6375e82c9f0d1898902b5db2fc77bbab296bcfa98b4ce8b501fa1b8ca2f60e88d4f252fed954878331b6eeffeaa8375bbc94d7cebdaff48576443e49638ac170d3dd6221161a9954e0e59c6873c761cf6f45f89176a7e8eab59071b6ddc64d46637130b7559f6e1d3834935501325c5bc47cf44e0766e37025303573aba984c959f48cdb39bde6a8ac8153ce80b6d907e7a63d703ded833dc6d22bc10c2bca11463fb0ade34d1dc46b7ddab2e6cc9d8320f5058952a5e8c4b733c96ab676017dab3736666470368430c8bf923f5308fe3779bf5b893f97625a631214221c0c8fc121be4964b78382456a66ee9de716fecbf2039e8ee8bff14a3b03084e878d015c524f90479479a37c11d671db7eb732d80dd4bfa58fcc1ff5c95fccc98747958c7a943180d75cf6497e93aee7d017174f231c88b9591beedadbcd5770633d027b6324070d78010067ef806df1ae3e93d131f629646202bcb10eeb921b73ae19770fc445b7a0b034754b9eb97e7b1082f7da4194bbc85d63650a27c1075c4911ee31b1c007</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎在评论区中进行批评指正，转载请注明来源，如涉及侵权，请联系作者删除。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <script src="https://utteranc.es/client.js"
+            repo="pengber/pengber.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="comment"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2022-2022 pengber
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 622px;
+    }
+    .nav.fullscreen {
+        margin-left: -622px;
+    }
+    .nav-left {
+        width: 200px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 552px;
+        }
+        .nav.fullscreen {
+            margin-left: -552px;
+        }
+        .nav-left {
+            width: 160px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 552px;
+            margin-left: -552px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
