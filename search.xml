@@ -275,8 +275,8 @@
     
     <entry>
       <title>EEG实验</title>
-      <link href="/2022/06/17/ji-suan-ji/zhen-qi-ta/eeg-shi-yan/"/>
-      <url>/2022/06/17/ji-suan-ji/zhen-qi-ta/eeg-shi-yan/</url>
+      <link href="/2022/06/17/ji-suan-ji/qi-ta-ji-suan-ji/eeg-shi-yan/"/>
+      <url>/2022/06/17/ji-suan-ji/qi-ta-ji-suan-ji/eeg-shi-yan/</url>
       
         <content type="html"><![CDATA[<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617155833853.png" alt="image-20220617155833853"></p><h3 id="Step1导入数据"><a href="#Step1导入数据" class="headerlink" title="Step1导入数据"></a>Step1导入数据</h3><h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617160104480.png" alt="image-20220617160104480"></p><h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617164408083.png" alt="image-20220617164408083"></p><ul><li>channel per frame：导入数据有64个通道</li><li>frames per epoch：一段数据的总长度，是1087300采样点</li><li>epochs：指当前数据的段数，该只有一段</li><li>events：检测到当前数据一共有925个events</li><li>sampling rate（HZ）：数据的采样率为1000HZ</li><li>epoch start和epoch end: 这个的分段是从0秒开始，到1087.299秒结束。还没有进行分段所以看这个数值没有意义</li><li>reference: 指数据的参考点，重参考后会显示重参考的电极点，或者average，目前还没有进行重参考所以是unknown</li><li>channel locations：是否有对通道进行定位，目前显示没有，定位后会显示为yes</li><li>ICA weights：是否对数据进行了ICA独立主成分分析，分析后会显示yes</li><li>dataset size：数据的大小，288.8MB</li></ul><h3 id="Step2-滤波操作"><a href="#Step2-滤波操作" class="headerlink" title="Step2 滤波操作"></a>Step2 滤波操作</h3><h4 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617165416653.png" alt="image-20220617165416653"></p><h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617165829685.png" alt="image-20220617165829685"></p><p>高通滤波和低通滤波分别对高于45HZ和低于0.3HZ频率的数据进行剔除。</p><h3 id="Step3-去坏导"><a href="#Step3-去坏导" class="headerlink" title="Step3 去坏导"></a>Step3 去坏导</h3><h4 id="操作-2"><a href="#操作-2" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617170711148.png" alt="image-20220617170711148"></p><h4 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h4><p>所谓坏导是指在脑电数据收集过程中，由于各种原因（如电极打串了）导致数据记录错误。去坏导可以用插值的方式实现。</p><h3 id="Step4-重参考"><a href="#Step4-重参考" class="headerlink" title="Step4 重参考"></a>Step4 重参考</h3><h4 id="操作-3"><a href="#操作-3" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617170944707.png" alt="image-20220617170944707"></p><h4 id="结果-3"><a href="#结果-3" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617175459944.png" alt="image-20220617175459944"></p><h3 id="Step4-电极定位"><a href="#Step4-电极定位" class="headerlink" title="Step4 电极定位"></a>Step4 电极定位</h3><h4 id="操作-4"><a href="#操作-4" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617175901681.png" alt="image-20220617175901681"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617175929634.png" alt="image-20220617175929634"></p><h4 id="结果-4"><a href="#结果-4" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180012423.png" alt="image-20220617180012423"></p><h3 id="Step5-数据分段，去除坏段"><a href="#Step5-数据分段，去除坏段" class="headerlink" title="Step5 数据分段，去除坏段"></a>Step5 数据分段，去除坏段</h3><h4 id="操作-5"><a href="#操作-5" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180220903.png" alt="image-20220617180220903"></p><h4 id="结果-5"><a href="#结果-5" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180258268.png" alt="image-20220617180258268"></p><p>某些分段试次存在明显伪迹，一般会剔除被伪迹污染的试次。比如闭眼时间过长，或者肌电伪迹明显，说明没有专注任务。（听觉任务，鼻闭眼也可以完成是不是就不需要针对“闭眼”、“眨眼”做剔除？）</p><p>坏段是否应该被剔除：坏段波动太大，对事件诱发响应的影响较大；坏段剔除的标准，不同操作者不同。</p><h3 id="Step6-采用ICA法去除眼动伪迹1"><a href="#Step6-采用ICA法去除眼动伪迹1" class="headerlink" title="Step6 采用ICA法去除眼动伪迹1"></a>Step6 采用ICA法去除眼动伪迹1</h3><h4 id="操作-6"><a href="#操作-6" class="headerlink" title="操作"></a>操作</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180841308.png" alt="image-20220617180841308"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180857884.png" alt="image-20220617180857884"></p><h4 id="结果-6"><a href="#结果-6" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617180934863.png" alt="image-20220617180934863"></p><h3 id="Step6采用ICA法去除眼动伪迹-2"><a href="#Step6采用ICA法去除眼动伪迹-2" class="headerlink" title="Step6采用ICA法去除眼动伪迹(2"></a>Step6采用ICA法去除眼动伪迹(2</h3><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181053720.png" alt="image-20220617181053720"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181100236.png" alt="image-20220617181100236"></p><h4 id="结果-7"><a href="#结果-7" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181127760.png" alt="image-20220617181127760"></p><h3 id="Step6-采用ICA法去除眼动伪迹-34"><a href="#Step6-采用ICA法去除眼动伪迹-34" class="headerlink" title="Step6 采用ICA法去除眼动伪迹(34"></a>Step6 采用ICA法去除眼动伪迹(34</h3><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181314685.png" alt="image-20220617181314685"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181402733.png" alt="image-20220617181402733"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181425213.png" alt="image-20220617181425213"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181437438.png" alt="image-20220617181437438"></p><h4 id="结果-8"><a href="#结果-8" class="headerlink" title="结果"></a>结果</h4><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220617181526613.png" alt="image-20220617181526613"></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://kangkang0820.github.io/eeg/preprocessing">https://kangkang0820.github.io/eeg/preprocessing</a></p><p><a href="https://zhuanlan.zhihu.com/p/142071693">https://zhuanlan.zhihu.com/p/142071693</a></p><p><a href="https://sapere-aude.group/read/wangmeng/2021-09-12-wm2/#17-%E5%89%94%E9%99%A4%E5%9D%8F%E6%AE%B5">https://sapere-aude.group/read/wangmeng/2021-09-12-wm2/#17-%E5%89%94%E9%99%A4%E5%9D%8F%E6%AE%B5</a></p>]]></content>
       
@@ -285,7 +285,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -4287,8 +4287,8 @@
     
     <entry>
       <title>记录一次关于菠菜爬虫教育门户网站</title>
-      <link href="/2021/10/02/ji-suan-ji/zhen-qi-ta/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/"/>
-      <url>/2021/10/02/ji-suan-ji/zhen-qi-ta/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/</url>
+      <link href="/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/"/>
+      <url>/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/</url>
       
         <content type="html"><![CDATA[<p>1.搜索自己人名的时候，发现了一个奇怪的网站域名<a href="http://lipingguotuziyuan.com/">lipingguotuziyuan.com</a></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image002-163314685111119.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image003-163314685111018.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p> 2.然后访问此域名发现是菠菜。。</p><p>3.但是访问<a href="http://lipingguotuziyuan.com/html">lipingguotuziyuan.com/html</a>确实一个市的教育局门户网站</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image007.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image008.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>4.拉到此网页下面，可以看到备案信息</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image010.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image011.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>5.访问备案信息可以发现是某市的教育局</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image013.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image014.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>6.查询<a href="http://lipingguotuziyuan.com/">lipingguotuziyuan.com</a>的whois信息可以看到</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image016.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image017.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>7.而<a href="http://lipingguotuziyuan.com/html">lipingguotuziyuan.com/html</a>的伪门户网站也恰好更新到2018年7月份</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image019.png" alt="img"><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image020.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>8.查看一下此网页请求的文件</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image022.png" alt="img"><img src="file:///C:/Users/Pengber/AppData/Local/Temp/msohtmlclip1/01/clip_image022.png" alt="img"></p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/clip_image005.png" alt="img"></p><p>可以看到很多存储在服务器上的文件都是请求失败。</p><p>9.此市的教育门户网站服务器应该是没有问题的，只是菠菜公司将该市教育网前端给爬了下来上传到了自己的服务器上，是想增加访问量吗？可是百度地图显示此市是内陆的一个不发达市，访问量应该也不大。所以推测应该菠菜公司有很多个这样的域名，爬了很多这样的教育门户网站，向自己公司导流。</p><p><strong>长见识了。</strong></p>]]></content>
       
@@ -4297,7 +4297,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -4712,8 +4712,8 @@
     
     <entry>
       <title>配置github12306项目</title>
-      <link href="/2021/10/02/ji-suan-ji/zhen-qi-ta/pei-zhi-github12306-xiang-mu/"/>
-      <url>/2021/10/02/ji-suan-ji/zhen-qi-ta/pei-zhi-github12306-xiang-mu/</url>
+      <link href="/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/pei-zhi-github12306-xiang-mu/"/>
+      <url>/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/pei-zhi-github12306-xiang-mu/</url>
       
         <content type="html"><![CDATA[<p>1.首先建立虚拟环境</p><p>使用 conda create -n 12306_python python=X.X（2.7、3.6等)命令创建python版本为X.X、名字为12306_python的虚拟环境。 12306_python 文件可以在Anaconda安装目录envs文件下找到。</p><p>2.激活环境</p><p>activate 12306_python</p><p>注释:<br>1.linux为source activate 12306_python<br>2.不必移动到env目录<br>3.注释环境为deactivate<br>激活环境:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001956505.png" alt="image-20211002001956505"></p><p>3.经过测试pip安装的包就只是虚拟环境的包：</p><p>先用base环境下用pip list查看包:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002006955.png" alt="image-20211002002006955"></p><p>没有tensflow,然后切换到12306_python环境下用pip安装tensflow安装成功后在12306环境下查看包：</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002025422.png" alt="image-20211002002025422"></p><p>再切回base环境查看pip包发现没有tensflow，所以放心的使用pip在虚拟环境下安装包吧。</p><p>4.然后用</p><pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt</code></pre><p>注：<br>按理来说pip3的，但是不知道为什么我可以用pip<br>安装项目依赖成功:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002057811.png" alt="image-20211002002057811"></p><p>5.本地12306配置</p><p>配置文件是TickerConfig.py，按照配置文件里面的注释配置就OK，有以下几点学要注意：<br>我用的163邮箱，我的username填的就是<a href="mailto:xxx@163.com">xxx@163.com</a>前面的xxx:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002119703.png" alt="image-20211002002119703"></p><p>我选择的是捡漏模式，但是还是需要配置COOKIE_TYPE:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002135383.png" alt="image-20211002002135383"></p><p>如果COOKIE_TYPE选择3，那么我们需要手动登入12306获得cookie</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002152253.png" alt="image-20211002002152253">登陆12306按F12（火狐浏览器）（谷歌浏览器F12-&gt;Application(上面）-&gt;Cookies（左面)查看<br>配置文件所需要的值，右边栏目中的Expires是过期的时间，如果到期了就需要自己重新登陆网站获取新cookie后再使用脚本啦</p><p>6.成功<br>成功页面，也可以按照配置文件设置微信提醒:</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002717662.png" alt="image-20211002002717662"></p><p>7.坑</p><p>试了以下，COOKIE_TYPE选择1的话需要下载chromeDriver,而下载后并且配置好路径，而路径的配置是这样的</p><p>D:/git/chromeDriver/chromedriver.exe</p><p>1.不是文件夹而是文件的路径</p><p>2.\在windows被转义了，用/替换即可。</p>]]></content>
       
@@ -4722,7 +4722,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -4741,8 +4741,8 @@
     
     <entry>
       <title>编码方式-ASCIIUnicodeUTF-8UTF-16辨析</title>
-      <link href="/2021/10/02/ji-suan-ji/zhen-qi-ta/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/"/>
-      <url>/2021/10/02/ji-suan-ji/zhen-qi-ta/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/</url>
+      <link href="/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/"/>
+      <url>/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/</url>
       
         <content type="html"><![CDATA[<p>一.ASCII码</p><p>世界上所有的信息存储在计算机中都是二进制010串，计算机由美国发展起来，所以美国对自己常用的信息进行了编码规范也就是ASCII码，1个字节的长度，最高位规定为0，其余7位可以表示2^7个字符也就是128个字符，比如常见的1——（0001 1111）2也就是3110，a——（0011 1101）2，也就是6110 。</p><p>二.Unicode</p><p>Unicode学名为 “Universal Multiple-Octet Coded Character Set” ，简称USC，有两种USC-2，USC-4。前者用两字节编码，后者用四字节编码。</p><p>但是随着世界的发展，其他国家也有存储自己本国文字信息的需要，拉丁文，汉字等也需要编码，所以相关组织考虑了ASCII码的基础上，将世界上所有的符号计划都用32位也就是四字节表示，可以表示100万以上个字符，人类世界足以，但是常用的不那么多，所以有16位双字节的Unicode标准（通常称作USC-2）和32位的四字节的Unicode标准（USC-4）。</p><p>通常我们见到的Unicode编码都是USC-2，下文中默认Unicode都为USC-2标准。</p><p>而为什么说是在ASCII码的基础上呢，因为如下图所示</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001334394.png" alt="image-20211002001334394"></p><p>可以看到Unicode保留了ASCII的编码，只在高位扩展0而已。</p><p>三.UTF-8和UTF-16</p><p>UTF——Unicode 转换格式（Unicode Transformation Format，简称为UTF）。UTF-8是一种可变长度字符编码方式，以8-bit 为单元，使用1至4个字节为每个字符编码 ；UTF-16是一种可变长度字符编码方式，以16-bit 为单元，使用2个或4个字节为每个字符编码，UTF-16就是Unicode的常规编码。</p><p>已经有了Unicode编码方式，但是按照这样编码并且存储的话，每个符号都需要16位，但如果存储一些数据只需要用到很少的中文，拉丁文等，大量的都是英文（即用8位的ASCII码），也就是说，文件中将会有很多的0（因为ASCII码前面填充1个字节的0就是Unicode），文件体积就很大。</p><p>所以用变长编码的方式，减小文件大小，也就是说UTF-8按照Unicode的字符表示规定进行编码，但是做了存储优化。所以我们可以料想到UFT-8比UTF-16更好，因为最大化削减了能表示字符的比特位的位数。UTF-8最短8位，UTF-16最短16位就可以看出。<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001358310.png" alt="image-20211002001358310"></p><p>四.编码方式和实际存储</p><p>我们用TextPad填写1a，并且通过不同的编码方式（UTF-8,Unicode，Unicode（Big Endian）保存，如下图：</p><p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001416316.png" alt="image-20211002001416316"></p><p>然后我们将他们用XVI32（查看文件的16进制实际存储）打开查看：<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001451315.png" alt="image-20211002001451315"></p><p>可以看到，我们用什么编码方式保存，实际的二进制位就保存为相应的编码表示，而大端和小端的区别就是，Unicode1a的编码是0031 0061，大端就保存为0031 0061，而小端保存为6100 3100。</p><p>五.编码方式和字符显示</p><p>我们经常遇到乱码的情况。</p><p>乱码就是，当作者输入了符号，然后按照A编码方式保存为文件File，而其他人收到文件后通过自己的查看器打开时，默认的编码方式是B方式，于是按照B方式解码，所以作者看到的和其他人看到的符号不一致的情况。</p><p>首先，作者我输入你好并按照UTF-8和Unicode保存成两个文件：<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001501949.png" alt="image-20211002001501949"></p><p>UTF-8存储，UTF-8显示<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001522267.png" alt="image-20211002001522267"></p><p>Unicode存储，UTF-8显示：<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001541879.png" alt="image-20211002001541879"></p><p>记事本的默认编码方式是UTF-8，所以我们打开记事本就是用UTF-8解码显示的过程。而XVI32软件的默认编码方式是ASCII，所以我们的Unicode编码604F7D59就被ASCII解码，4F对应的就是O，而59对应显示的就是Y。</p><p>六.参考文献</p><p><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a></p><p><a href="https://segmentfault.com/q/1010000009652523">unicode编码是占用几个字节？</a></p><p><a href="https://www.jianshu.com/p/9ed19a6645df">Unicode和UTF-8、UTF-16</a></p>]]></content>
       
@@ -4751,7 +4751,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -4768,8 +4768,8 @@
     
     <entry>
       <title>爬虫爬到的&amp;#是什么</title>
-      <link href="/2021/10/02/ji-suan-ji/zhen-qi-ta/pa-chong-pa-dao-de-shi-shi-me/"/>
-      <url>/2021/10/02/ji-suan-ji/zhen-qi-ta/pa-chong-pa-dao-de-shi-shi-me/</url>
+      <link href="/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/pa-chong-pa-dao-de-shi-shi-me/"/>
+      <url>/2021/10/02/ji-suan-ji/qi-ta-ji-suan-ji/pa-chong-pa-dao-de-shi-shi-me/</url>
       
         <content type="html"><![CDATA[<ol><li>\u开头和&amp;#x开头是一样的，都是16进制Unicode字符的不同写法,而&amp;#则是 unicode字符的10进制的写法.</li></ol><p>2.爬虫返回的数据是，显然，其中&amp;#是Unicode编码的中文，因为最终要全部编码为UTF-8上传到数据库中，所以要用正则匹配到这些串后，将他们转化为符号（UTF-8）存储，而非Unicode二进制串。<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001050736.png" alt="image-20211002001050736"></p><p>3.样例程序是这样<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001105317.png" alt="image-20211002001105317"><br>通过正则匹配到形如&amp;#ddddd;的串，将&amp;#和;去掉，然后把剩下的ddddd字符串转为10进制int型，然后用chr（ddddd)就可以转化为对应的符号了</p><p>4.也可以这样转换<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001114022.png" alt="image-20211002001114022"></p><p>5.参考</p><p><a href="https://www.zhihu.com/question/21390312">https://www.zhihu.com/question/21390312</a></p><p><a href="https://www.jianshu.com/p/644cf8b6234a">https://www.jianshu.com/p/644cf8b6234a</a></p>]]></content>
       
@@ -4778,7 +4778,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -6030,8 +6030,8 @@
     
     <entry>
       <title>计算机论文发表</title>
-      <link href="/2021/09/14/ji-suan-ji/zhen-qi-ta/ji-suan-ji-lun-wen-fa-biao/"/>
-      <url>/2021/09/14/ji-suan-ji/zhen-qi-ta/ji-suan-ji-lun-wen-fa-biao/</url>
+      <link href="/2021/09/14/ji-suan-ji/qi-ta-ji-suan-ji/ji-suan-ji-lun-wen-fa-biao/"/>
+      <url>/2021/09/14/ji-suan-ji/qi-ta-ji-suan-ji/ji-suan-ji-lun-wen-fa-biao/</url>
       
         <content type="html"><![CDATA[<h2 id="期刊和顶会"><a href="#期刊和顶会" class="headerlink" title="期刊和顶会"></a>期刊和顶会</h2><h3 id="CCF-SCI-EI"><a href="#CCF-SCI-EI" class="headerlink" title="CCF,SCI,EI"></a>CCF,SCI,EI</h3><p>CCF是中国计算机学会的简称,CCF每过几年会更新对于国外和国内会议和期刊的分类,最近的一次是19年的《<a href="https://www.ccf.org.cn/Academic_Evaluation/By_category/">中国计算机学会推荐国际学术会议和期刊目录</a>》第五版的公布,该《目录》分为国际和中文期刊,国际期刊论文分为各个领域,每个领域为A,B,C三类.而中文期刊不分领域,只分A,B,C三类,A为最顶级期刊，B为非常优秀期刊，C为优秀期刊。其中，A类期刊7本，B类期刊11本，C类期刊19本,比如A类期刊有:《软件学报》,《计算机学报》等,这里有<a href="https://ccfddl.github.io/">CCF Conference Deadlines</a>.</p><p>SCI（科学引文索引）、EI（工程索引）、ISTP（<a href="https://baike.baidu.com/item/%E7%A7%91%E6%8A%80%E4%BC%9A%E8%AE%AE%E5%BD%95%E7%B4%A2%E5%BC%95/8528068">科技会议录索引</a>）是世界著名的三大<a href="https://baike.baidu.com/item/%E7%A7%91%E6%8A%80%E6%96%87%E7%8C%AE%E6%A3%80%E7%B4%A2/5815285">科技文献检索</a>系统，是国际公认的进行科学统计与科学评价的主要检索工具,SSCI是社会科学引文索引.</p><p>计算机学科内一般说CCF,其它学科说SCI.</p><h3 id="期刊分区"><a href="#期刊分区" class="headerlink" title="期刊分区"></a>期刊分区</h3><p>关于JCR(Journal Citation Reports, 期刊引证报告) 期刊分区影响较为广泛的有两种：一种是 Thomson  Reuters 公司制定的分区（中文一般翻译为汤森路透分区）；第二种是中国科学院国家科学图书馆制定的分区（简称中科院分区）。这两种分区方式均基于 SCI 收录期刊影响因子基础之上进行分区的。</p><p>汤森路透每年出版一本《期刊引用报告》（Journal Citation  Reports，简称JCR）。JCR对86000多种SCI期刊的影响因子（Impact  Factor）等指数加以统计。JCR将收录期刊分为176个不同学科类别。每个学科分类按照期刊的影响因子高低，平均分为Q1、Q2、Q3和Q4四个区：各学科分类中影响因子前25%(含25%)期刊划分为Q1区，前25%～50% (含50%)为Q2区，前50%～75% (含75% )为Q3区， 75%之后的为Q4区。汤森路透分区中期刊的数量是均匀分为四个部分。</p><p>中科院首先将JCR中所有期刊分为数学、物理、化学、生物、地学、天文、工程技术、医学、环境科学、农林科学、社会科学、管理科学及综合性期刊13  大类。然后，将13大类期刊分各自为4 个等级，即4 个区。按照各类期刊影响因子划分，前5% 为该类1 区、6% ～ 20% 为2 区、21% ～ 50% 为3 区，其余的为4  区。显然在中科院的分区中，1区和2区杂志很少，杂志质量相对也高，基本都是本领域的顶级期刊。中科院分区中四个区的期刊数量是从1区到4区呈金字塔状分布。</p><h3 id="DOI"><a href="#DOI" class="headerlink" title="DOI"></a>DOI</h3><p>DOI是数字对象标识Digital Object  Identifier的简称，是一个专门用来标识数字化对象的命名系统，为数字对象提供唯一、持久的标识符，DOI由International DOI Foundation组织负责运作和管理。每个DOI由一个字符串组成，包括前缀、后缀两部分，中间用/号隔开，如：10.1016  /j.mcm.2005.05.028。前缀中的10.为DOI特定代码，前缀后4位数字表示出版机构代码，由DOI注册代理机构分配；后缀由出版机构提供,规则不限,只要在相同的前缀中具有唯一性即可。</p>]]></content>
       
@@ -6040,7 +6040,7 @@
           
           <category> 计算机 </category>
           
-          <category> 真其它 </category>
+          <category> 其他计算机 </category>
           
       </categories>
       
@@ -6057,8 +6057,8 @@
     
     <entry>
       <title>好句子</title>
-      <link href="/2021/09/14/xue-ke/zhen-qi-ta/hao-ju-zi/"/>
-      <url>/2021/09/14/xue-ke/zhen-qi-ta/hao-ju-zi/</url>
+      <link href="/2021/09/14/xue-ke/qi-ta-xue-ke/hao-ju-zi/"/>
+      <url>/2021/09/14/xue-ke/qi-ta-xue-ke/hao-ju-zi/</url>
       
         <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="977e890a436286e93072943935c930bffd1cb52abd89cb4171b2c6e0c7025963">1209d4e9609a7a6965961d8431e08315eaa9fa1d970c23fcd505d1aff8bd70a0a3538e9c7875c9bca43d23b0f12d5b8192b8e216956fc6db566a378bac91d7df4f09a0c13129e3cf7a2730a2933fd0e3e66ba13691183dffed086ba3658749bf73e91f95412533bb24b2198d128831868e3e3d7a8a34ac2a5682138092da6090cca07a2b2b56d765697ba2ec87cee3e3bdaff39491a41c3eb2cefee9008a5f32eee3d6ca8c74383d03e4f307666d80a1d7e8e0017cb68a7cafeec0baa289c2823227859c1d23aaf6cc571b4c55e28fca1c7b4caee090c91e02a07965e7054bcc1f33bec0799bd676a8c86354ec9ddcf4856dcee63e70201aad96ddc48aab92fe9f9486566ca00c8a82122c3d66c05dbf4b61e4d25051217327c932b5c7a1e1225a7c46add3a25f372e86a601da413251a7f77f59c9e88df5178e12062bf106251e6a463b01d7488aefe171c4409d889672656f3b0454fab0c288821d7f4b51af9f6bec65b0f9b9ae695944892989bea64e067b13a65501b5534048c2e66845d24c04ba5744fa8f7d2546020189c86e689419bf03d9ded61466b202dc248217ed804446a5cdba50e61f7316318190d3567fb873cf36abcde53a191f20454ec6b994f80f4b98247e21ceaabb964802e7aa8cebf3c0a94d7625220a430fc9b841662a1f36bc701f673478975add25946952233320d24f17503d5eaf6a81a9ca65a8b8e267b1bdf75c3270cdca6ae1ec1e3a62922c83c62901ac88b79770aad2447b1169a3d0b2dd265c3774393883a56a870938e451e8fded76e02e5e5f32c4667794907bbc877a36d12b48f2436322db6a50ed24abe6fd460a443afa9bd841e1bb6653c4fe55979696fefd543451e413cde1b6756205fa64126277855d586a11e819c295e786c68e0a800ed36d81f2baad75bb37b0eabb5b1afc23daaf0c5da3d5fe648baf9225ba43ec98ffefb0046b1a2d58d246a41c0aa090439dcbd8f20a00781add0f14692ea6a02e8d282c1ea8f2f3ad12db68b078dd4e03e6af10d2f1205d2e49df19e4fcf57f7654d1e80a6342be6403c49ee0c2bf68ff92251a69c866476edbd878c89ea38a636310e62e85b7b2401c6990aee832fc590f90ebb4e10b280796fef4608727759b3398d358733c51aeaa9bdfbc8bdf3a2f508479e160bee94b5effe34b9dc6b4016be57664c769266ad9202e4de50eba90bc42e9387c1d2aa9ba680a156ed63c24bcf5ae8690f40115d96480ffaff56a93d5f3e2b19c29a01c96db161764fc2238a90a27b8ef5d488fd2ba9ca198755a9a67dde8d159b3aed677d157417009cb54bc414c4c8a38358378f13a7d84cb883d99b1e9a9a1ac1a7c9990433aa6a484dc4bdd0d3e95a27e68e71b979cea00f41e7a66bdfc8fc06e28634d04018214dec1dbdbac63f11087fc480b9ba98250d17273c77ade6908be9bb194c0296c97b86586be44ec409d4640b72e97dde5ba42352d51e885feddc509a65e6a40879d79cfd19d1c00be2aa198ddf271ff1d9cade0275dbf1f40b2847b90bc8e9ecf313793b287bb3bbc16d8b648a46d407573494f4fa93e2cf64226c8506902e28fdf4d810af9a1662c8227967b605aa6187b412a350738cb8a23d161e01b4d461ca87fa6a833af3e15be4c3f89e70e2d2db56bdaf30528e92c49ea9d36ebbb74dddf3c8720b0919107df420a472ac0e9c415f9f8a120eaef6d50c931974dd142a796ba7ec1e88baacdee96573c03b318b76eaf3a5040d17f16a70596392d40c468f30e83b366110d4988bae77df68a9d0e9b5645385983ef869c84edb4883f1a000ef38b1773e5a961a059d537b6bcdf8ad57d9c345669a97548536ca551d77b8142b95e44a512953cbe4c5d56f5a0ffd4fac3d04ba41252f4c26abec9e9f4add1d2ca722f92ce0399b89931ddeb3b64650badb67cf92ca3f7d333d55e765ded04e2ff52582a674c48d68f63f35074722ecb83fae531151083bf1c488da3a36d776eca59667facd5d17ee2d00a0f0a34b40f1edc011fc9b0a8f4bb82eb8961edd3f61b06d2b7c91a001817f2b13af993d9c2f87f4717f032d1e057d3a22dd4ef1c5ff8a4fd99d1989dceeb63fb908d6ae23e9d9b260fefd8fb4aaa2f1d46c84e3a64632e3de2b428bd1e435491707e50b3bf8320e691b8f122004f880abacb1f71e21eaa7597bb99d99e2aee4cf617b2e9a32ece725e39b592c0a8417d7534f82c701b837e377a65e3fccd9ea848df787bed0f9df5a197a695d34c9ade71a14e6657b441e078679336ecd9c29d67173204d88f540e9e8063f2fc64aa31ba55b1706967d244b9580193b8dc5c82639243693857bddca5419d0d34b364dbe7f6eb033ac9c02c7d43e9a36a7672a0b53d66e7e3e192f343d45ee69a914e2a63a7222fe2b63178af3d86686d5280d4c3d5be69073da9f2325cd6f8645bdc73d6f884726c12e59edba56917cc67c51b3d080202ad7ec841178dbc0668804896b7194f50ef69889a3d63d3383db280107a4930972828d85b73950f9cfd8bd0a2f33b7c2f7064a531806eeb750eac6aaec13a350de6b8ea9dce205ca3a7e92725be16c736e1958b7f260b680febf6e769fe5d9495ab35a606e56ae122ef8240e905267e4233e9b267127cd903bc80826897f7deb710b303bb98c1c9577f0a599af7084c5857ce3b95ef86e564154c758e987fc4e1b3a3d473e273aa30edc15da78d7542212cf3d2d2a161b5d04b6e57fd8285198101aa8c1a7341c1bc7784cfe2e25fdc231bd1ddbb15e4144cca8a2cef26ab2702d99eb45e124a748273755448b71f5dc9cac2888c3108aecda5c23b5400e8f2db848b57ba5a935f83e1c114dcbf112a2f6058dfe5915944e0c5180416d5dde7cb36b1af29fa107b4f844fdbbdae27d9f12950c941947296056a1d951cec99231fd8f22b95655a7a832d23028e4fab87108eabf4242675b2d2e2fb08903068bed54582c78208688cccaa259294aa5121449cc1f4243577c00bc72bcf1879e306aa89fdb976dbc5d56015dde11095b6017ed5281d22ee059bd857e1e826cb022019d2f9ea38f9399594f762d8f80fc5017b4229d9c52cbff3efb5f38ba813ad7e362aae12858fbdc550cf5395a1f95cfdf88222283fb3e98d2b91844ec50b646c810e1825cce5939604b1cfac3f0e6c444b35f2a4d01374c85eae</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       
@@ -6067,7 +6067,7 @@
           
           <category> 学科 </category>
           
-          <category> 真其它 </category>
+          <category> 其他学科 </category>
           
       </categories>
       
@@ -6078,8 +6078,8 @@
     
     <entry>
       <title>开脑洞</title>
-      <link href="/2021/09/14/xue-ke/zhen-qi-ta/kai-nao-dong/"/>
-      <url>/2021/09/14/xue-ke/zhen-qi-ta/kai-nao-dong/</url>
+      <link href="/2021/09/14/xue-ke/qi-ta-xue-ke/kai-nao-dong/"/>
+      <url>/2021/09/14/xue-ke/qi-ta-xue-ke/kai-nao-dong/</url>
       
         <content type="html"><![CDATA[<h2 id="时间在倒退而非前进"><a href="#时间在倒退而非前进" class="headerlink" title="时间在倒退而非前进"></a>时间在倒退而非前进</h2><p>我们似乎将时间的流逝看成天经地义，时间自然而然的前进，社会自然而然地<strong>向前</strong>发展。但是，忽略掉细节地话，时间也许是在后退呢？以一种我们很难理解的方式。</p><p>或许奇点是宇宙的终点而非起点？</p><p>或许宇宙是逐渐收缩？</p><p>或许自然化，原始化才是地球的进化方向？又人类进化成猿猴，后来再陨石坠落，出现恐龙，恐龙受到地球自然化的影响，最终尘归尘，土规土，结局为无机物？</p><p>或许人类从年幼衰老，其实是一个由衰老逐渐进化成年幼的过程？</p><p>或许我们从幼时的快乐、天真逐渐长大，逐渐失去，是一个走向开始的过程？或许我们的友情是结局，而长大是一个不断失去的过程？</p>]]></content>
       
@@ -6088,7 +6088,7 @@
           
           <category> 学科 </category>
           
-          <category> 真其它 </category>
+          <category> 其他学科 </category>
           
       </categories>
       
@@ -6099,8 +6099,8 @@
     
     <entry>
       <title>笑话</title>
-      <link href="/2021/09/14/xue-ke/zhen-qi-ta/xiao-hua/"/>
-      <url>/2021/09/14/xue-ke/zhen-qi-ta/xiao-hua/</url>
+      <link href="/2021/09/14/xue-ke/qi-ta-xue-ke/xiao-hua/"/>
+      <url>/2021/09/14/xue-ke/qi-ta-xue-ke/xiao-hua/</url>
       
         <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="87532085edcbfecd4fd59ce890f376d254ba43b73329871bbc3bf5e14abc2dba">1209d4e9609a7a6965961d8431e08315eaa9fa1d970c23fcd505d1aff8bd70a0f25eadb9bcaccece864c8093de35b2b75a739d52ef480bc1398087370121337c27acdbbb75e026f905dac7aa79f88ff9abb4dd5255755bb9baabb7f98988564efbe8e2eef6df8cc8718b381e150ed40ef5b87b8aeb55193778d43d27db99c1bf73ceb57a59287fdb5ae7827257b54470fefc8a854bd3e1ea8eccac51381a827a55d1d63eb71c9bbbbc255ecc1be0b69450e681ccd493b94153a5437520e2a321936d2eb12ea4af8078f68f6921336dfb</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       
@@ -6109,7 +6109,7 @@
           
           <category> 学科 </category>
           
-          <category> 真其它 </category>
+          <category> 其他学科 </category>
           
       </categories>
       
@@ -6120,8 +6120,8 @@
     
     <entry>
       <title>其它</title>
-      <link href="/2021/09/14/xue-ke/zhen-qi-ta/qi-ta/"/>
-      <url>/2021/09/14/xue-ke/zhen-qi-ta/qi-ta/</url>
+      <link href="/2021/09/14/xue-ke/qi-ta-xue-ke/qi-ta/"/>
+      <url>/2021/09/14/xue-ke/qi-ta-xue-ke/qi-ta/</url>
       
         <content type="html"><![CDATA[<h2 id="没什么用但就是想记录的知识"><a href="#没什么用但就是想记录的知识" class="headerlink" title="没什么用但就是想记录的知识"></a>没什么用但就是想记录的知识</h2><ol><li><p>我国虽然各大城市（北、上、西安、成都、南昌、石家庄等）均有印刷纸币的印钞厂，但是制造硬币的造币厂却大多分布在南方。南方有南京造币厂、上海造币厂、深圳造币公司等，北方却只有沈阳造币厂一家，且以制造5角硬币为主。</p></li><li><p>西游记最大的BUG在于硅基的石头转换成了碳基的猴子。</p></li><li><p>长城的作用？</p><ol><li>长城这么矮但阻挡商人绰绰有余。</li><li>绵长的长城可以阻止商人越境走私，对于征收关税有利。</li><li>长城制造的无人区可以阻碍敌人。</li><li>经济封锁是敌我互伤的双刃剑。</li></ol></li><li><p>考试总犯低级错误怎么办？<br> 不要只做心中的题。</p></li><li><p>飞机厕所的冲水按钮！！<br> 原因是飞机是抽真空造成压力，如果不留缝隙的话人有可能被吸到马桶上。</p></li></ol>]]></content>
       
@@ -6130,7 +6130,7 @@
           
           <category> 学科 </category>
           
-          <category> 真其它 </category>
+          <category> 其他学科 </category>
           
       </categories>
       
