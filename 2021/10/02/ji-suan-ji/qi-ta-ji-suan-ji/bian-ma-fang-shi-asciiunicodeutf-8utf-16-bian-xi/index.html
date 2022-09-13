@@ -3559,7 +3559,7 @@
 <p>三.UTF-8和UTF-16</p>
 <p>UTF——Unicode 转换格式（Unicode Transformation Format，简称为UTF）。UTF-8是一种可变长度字符编码方式，以8-bit 为单元，使用1至4个字节为每个字符编码 ；UTF-16是一种可变长度字符编码方式，以16-bit 为单元，使用2个或4个字节为每个字符编码，UTF-16就是Unicode的常规编码。</p>
 <p>已经有了Unicode编码方式，但是按照这样编码并且存储的话，每个符号都需要16位，但如果存储一些数据只需要用到很少的中文，拉丁文等，大量的都是英文（即用8位的ASCII码），也就是说，文件中将会有很多的0（因为ASCII码前面填充1个字节的0就是Unicode），文件体积就很大。</p>
-<p>所以用变长编码的方式，减小文件大小，也就是说UTF-8按照Unicode的字符表示规定进行编码，但是做了存储优化。所以我们可以料想到UFT-8比UTF-16更好，因为最大化削减了能表示字符的比特位的位数。UTF-8最短8位，UTF-16最短16位就可以看出。<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001358310.png" alt="image-20211002001358310"></p>
+<p>所以用变长编码的方式，减小文件大小，也就是说UTF-8按照Unicode的字符表示规定进行编码，但是做了存储优化。所以我们可以料想到UFT-8比UTF-16更好，因为最大化削减了能表示字符的比特位的位数。UTF-8最短8位，UTF-16最短16位就可以看出。<br><img src="D:\pic-bed\img\image-20211002001358310.png" alt="image-20211002001358310"></p>
 <p>四.编码方式和实际存储</p>
 <p>我们用TextPad填写1a，并且通过不同的编码方式（UTF-8,Unicode，Unicode（Big Endian）保存，如下图：</p>
 <p><img src="D:\pic-bed\img\image-20211002001416316.png" alt="image-20211002001416316"></p>
