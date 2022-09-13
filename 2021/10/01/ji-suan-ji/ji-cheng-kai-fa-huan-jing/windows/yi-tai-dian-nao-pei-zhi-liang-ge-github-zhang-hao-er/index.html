@@ -3561,7 +3561,7 @@
 <p>出现图1-1的报错是因为config文件有误而不是位置放错，将每一行前的空白删除掉就可以消除此错误。<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211001235753963.png" alt="image-20211001235753963"></p>
 <p>并且config文件和密钥公钥文件都应该放在~/.ssh/目录下，windows下也就是C：/user/lenovo/.ssh/下。</p>
 <p>虽然可以消除文件错误，但是我还是不能ssh -T <a href="mailto:pengber@github.com">pengber@github.com</a>。</p>
-<p>用命令ssh -vT <a href="mailto:pengber@github.com">pengber@github.com</a> 可以debug：<br><img src="D:\pic-bed\img\image-20211001235807044.png" alt="image-20211001235807044"><br>可以看到，git准备访问id_rsa的文件，而不是我命名的id_rsa_pengber等文件，也就是说配置没起到作用。</p>
+<p>用命令ssh -vT <a href="mailto:pengber@github.com">pengber@github.com</a> 可以debug：<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211001235807044.png" alt="image-20211001235807044"><br>可以看到，git准备访问id_rsa的文件，而不是我命名的id_rsa_pengber等文件，也就是说配置没起到作用。</p>
 <p>我用记事本和TextPad都进行了编写，但还是不行，所以我又找了一个教程，他的配置文件类似如下：</p>
 <pre><code class="bash">Host pengber
 Hostname github.com

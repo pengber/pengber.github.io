@@ -3551,7 +3551,7 @@
       
         <p>1.mysql在A主机101.201.236.xx上面，我想在B主机49.232.129.x上面连接数据库。</p>
 <p>2.准备工作：<br>①在A主机mysql中用grant all privileges on zhygl to ‘slave_1‘@’49.232.129.x’ identified by ‘slave_1’将zhygl数据的所有权限付给slave_1密码slave_1并且只能在49.232.129.x上用此用户登录<br>②flush privileges;<br>③查看3306端口是否开放netstat -an | grep 3306<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002003941914.png" alt="image-20211002003941914"></p>
-<p>④将/etc/my.cnf文件中的bind 127.0.0.1注释掉（不过我发现我的配置文件没有这句话）<br><img src="D:\pic-bed\img\image-20211002003950762.png" alt="image-20211002003950762"></p>
+<p>④将/etc/my.cnf文件中的bind 127.0.0.1注释掉（不过我发现我的配置文件没有这句话）<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002003950762.png" alt="image-20211002003950762"></p>
 <p>⑤service mysql restart重启服务（也试过重启服务器）</p>
 <p>3.在B主机上连接mysql -h 101.201.236.xx -P 3306 -u slave_1 -p<br>之后输入密码，但是还是提示：<br><img src="D:\pic-bed\img\image-20211002003957518.png" alt="image-20211002003957518"></p>
 

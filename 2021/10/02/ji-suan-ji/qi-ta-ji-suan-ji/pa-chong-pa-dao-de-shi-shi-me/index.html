@@ -3551,7 +3551,7 @@
 <li>\u开头和&amp;#x开头是一样的，都是16进制Unicode字符的不同写法,而&amp;#则是 unicode字符的10进制的写法.</li>
 </ol>
 <p>2.爬虫返回的数据是，显然，其中&amp;#是Unicode编码的中文，因为最终要全部编码为UTF-8上传到数据库中，所以要用正则匹配到这些串后，将他们转化为符号（UTF-8）存储，而非Unicode二进制串。<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001050736.png" alt="image-20211002001050736"></p>
-<p>3.样例程序是这样<br><img src="D:\pic-bed\img\image-20211002001105317.png" alt="image-20211002001105317"><br>通过正则匹配到形如&amp;#ddddd;的串，将&amp;#和;去掉，然后把剩下的ddddd字符串转为10进制int型，然后用chr（ddddd)就可以转化为对应的符号了</p>
+<p>3.样例程序是这样<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002001105317.png" alt="image-20211002001105317"><br>通过正则匹配到形如&amp;#ddddd;的串，将&amp;#和;去掉，然后把剩下的ddddd字符串转为10进制int型，然后用chr（ddddd)就可以转化为对应的符号了</p>
 <p>4.也可以这样转换<br><img src="D:\pic-bed\img\image-20211002001114022.png" alt="image-20211002001114022"></p>
 <p>5.参考</p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21390312">https://www.zhihu.com/question/21390312</a></p>

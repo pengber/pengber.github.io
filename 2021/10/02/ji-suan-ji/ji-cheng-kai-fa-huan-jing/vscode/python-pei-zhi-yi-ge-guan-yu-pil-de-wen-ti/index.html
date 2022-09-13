@@ -3563,7 +3563,7 @@
 <p>错误截图：<img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002002921044.png" alt="image-20211002002921044">然后同学用此测试文件可以运行，所以应该是c:\users.…这个包的问题，用代码</p>
 <p>import sys<br>print(‘\n’.join(sys.path))</p>
 <p>查看包路径:</p>
-<p><img src="D:\pic-bed\img\image-20211002003009176.png" alt="image-20211002003009176"></p>
+<p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002003009176.png" alt="image-20211002003009176"></p>
 <p><img src="D:\pic-bed\img\image-20211002002950039.png" alt="image-20211002002950039"></p>
 <p>发现这个C:\Users\lenovo\AppData\Roaming\Python\Python37\site-packages和其他的包路径d:\不一样，怪怪的，然后请同学查了一下他的路径，没有上述路径，然后删除这个文件夹再测试就绘图成功了<br>测试成功</p>
 <p>结论：这个C:\Users\lenovo\AppData\Roaming\Python\Python37\site-packages应该是我之前的python环境用pip安装时安装的包路径，然后再用conda安装后，前面的“卸载残留”包路径将我之后成功安装的包路径覆盖了，删除即可。</p>
