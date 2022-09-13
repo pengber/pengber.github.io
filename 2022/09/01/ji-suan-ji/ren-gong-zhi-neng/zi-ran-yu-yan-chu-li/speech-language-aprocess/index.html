@@ -1007,7 +1007,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="264">
-<input type="hidden" id="yelog_site_word_count" value="394.4k">
+<input type="hidden" id="yelog_site_word_count" value="394.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3716,7 +3716,7 @@
 <li>$y$表示真正的输出</li>
 </ul>
 <p>所以,算法表示如下:</p>
-<p><img src="D:\pic-bed\img\image-20211019164039794.png" alt="image-20211019164039794"></p>
+<p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211019164039794.png" alt="image-20211019164039794"></p>
 <h4 id="7-4-Feedforward-networks-for-NLP-Classification"><a href="#7-4-Feedforward-networks-for-NLP-Classification" class="headerlink" title="7.4 Feedforward networks for NLP: Classification"></a>7.4 Feedforward networks for NLP: Classification</h4><p>利用前馈神经网络可以进行自然语言处理任务文本情感分类,输入元素可以是标量特征,比如特征向量中第一个元素 $x_1$为文本中的单词再单词表中出现的总次数,$x_2$为文本中属于积极词性的单词的个数,$x_3$为如果有”no”在单词表中为1等等(<strong>也就是自己手动构建特征,而在学习的过程学习权重</strong>),输出是两个节点(或者三个节点(积极,消极,中性).</p>
 <p>更多的NLP任务不用手动构建特征,而是使用单词的嵌入的串联,这叫做<strong>预训练</strong>,网络模型如下:<br>$$<br>\begin{aligned}<br>\mathbf{x} &amp;=\left[\mathbf{e}<em>{w 1} ; \mathbf{e}</em>{w 2} ; \mathbf{e}<em>{w 3} ; \cdots ; \mathbf{e}</em>{w n}\right] \<br>\mathbf{h} &amp;=\sigma(\mathbf{W} \mathbf{x}+\mathbf{b}) \<br>\mathbf{z} &amp;=\mathbf{U h} \<br>\mathbf{y} &amp;=\operatorname{softmax}(\mathbf{z})<br>\end{aligned}<br>$$</p>
 <h3 id="7-5-Feedforward-Neural-Language-Modeling"><a href="#7-5-Feedforward-Neural-Language-Modeling" class="headerlink" title="7.5 Feedforward Neural Language Modeling"></a>7.5 Feedforward Neural Language Modeling</h3><p>另一个前馈神经网络模型的的应用是语言模型:从前面的单词上下文预测将要出来的单词.相比于<code>n-gram</code>模型,神经网络模型可以处理更长的历史, 在处理相似单词的上下文时 表现更好, 并且对于单词的预测更准确. 但是, 神经网络更复杂, 训练地慢, 更低的可解释性, 所以在一些(较小)的任务中<code>n-gram</code>模型依然是很好的工具.神经网络模型表示前面的上下文用嵌入而非<code>n-gram</code>模型中的单词的特征, 使用嵌入允许神经网络模型对没有出现的单词泛化的很好.</p>

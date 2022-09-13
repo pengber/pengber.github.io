@@ -1007,7 +1007,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="264">
-<input type="hidden" id="yelog_site_word_count" value="394.4k">
+<input type="hidden" id="yelog_site_word_count" value="394.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3641,7 +3641,7 @@
 <p>拥塞控制维护一个拥塞窗口cwnd和慢开始门限ssthresh.拥塞窗口从1增大, 在增长到慢开始门限之前, 每经过一个RTT收到确认报文时采用指数增大的方式增大拥塞窗口, 而在拥塞窗口达到慢开始门限时,采用线性方式增大拥塞窗口,而重点是在遇到网络拥塞时的处理方法.</p>
 <p>慢开始和拥塞避免算法, 在需要超时重传时(网络拥塞的表现之一就是报文丢失)<strong>, 慢开始门限为当时拥塞窗口的一半, 拥塞窗口直接降为1</strong>, 继续重复算法.</p>
 <p>快恢复和快重传算法, 在收到连续ACK时(网络拥塞的表现之二), 慢开始门限为当时拥塞窗口的一半, 但是<strong>拥塞窗口不降为1而为慢开始门限的值开始线性增大</strong>, 继续重复算法.</p>
-<p><img src="D:\pic-bed\img\image-20220705110600025.png" alt="image-20220705110600025"></p>
+<p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220705110600025.png" alt="image-20220705110600025"></p>
 <h3 id="浏览器访问网站的数据传输过程"><a href="#浏览器访问网站的数据传输过程" class="headerlink" title="浏览器访问网站的数据传输过程"></a>浏览器访问网站的数据传输过程</h3><p>发送HTTP请求, 在发送HTTP请求之前, 需要三次握手建立TCP连接</p>
 <p>TCP连接时需要知道对方的IP地址, 此时需要DNS解析, 根据url中的域名请求DNS缓存或者服务器得到对方的IP地址.</p>
 <p>得到对方的IP地址后就可以将TCP报文分装为IP数据包发送给服务器.</p>

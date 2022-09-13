@@ -1007,7 +1007,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="264">
-<input type="hidden" id="yelog_site_word_count" value="394.4k">
+<input type="hidden" id="yelog_site_word_count" value="394.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3552,7 +3552,7 @@
         <p>1.静态函数成员能否用对象访问。</p>
 <p>#include <iostream><br>#include <iomanip><br>#include <fstream><br>using namespace std;</fstream></iomanip></iostream></p>
 <p>class People {<br>protected:<br>    int age;<br>    static int id;<br>public:<br>    People(int a) :age(a) {<br>        id++;<br>    };<br>    static int getId() {<br>        return id;<br>    }<br>};<br>int People::id = 0;<br>int main() {<br>    People first(1);<br>    cout &lt;&lt; first.getId();//验证静态函数成员是否可以通过对象访问：可以。<br>    cout &lt;&lt; People::getId();<br>    return 0;<br>}</p>
-<p>运行结果：<br><img src="D:\pic-bed\img\image-20211002003748832.png" alt="image-20211002003748832"></p>
+<p>运行结果：<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20211002003748832.png" alt="image-20211002003748832"></p>
 <p>结论：</p>
 <p>静态函数成员可以通过对象访问。</p>
 <p>2.静态函数成员能否访问类的非静态函数成员而不通过对象：<br><img src="D:\pic-bed\img\image-20211002003758276.png" alt="image-20211002003758276"></p>
