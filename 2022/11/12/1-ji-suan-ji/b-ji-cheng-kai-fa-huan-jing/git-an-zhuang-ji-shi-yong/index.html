@@ -1,0 +1,4093 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Git安装及使用 | pengber&#39;s site</title>
+  <meta name="keywords" content=" github ">
+  <meta name="description" content="Git安装及使用 | pengber&#39;s site">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="pengber&#39;s site">
+<meta property="og:url" content="https://pengber.github.io/about/index.html">
+<meta property="og:site_name" content="pengber&#39;s site">
+<meta property="og:description" content="个人简介pengber 本科毕业于北京化工大学, 硕士就读于北京邮电大学. 联系方式邮箱: pengber@126.com">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-15T11:15:27.280Z">
+<meta property="article:modified_time" content="2022-07-15T11:15:22.204Z">
+<meta property="article:author" content="pengber">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>pengber</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/pengber"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:pengber@126.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(231)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="1计算机">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        1计算机
+                        <small>(95)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->A编程语言">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        A编程语言
+                                        
+                                            <small>(14
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->A编程语言其它">
+                                                        
+                                                        其它
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->A编程语言C">
+                                                        
+                                                        C
+                                                        
+                                                            <small>(3)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->A编程语言JAVA">
+                                                        
+                                                        JAVA
+                                                        
+                                                            <small>(2)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->A编程语言Python">
+                                                        
+                                                        Python
+                                                        
+                                                            <small>(3)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->B集成开发环境">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        B集成开发环境
+                                        
+                                            <small>(37
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->B集成开发环境linux">
+                                                        
+                                                        linux
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->B集成开发环境Vs2019">
+                                                        
+                                                        Vs2019
+                                                        
+                                                            <small>(1)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->B集成开发环境VsCode">
+                                                        
+                                                        VsCode
+                                                        
+                                                            <small>(9)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->B集成开发环境WAMP">
+                                                        
+                                                        WAMP
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                                <li>
+                                                    <div data-rel="1计算机<--->B集成开发环境windows">
+                                                        
+                                                        windows
+                                                        
+                                                            <small>(7)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->C算法与数据结构">
+                                        
+                                        C算法与数据结构
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->D软件开发">
+                                        
+                                        D软件开发
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->E人工智能">
+                                        
+                                        E人工智能
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->F计算机网络">
+                                        
+                                        F计算机网络
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->G计算机硬件">
+                                        
+                                        G计算机硬件
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->I计算机图形学">
+                                        
+                                        I计算机图形学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->J计算机理论与数学">
+                                        
+                                        J计算机理论与数学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->Y实验室">
+                                        
+                                        Y实验室
+                                        
+                                            <small>(10
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="1计算机<--->Z其他计算机">
+                                        
+                                        Z其他计算机
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="2金融">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        2金融
+                        <small>(31)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="2金融<--->A金融知识">
+                                        
+                                        A金融知识
+                                        
+                                            <small>(19
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="2金融<--->C行业个股">
+                                        
+                                        C行业个股
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="2金融<--->D投资理念">
+                                        
+                                        D投资理念
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="2金融<--->E投资记录">
+                                        
+                                        E投资记录
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="3修身">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        3修身
+                        <small>(69)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="3修身<--->A自修">
+                                        
+                                        A自修
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="3修身<--->B生活技能">
+                                        
+                                        B生活技能
+                                        
+                                            <small>(9
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="3修身<--->C生活知识">
+                                        
+                                        C生活知识
+                                        
+                                            <small>(21
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="3修身<--->D工作">
+                                        
+                                        D工作
+                                        
+                                            <small>(9
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="3修身<--->E创业">
+                                        
+                                        E创业
+                                        
+                                            <small>(13
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="3修身<--->F奇思妙想">
+                                        
+                                        F奇思妙想
+                                        
+                                            <small>(10
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="4运动">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        4运动
+                        <small>(7)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="4运动<--->A足球">
+                                        
+                                        A足球
+                                        
+                                            <small>(7
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="5学科">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        5学科
+                        <small>(26)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="5学科<--->A文学">
+                                        <i class="fold iconfont icon-right"></i>
+                                        
+                                        A文学
+                                        
+                                            <small>(9
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                        <ul class="sub hide">
+                                            
+                                                <li>
+                                                    <div data-rel="5学科<--->A文学村上春树">
+                                                        
+                                                        村上春树
+                                                        
+                                                            <small>(6)</small>
+                                                        
+                                                    </div>
+                                                </li>
+                                            
+                                        </ul>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="5学科<--->B社会科学">
+                                        
+                                        B社会科学
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="5学科<--->C历史">
+                                        
+                                        C历史
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="5学科<--->D政治">
+                                        
+                                        D政治
+                                        
+                                            <small>(6
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="5学科<--->F心理学">
+                                        
+                                        F心理学
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="5学科<--->G影评">
+                                        
+                                        G影评
+                                        
+                                            <small>(5
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="231">
+<input type="hidden" id="yelog_site_word_count" value="381.2k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>C++</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>github</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Java</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PHP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>pytorch</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>WAMP</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 5学科 G影评 "
+           href="/2022/11/26/5-xue-ke/g-ying-ping/zhi-chao-wu-jiao-shou-gei-zhi-zi-xie-de-shi-me/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="纸钞屋教授给侄子写的什么">纸钞屋教授给侄子写的什么</span>
+            <span class="post-date" title="2022-11-26 00:22:19">2022/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 "
+           href="/2022/11/22/1-ji-suan-ji/ji-suan-ji-zhi-shi-qa/"
+           data-tag="Java,C++,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="计算机知识QA">计算机知识QA</span>
+            <span class="post-date" title="2022-11-22 16:24:57">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2022/11/22/3-xiu-shen/e-chuang-ye/zhong-ying-chuang-ye-xiang-mu-si-ci-pei-xun/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中英创业项目四次培训">中英创业项目四次培训</span>
+            <span class="post-date" title="2022-11-22 16:09:08">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 F计算机网络 "
+           href="/2022/11/22/1-ji-suan-ji/f-ji-suan-ji-wang-luo/hu-nan-ke-ji-da-xue-ji-suan-ji-wang-luo-bi-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="湖南科技大学计算机网络笔记">湖南科技大学计算机网络笔记</span>
+            <span class="post-date" title="2022-11-22 15:26:00">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 Python "
+           href="/2022/11/22/1-ji-suan-ji/a-bian-cheng-yu-yan/python/pytorch/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="Pytorch">Pytorch</span>
+            <span class="post-date" title="2022-11-22 15:15:07">2022/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2022/11/19/4-yun-dong/a-zu-qiu/wu-ren-zhi-cai-pan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="五人制裁判">五人制裁判</span>
+            <span class="post-date" title="2022-11-19 08:34:41">2022/11/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 "
+           href="/2022/11/17/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/ju-chi-yun/"
+           data-tag="github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="矩池云">矩池云</span>
+            <span class="post-date" title="2022-11-17 21:56:15">2022/11/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2022/11/14/3-xiu-shen/a-zi-xiu/fang-fa-lun-ru-he-shu-li-mo-sheng-ling-zhang-cen-zi-mu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="方法论-如何梳理陌生领- 张涔子沐">方法论-如何梳理陌生领- 张涔子沐</span>
+            <span class="post-date" title="2022-11-14 22:52:59">2022/11/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/11/12/2-jin-rong/a-jin-rong-zhi-shi/bei-da-jing-ji-xue-fu-he-xiang-mu-ke-biao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="北大经济学复合项目课表">北大经济学复合项目课表</span>
+            <span class="post-date" title="2022-11-12 23:57:51">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 "
+           href="/2022/11/12/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/git-an-zhuang-ji-shi-yong/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="Git安装及使用">Git安装及使用</span>
+            <span class="post-date" title="2022-11-12 20:11:38">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 C "
+           href="/2022/11/12/1-ji-suan-ji/a-bian-cheng-yu-yan/c/c-yu-yan-te-xing/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="C语言特性">C语言特性</span>
+            <span class="post-date" title="2022-11-12 19:58:25">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 C "
+           href="/2022/11/12/1-ji-suan-ji/a-bian-cheng-yu-yan/c/c-xue-xi-lu-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="C学习路线">C学习路线</span>
+            <span class="post-date" title="2022-11-12 19:58:04">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 JAVA "
+           href="/2022/11/12/1-ji-suan-ji/a-bian-cheng-yu-yan/java/java-yu-yan-te-xing/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="Java语言特性">Java语言特性</span>
+            <span class="post-date" title="2022-11-12 19:54:55">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 Python "
+           href="/2022/11/12/1-ji-suan-ji/a-bian-cheng-yu-yan/python/python-yu-yan-te-xing/"
+           data-tag="C++,python"
+           data-author="" >
+            <span class="post-title" title="python语言特性">python语言特性</span>
+            <span class="post-date" title="2022-11-12 19:48:42">2022/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 "
+           href="/2022/11/08/2-jin-rong/11-ju-hua-gao-qing-hui-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11句话搞清会计">11句话搞清会计</span>
+            <span class="post-date" title="2022-11-08 00:13:39">2022/11/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/10/30/2-jin-rong/a-jin-rong-zhi-shi/jing-ji-xue/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="经济学">经济学</span>
+            <span class="post-date" title="2022-10-30 20:42:55">2022/10/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 D软件开发 "
+           href="/2022/10/28/1-ji-suan-ji/d-ruan-jian-kai-fa/ssm/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="SSM">SSM</span>
+            <span class="post-date" title="2022-10-28 16:33:54">2022/10/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/10/22/3-xiu-shen/d-gong-zuo/ding-ju-sheng-huo-fen-xi/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="定居生活分析">定居生活分析</span>
+            <span class="post-date" title="2022-10-22 00:27:25">2022/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2022/10/16/3-xiu-shen/a-zi-xiu/ba-shi-jian-dang-peng-you/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="把时间当朋友">把时间当朋友</span>
+            <span class="post-date" title="2022-10-16 11:10:09">2022/10/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2022/09/20/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/leetcode-mei-ri-yi-ti/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Leetcode每日一题">Leetcode每日一题</span>
+            <span class="post-date" title="2022-09-20 00:25:03">2022/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2022/09/20/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/leetcode-dong-tai-gui-hua/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Leetcode动态规划">Leetcode动态规划</span>
+            <span class="post-date" title="2022-09-20 00:22:21">2022/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2022/09/20/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/leetocde-shu-ju-jie-gou/"
+           data-tag="Java,github,C++,python"
+           data-author="" >
+            <span class="post-title" title="Leetocde数据结构">Leetocde数据结构</span>
+            <span class="post-date" title="2022-09-20 00:16:45">2022/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2022/09/18/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/leetcode-zhou-sai/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Leetcode周赛">Leetcode周赛</span>
+            <span class="post-date" title="2022-09-18 16:23:28">2022/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/09/16/2-jin-rong/a-jin-rong-zhi-shi/hui-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="汇率">汇率</span>
+            <span class="post-date" title="2022-09-16 16:33:54">2022/09/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/09/13/3-xiu-shen/d-gong-zuo/202209-ji-hui/"
+           data-tag="Java,C++,python"
+           data-author="" >
+            <span class="post-title" title="202209机会">202209机会</span>
+            <span class="post-date" title="2022-09-13 09:07:15">2022/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 F心理学 "
+           href="/2022/09/12/5-xue-ke/f-xin-li-xue/shi-liu-ren-ge/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="十六人格">十六人格</span>
+            <span class="post-date" title="2022-09-12 00:05:27">2022/09/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/09/11/3-xiu-shen/c-sheng-huo-zhi-shi/pei-yan-jing/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="配眼镜">配眼镜</span>
+            <span class="post-date" title="2022-09-11 22:47:23">2022/09/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2022/09/01/5-xue-ke/d-zheng-zhi/wo-guo-jue-ce-ti-xi-ji-ji-gou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="我国决策体系及机构">我国决策体系及机构</span>
+            <span class="post-date" title="2022-09-01 17:27:48">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2022/09/01/1-ji-suan-ji/e-ren-gong-zhi-neng/speech-language-aprocess/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Speech language aprocess">Speech language aprocess</span>
+            <span class="post-date" title="2022-09-01 16:12:26">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 C历史 "
+           href="/2022/08/25/5-xue-ke/c-li-shi/ming-zhao-zhao-dai-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="明朝朝代总结">明朝朝代总结</span>
+            <span class="post-date" title="2022-08-25 23:18:36">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/08/17/3-xiu-shen/d-gong-zuo/bi-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="笔试总结">笔试总结</span>
+            <span class="post-date" title="2022-08-17 14:57:53">2022/08/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/08/09/2-jin-rong/a-jin-rong-zhi-shi/wen-da/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="问答">问答</span>
+            <span class="post-date" title="2022-08-09 09:28:56">2022/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/08/02/3-xiu-shen/d-gong-zuo/20220718mm/"
+           data-tag="github,python,PHP"
+           data-author="" >
+            <span class="post-title" title="20220718MM">20220718MM</span>
+            <span class="post-date" title="2022-08-02 19:50:38">2022/08/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/08/01/3-xiu-shen/d-gong-zuo/gong-zuo-fang-xiang/"
+           data-tag="Java,C++,python,PHP"
+           data-author="" >
+            <span class="post-title" title="工作方向">工作方向</span>
+            <span class="post-date" title="2022-08-01 09:12:53">2022/08/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2022/07/30/3-xiu-shen/f-qi-si-miao-xiang/sui-bian-xiang-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="随便想想">随便想想</span>
+            <span class="post-date" title="2022-07-30 15:23:54">2022/07/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/07/29/3-xiu-shen/c-sheng-huo-zhi-shi/a-sheng-huo-chang-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="阿生活常识">阿生活常识</span>
+            <span class="post-date" title="2022-07-29 22:23:48">2022/07/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2022/07/25/1-ji-suan-ji/e-ren-gong-zhi-neng/text-to-table/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="text_to_table">text_to_table</span>
+            <span class="post-date" title="2022-07-25 19:49:50">2022/07/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 G影评 "
+           href="/2022/07/24/5-xue-ke/g-ying-ping/da-ming-wang-zhao-1566/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="大明王朝1566">大明王朝1566</span>
+            <span class="post-date" title="2022-07-24 17:03:10">2022/07/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2022/07/24/3-xiu-shen/f-qi-si-miao-xiang/ni-ke-yi-ti-wo-qu-zuo-mou-jian-shi-ma/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="你可以替我去做某件事吗">你可以替我去做某件事吗</span>
+            <span class="post-date" title="2022-07-24 15:59:13">2022/07/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2022/07/22/1-ji-suan-ji/y-shi-yan-shi/zhan-chang-ben-ti-gou-jian-1-9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="战场本体构建1-9">战场本体构建1-9</span>
+            <span class="post-date" title="2022-07-22 09:23:24">2022/07/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2022/07/21/1-ji-suan-ji/y-shi-yan-shi/ooda/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OODA">OODA</span>
+            <span class="post-date" title="2022-07-21 11:32:54">2022/07/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 E投资记录 "
+           href="/2022/07/20/2-jin-rong/e-tou-zi-ji-lu/2022-nian-tou-zi-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2022年投资记录">2022年投资记录</span>
+            <span class="post-date" title="2022-07-20 14:48:25">2022/07/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 E投资记录 "
+           href="/2022/07/20/2-jin-rong/e-tou-zi-ji-lu/2021-nian-tou-zi-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2021年投资记录">2021年投资记录</span>
+            <span class="post-date" title="2022-07-20 14:47:52">2022/07/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2022/07/18/3-xiu-shen/d-gong-zuo/da-jin-rong-xing-ye/"
+           data-tag="Java,C++"
+           data-author="" >
+            <span class="post-title" title="大金融行业">大金融行业</span>
+            <span class="post-date" title="2022-07-18 23:17:05">2022/07/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 D软件开发 "
+           href="/2022/07/17/1-ji-suan-ji/d-ruan-jian-kai-fa/da-xue-zui-hou-yi-gong-li/"
+           data-tag="WAMP"
+           data-author="" >
+            <span class="post-title" title="大学最后一公里">大学最后一公里</span>
+            <span class="post-date" title="2022-07-17 16:02:41">2022/07/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/07/15/3-xiu-shen/c-sheng-huo-zhi-shi/index/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="index">index</span>
+            <span class="post-date" title="2022-07-15 19:10:05">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/07/15/3-xiu-shen/c-sheng-huo-zhi-shi/indexs/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="indexs">indexs</span>
+            <span class="post-date" title="2022-07-15 15:51:06">2022/07/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2022/07/08/1-ji-suan-ji/e-ren-gong-zhi-neng/shen-du-xue-xi-li-hong-yi/"
+           data-tag="github,python,pytorch,PHP"
+           data-author="" >
+            <span class="post-title" title="深度学习李宏毅">深度学习李宏毅</span>
+            <span class="post-date" title="2022-07-08 19:57:13">2022/07/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2022/07/06/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/hexo-github-da-jian-jing-tai-bo-ke/"
+           data-tag="Java,github,C++,python,pytorch,WAMP,PHP"
+           data-author="" >
+            <span class="post-title" title="hexo+github搭建静态博客">hexo+github搭建静态博客</span>
+            <span class="post-date" title="2022-07-06 10:09:35">2022/07/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2022/07/01/3-xiu-shen/e-chuang-ye/mi-xue-bing-cheng-diao-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="蜜雪冰城调研">蜜雪冰城调研</span>
+            <span class="post-date" title="2022-07-01 00:27:36">2022/07/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/06/27/3-xiu-shen/c-sheng-huo-zhi-shi/tu-shu-guan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="图书馆">图书馆</span>
+            <span class="post-date" title="2022-06-27 17:19:13">2022/06/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/06/23/3-xiu-shen/c-sheng-huo-zhi-shi/bei-you-2022-zhao-sheng-xuan-chuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="北邮2022招生宣传">北邮2022招生宣传</span>
+            <span class="post-date" title="2022-06-23 17:13:50">2022/06/23</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 J计算机理论与数学 "
+           href="/2022/06/22/1-ji-suan-ji/j-ji-suan-ji-li-lun-yu-shu-xue/nao-ren-zhi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="脑认知">脑认知</span>
+            <span class="post-date" title="2022-06-22 00:23:58">2022/06/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2022/06/17/1-ji-suan-ji/z-qi-ta-ji-suan-ji/eeg-shi-yan/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="EEG实验">EEG实验</span>
+            <span class="post-date" title="2022-06-17 15:57:34">2022/06/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 F心理学 "
+           href="/2022/06/08/5-xue-ke/f-xin-li-xue/xin-li-xue-gai-nian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="心理学概念">心理学概念</span>
+            <span class="post-date" title="2022-06-08 00:33:28">2022/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2022/06/08/3-xiu-shen/a-zi-xiu/wu-ri-san-sheng-wu-shen-zhuang-tai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="吾日三省吾身-状态">吾日三省吾身-状态</span>
+            <span class="post-date" title="2022-06-08 00:01:16">2022/06/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/06/06/3-xiu-shen/c-sheng-huo-zhi-shi/ge-ren-du-ju-zhi-nan/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="个人独居指南">个人独居指南</span>
+            <span class="post-date" title="2022-06-06 10:34:31">2022/06/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2022/05/24/3-xiu-shen/a-zi-xiu/nan-de/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="男德">男德</span>
+            <span class="post-date" title="2022-05-24 22:34:49">2022/05/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2022/05/21/4-yun-dong/a-zu-qiu/cai-pan-gui-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="裁判规则">裁判规则</span>
+            <span class="post-date" title="2022-05-21 09:21:11">2022/05/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 G影评 "
+           href="/2022/05/10/5-xue-ke/g-ying-ping/er-shi-wu-er-shi-yi-dai-2022-05-10/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="二十五二十一(待)">二十五二十一(待)</span>
+            <span class="post-date" title="2022-05-10 00:00:00">2022/05/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2022/04/22/1-ji-suan-ji/y-shi-yan-shi/mo-zi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="墨子">墨子</span>
+            <span class="post-date" title="2022-04-22 21:37:54">2022/04/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/04/11/3-xiu-shen/c-sheng-huo-zhi-shi/liu-xue-yi-min/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="留学移民">留学移民</span>
+            <span class="post-date" title="2022-04-11 12:14:10">2022/04/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2022/04/06/3-xiu-shen/b-sheng-huo-ji-neng/kou-qin-xue-xi-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="口琴学习记录">口琴学习记录</span>
+            <span class="post-date" title="2022-04-06 19:58:36">2022/04/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 J计算机理论与数学 "
+           href="/2022/03/13/1-ji-suan-ji/j-ji-suan-ji-li-lun-yu-shu-xue/yun-ji-suan-an-quan/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="云计算安全">云计算安全</span>
+            <span class="post-date" title="2022-03-13 01:31:07">2022/03/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/03/12/3-xiu-shen/c-sheng-huo-zhi-shi/bei-jing-pi-fu-yi-yuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="北京皮肤医院">北京皮肤医院</span>
+            <span class="post-date" title="2022-03-12 10:51:09">2022/03/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2022/03/10/3-xiu-shen/e-chuang-ye/zhu-xiao-gong-si-liu-cheng/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="注销公司流程">注销公司流程</span>
+            <span class="post-date" title="2022-03-10 08:34:44">2022/03/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 D软件开发 "
+           href="/2022/02/28/1-ji-suan-ji/d-ruan-jian-kai-fa/an-zhuo-kai-fa/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安卓开发">安卓开发</span>
+            <span class="post-date" title="2022-02-28 14:31:46">2022/02/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/02/24/2-jin-rong/a-jin-rong-zhi-shi/ji-jin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基金">基金</span>
+            <span class="post-date" title="2022-02-24 11:00:05">2022/02/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/02/24/3-xiu-shen/c-sheng-huo-zhi-shi/shan-zhong-yi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="陕中医">陕中医</span>
+            <span class="post-date" title="2022-02-24 00:07:37">2022/02/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/02/11/2-jin-rong/a-jin-rong-zhi-shi/hong-guan-liang-hua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="宏观量化">宏观量化</span>
+            <span class="post-date" title="2022-02-11 01:11:46">2022/02/11</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2022/02/08/3-xiu-shen/b-sheng-huo-ji-neng/ge-ci/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="歌词">歌词</span>
+            <span class="post-date" title="2022-02-08 21:18:46">2022/02/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2022/02/06/3-xiu-shen/b-sheng-huo-ji-neng/ru-he-shi-yong-liu-lan-qi-cha-jian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="如何使用浏览器插件">如何使用浏览器插件</span>
+            <span class="post-date" title="2022-02-06 13:03:56">2022/02/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2022/02/05/1-ji-suan-ji/y-shi-yan-shi/shu-zi-luan-sheng/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字孪生">数字孪生</span>
+            <span class="post-date" title="2022-02-05 10:47:14">2022/02/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/01/27/2-jin-rong/a-jin-rong-zhi-shi/qi-ye-wei-guan-jing-ji-zhi-biao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业微观经济指标">企业微观经济指标</span>
+            <span class="post-date" title="2022-01-27 23:11:24">2022/01/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2022/01/21/3-xiu-shen/b-sheng-huo-ji-neng/zhuang-xiu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="装修">装修</span>
+            <span class="post-date" title="2022-01-21 18:51:33">2022/01/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2022/01/13/3-xiu-shen/f-qi-si-miao-xiang/guo-ren-quan-qiu-da-jiang-tang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="国任全球大讲堂">国任全球大讲堂</span>
+            <span class="post-date" title="2022-01-13 23:09:16">2022/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2022/01/13/3-xiu-shen/c-sheng-huo-zhi-shi/lu-you/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="旅游">旅游</span>
+            <span class="post-date" title="2022-01-13 20:54:01">2022/01/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 D软件开发 "
+           href="/2022/01/12/1-ji-suan-ji/d-ruan-jian-kai-fa/yu-yin-xiang-mu-ji-lu/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="语音项目记录">语音项目记录</span>
+            <span class="post-date" title="2022-01-12 14:23:32">2022/01/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2022/01/09/1-ji-suan-ji/y-shi-yan-shi/b4talk-dong-tai-lian-jie-ku/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="b4talk动态链接库">b4talk动态链接库</span>
+            <span class="post-date" title="2022-01-09 15:26:31">2022/01/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 B社会科学 "
+           href="/2022/01/08/5-xue-ke/b-she-hui-ke-xue/pin-qiong-de-ben-zhi-2022-01-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="贫穷的本质">贫穷的本质</span>
+            <span class="post-date" title="2022-01-08 00:00:00">2022/01/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/01/06/2-jin-rong/a-jin-rong-zhi-shi/zheng-fu-yu-suan-xu-yao-guan-zhu-de-shu-ju/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="政府预算需要关注的数据">政府预算需要关注的数据</span>
+            <span class="post-date" title="2022-01-06 11:47:23">2022/01/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/01/05/2-jin-rong/a-jin-rong-zhi-shi/jing-ji-jue-ce-he-hui-yi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="经济决策和会议">经济决策和会议</span>
+            <span class="post-date" title="2022-01-05 21:22:01">2022/01/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2022/01/05/a-ren-sheng-zhi-dao/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="阿人生指导">阿人生指导</span>
+            <span class="post-date" title="2022-01-05 00:59:40">2022/01/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2022/01/01/3-xiu-shen/b-sheng-huo-ji-neng/gan-xing-qu-zheng-shu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="感兴趣证书">感兴趣证书</span>
+            <span class="post-date" title="2022-01-01 17:26:31">2022/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2022/01/01/2-jin-rong/a-jin-rong-zhi-shi/zhong-guo-shi-zheng-fu-yu-suan-de-bei-xi-zhi-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中国式政府预算的悲喜之路">中国式政府预算的悲喜之路</span>
+            <span class="post-date" title="2022-01-01 15:28:58">2022/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/12/28/2-jin-rong/a-jin-rong-zhi-shi/fang-di-chan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="房地产">房地产</span>
+            <span class="post-date" title="2021-12-28 15:42:43">2021/12/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2021/12/20/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/leetcode-shua-ti-zong-jie/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Leetcode刷题总结">Leetcode刷题总结</span>
+            <span class="post-date" title="2021-12-20 22:28:55">2021/12/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2021/12/13/1-ji-suan-ji/y-shi-yan-shi/sheng-li-yin-qing-shi-yong-wen-dang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="生理引擎使用文档">生理引擎使用文档</span>
+            <span class="post-date" title="2021-12-13 17:10:29">2021/12/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2021/12/13/1-ji-suan-ji/y-shi-yan-shi/sheng-li-yin-qing-an-zhuang-pei-zhi-wen-dang/"
+           data-tag="C++,python"
+           data-author="" >
+            <span class="post-title" title="生理引擎安装配置文档">生理引擎安装配置文档</span>
+            <span class="post-date" title="2021-12-13 16:41:41">2021/12/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/12/08/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/an-zhuang-windows7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安装windows7">安装windows7</span>
+            <span class="post-date" title="2021-12-08 20:52:36">2021/12/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2021/12/07/3-xiu-shen/b-sheng-huo-ji-neng/how-to-give-a-good-presentation/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="How to give a good presentation">How to give a good presentation</span>
+            <span class="post-date" title="2021-12-07 17:46:13">2021/12/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/12/06/2-jin-rong/a-jin-rong-zhi-shi/kk-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="kk总结">kk总结</span>
+            <span class="post-date" title="2021-12-06 00:11:57">2021/12/06</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/12/03/bao-ji-kuang-jia-jie-shao-ji-shi-yong/"
+           data-tag="Java,github,C++,python,PHP"
+           data-author="" >
+            <span class="post-title" title="包及框架介绍及使用">包及框架介绍及使用</span>
+            <span class="post-date" title="2021-12-03 11:51:33">2021/12/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2021/11/29/1-ji-suan-ji/e-ren-gong-zhi-neng/gao-ji-ji-qi-xue-xi-ke-cheng-zuo-ye-1-he-2/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="高级机器学习课程作业1和2">高级机器学习课程作业1和2</span>
+            <span class="post-date" title="2021-11-29 10:31:43">2021/11/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/11/27/3-xiu-shen/c-sheng-huo-zhi-shi/she-hui-bao-xian-yang-lao-bao-xian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会保险养老保险">社会保险养老保险</span>
+            <span class="post-date" title="2021-11-27 20:28:50">2021/11/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2021/11/26/3-xiu-shen/a-zi-xiu/xin-xi-su-yang/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="信息素养">信息素养</span>
+            <span class="post-date" title="2021-11-26 18:46:10">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2021/11/26/5-xue-ke/d-zheng-zhi/shi-jiu-da-dang-zhang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="十九大党章">十九大党章</span>
+            <span class="post-date" title="2021-11-26 16:43:08">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2021/11/26/5-xue-ke/d-zheng-zhi/ji-ji-fen-zi-dang-ke-xue-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="积极分子党课学习">积极分子党课学习</span>
+            <span class="post-date" title="2021-11-26 14:46:07">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/11/26/2-jin-rong/d-tou-zi-li-nian/bu-yao-ba-tou-zi-jiao-liu-dang-zuo-tou-zi-xue-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不要把投资交流当作投资学习">不要把投资交流当作投资学习</span>
+            <span class="post-date" title="2021-11-26 11:41:11">2021/11/26</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2021/11/25/3-xiu-shen/f-qi-si-miao-xiang/guan-yu-yi-shi-xing-tai-he-wen-hua-guan-xi-de-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于意识形态和文化关系的思考">关于意识形态和文化关系的思考</span>
+            <span class="post-date" title="2021-11-25 23:32:18">2021/11/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/11/22/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/python-an-zhuang-bao-mu-lu/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="python安装包目录">python安装包目录</span>
+            <span class="post-date" title="2021-11-22 11:12:33">2021/11/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2021/11/20/5-xue-ke/d-zheng-zhi/gong-chan-dang-xuan-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="共产党宣言">共产党宣言</span>
+            <span class="post-date" title="2021-11-20 23:32:32">2021/11/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2021/11/18/3-xiu-shen/a-zi-xiu/zhi-shi-guan-li/"
+           data-tag="Java,github,C++,python,PHP"
+           data-author="" >
+            <span class="post-title" title="知识管理">知识管理</span>
+            <span class="post-date" title="2021-11-18 18:44:23">2021/11/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 C "
+           href="/2021/11/12/1-ji-suan-ji/a-bian-cheng-yu-yan/c/cmake/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="Cmake">Cmake</span>
+            <span class="post-date" title="2021-11-12 21:01:28">2021/11/12</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/11/03/3-xiu-shen/e-chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛总结">企业决策模拟比赛总结</span>
+            <span class="post-date" title="2021-11-03 23:50:04">2021/11/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/25/3-xiu-shen/e-chuang-ye/jue-ce-mo-ni/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="决策模拟">决策模拟</span>
+            <span class="post-date" title="2021-10-25 23:01:41">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 C行业个股 "
+           href="/2021/10/25/2-jin-rong/c-xing-ye-ge-gu/zhong-gong-jiao-yu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中公教育">中公教育</span>
+            <span class="post-date" title="2021-10-25 20:12:32">2021/10/25</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2021/10/24/4-yun-dong/a-zu-qiu/ti-qiu-jing-yan-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="踢球经验总结">踢球经验总结</span>
+            <span class="post-date" title="2021-10-24 23:41:05">2021/10/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/22/3-xiu-shen/e-chuang-ye/qi-ye-jue-ce-mo-ni-bi-sai-gui-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="企业决策模拟比赛规则">企业决策模拟比赛规则</span>
+            <span class="post-date" title="2021-10-22 23:07:51">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/10/22/2-jin-rong/a-jin-rong-zhi-shi/gu-xi-gu-li-yu-chu-xi-chu-quan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="股息股利与除息除权">股息股利与除息除权</span>
+            <span class="post-date" title="2021-10-22 15:13:04">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/10/22/2-jin-rong/a-jin-rong-zhi-shi/ya-zhou-98-nian-jin-rong-wei-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="亚洲98年金融危机">亚洲98年金融危机</span>
+            <span class="post-date" title="2021-10-22 01:15:26">2021/10/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2021/10/18/4-yun-dong/a-zu-qiu/yue-wei-pan-fa/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="越位判罚">越位判罚</span>
+            <span class="post-date" title="2021-10-18 00:01:37">2021/10/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2021/10/17/4-yun-dong/a-zu-qiu/zu-qiu-cai-pan-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="足球裁判记录">足球裁判记录</span>
+            <span class="post-date" title="2021-10-17 20:50:04">2021/10/17</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2021/10/16/5-xue-ke/d-zheng-zhi/dang-ke-dang-de-guang-hui-li-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="党课党的光辉历史">党课党的光辉历史</span>
+            <span class="post-date" title="2021-10-16 20:25:18">2021/10/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/10/13/2-jin-rong/d-tou-zi-li-nian/tou-zi-sui-bi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资随笔">投资随笔</span>
+            <span class="post-date" title="2021-10-13 16:58:49">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/10/13/2-jin-rong/d-tou-zi-li-nian/jie-zhi-tou-zi-vs-ji-zhu-tou-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="价值投资vs技术投机">价值投资vs技术投机</span>
+            <span class="post-date" title="2021-10-13 15:02:32">2021/10/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 C行业个股 "
+           href="/2021/10/09/2-jin-rong/c-xing-ye-ge-gu/zhong-guo-ping-an/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="中国平安">中国平安</span>
+            <span class="post-date" title="2021-10-09 15:46:55">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/10/09/2-jin-rong/d-tou-zi-li-nian/ding-tou-ce-lue-si-kao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定投策略思考">定投策略思考</span>
+            <span class="post-date" title="2021-10-09 15:32:41">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/10/09/2-jin-rong/d-tou-zi-li-nian/tou-zi-li-nian-shi-tiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="投资理念十条">投资理念十条</span>
+            <span class="post-date" title="2021-10-09 14:47:12">2021/10/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 "
+           href="/2021/10/07/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/typora-shi-shi-me/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="Typora 是什么？">Typora 是什么？</span>
+            <span class="post-date" title="2021-10-07 23:15:08">2021/10/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 JAVA "
+           href="/2021/10/04/1-ji-suan-ji/a-bian-cheng-yu-yan/java/java-xue-xi-lu-xian/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="Java学习路线">Java学习路线</span>
+            <span class="post-date" title="2021-10-04 19:43:51">2021/10/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2021/10/03/3-xiu-shen/b-sheng-huo-ji-neng/shou-ji-xuan-gou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机选购">手机选购</span>
+            <span class="post-date" title="2021-10-03 14:34:46">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/03/3-xiu-shen/c-sheng-huo-zhi-shi/shou-ji-zhu-ce-zhang-hao-guan-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="手机注册账号管理">手机注册账号管理</span>
+            <span class="post-date" title="2021-10-03 00:15:58">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/03/3-xiu-shen/c-sheng-huo-zhi-shi/tuo-hang-ji-hua-mian-shi-zong-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="拓航计划面试总结">拓航计划面试总结</span>
+            <span class="post-date" title="2021-10-03 00:14:25">2021/10/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/02/3-xiu-shen/c-sheng-huo-zhi-shi/ben-ke-bi-ye-lun-wen-jin-zhan/"
+           data-tag="Java,github,python,pytorch"
+           data-author="" >
+            <span class="post-title" title="本科毕业论文进展">本科毕业论文进展</span>
+            <span class="post-date" title="2021-10-02 19:06:41">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/02/3-xiu-shen/c-sheng-huo-zhi-shi/bi-ye-lun-wen-si-lu-he-can-kao-zi-liao/"
+           data-tag="github,PHP"
+           data-author="" >
+            <span class="post-title" title="毕业论文思路和参考资料">毕业论文思路和参考资料</span>
+            <span class="post-date" title="2021-10-02 19:04:15">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2021/10/02/3-xiu-shen/d-gong-zuo/ding-xiang-xuan-diao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="定向选调">定向选调</span>
+            <span class="post-date" title="2021-10-02 19:01:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2021/10/02/3-xiu-shen/d-gong-zuo/she-bao-he-wu-xian-yi-jin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社保和五险一金">社保和五险一金</span>
+            <span class="post-date" title="2021-10-02 18:59:33">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 D工作 "
+           href="/2021/10/02/3-xiu-shen/d-gong-zuo/ji-ti-hu-kou-xiang-guan-shi-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="集体户口相关事项">集体户口相关事项</span>
+            <span class="post-date" title="2021-10-02 18:58:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/neo4j-tu-cha-xun-yu-ju/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="neo4j图查询语句">neo4j图查询语句</span>
+            <span class="post-date" title="2021-10-02 18:52:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 A自修 "
+           href="/2021/10/02/3-xiu-shen/a-zi-xiu/yan-jiu-sheng-jie-duan-zhun-bei/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="研究生阶段准备">研究生阶段准备</span>
+            <span class="post-date" title="2021-10-02 18:51:31">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/linux-ling-san-zhi-shi-dian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="linux零散知识点">linux零散知识点</span>
+            <span class="post-date" title="2021-10-02 18:32:34">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/an-zhuang-reactnative/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="安装ReactNative">安装ReactNative</span>
+            <span class="post-date" title="2021-10-02 18:01:21">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ci-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理词法分析程序文档">编译原理词法分析程序文档</span>
+            <span class="post-date" title="2021-10-02 18:00:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-ebnf-to-bnf/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编译原理EBNF To BNF">编译原理EBNF To BNF</span>
+            <span class="post-date" title="2021-10-02 17:59:24">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/bian-yi-yuan-li-yu-fa-fen-xi-cheng-xu-wen-dang/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="编译原理语法分析程序文档">编译原理语法分析程序文档</span>
+            <span class="post-date" title="2021-10-02 17:58:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-she-zhi-xu-ni-zhu-ji-hou-bu-neng-fang-wen-wen-ti/"
+           data-tag="WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP设置虚拟主机后不能访问问题">WAMP设置虚拟主机后不能访问问题</span>
+            <span class="post-date" title="2021-10-02 17:53:26">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-yuan-cheng-zhu-ji-she-zhi-xu-ni-zhu-ji/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="WAMP远程主机设置虚拟主机">WAMP远程主机设置虚拟主机</span>
+            <span class="post-date" title="2021-10-02 17:45:44">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 I计算机图形学 "
+           href="/2021/10/02/1-ji-suan-ji/i-ji-suan-ji-tu-xing-xue/shu-zi-tu-xiang-chu-li-ke-cheng-bi-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字图像处理课程笔记">数字图像处理课程笔记</span>
+            <span class="post-date" title="2021-10-02 17:02:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 I计算机图形学 "
+           href="/2021/10/02/1-ji-suan-ji/i-ji-suan-ji-tu-xing-xue/ping-mu-huan-chong-qu-li-jie/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="屏幕缓冲区理解">屏幕缓冲区理解</span>
+            <span class="post-date" title="2021-10-02 17:00:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 F计算机网络 "
+           href="/2021/10/02/1-ji-suan-ji/f-ji-suan-ji-wang-luo/jian-yi-liao-tian-ruan-jian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="简易聊天软件">简易聊天软件</span>
+            <span class="post-date" title="2021-10-02 16:19:29">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 F计算机网络 "
+           href="/2021/10/02/1-ji-suan-ji/f-ji-suan-ji-wang-luo/ji-suan-ji-wang-luo-ke-cheng-zhi-shi-tu-pu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络课程知识图谱">计算机网络课程知识图谱</span>
+            <span class="post-date" title="2021-10-02 16:18:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-tong-yi-ge-fu-wu-qi-pei-zhi-duo-ge-wang-zhan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="WAMP同一个服务器配置多个网站">WAMP同一个服务器配置多个网站</span>
+            <span class="post-date" title="2021-10-02 16:11:44">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/teng-xun-yun-fu-wu-qi-bao-ta-wordpress-an-zhuang-ge-ren-bo-ke/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="腾讯云服务器+宝塔+wordpress安装个人博客">腾讯云服务器+宝塔+wordpress安装个人博客</span>
+            <span class="post-date" title="2021-10-02 16:10:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2021/10/02/1-ji-suan-ji/e-ren-gong-zhi-neng/san-chong-sou-suo-suan-fa-jie-8-shu-ma-wen-ti/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="三种搜索算法解8数码问题">三种搜索算法解8数码问题</span>
+            <span class="post-date" title="2021-10-02 14:56:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2021/10/02/1-ji-suan-ji/e-ren-gong-zhi-neng/shen-jing-wang-luo-bp-suan-fa-xi-tong-kai-fa-yu-yan-zheng/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="神经网络 BP算法系统开发与验证">神经网络 BP算法系统开发与验证</span>
+            <span class="post-date" title="2021-10-02 14:44:53">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-guan-yu-lian-jie-shu-ju-ku-shi-bai-de-ke-neng-xing/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="WAMP关于连接数据库失败的可能性">WAMP关于连接数据库失败的可能性</span>
+            <span class="post-date" title="2021-10-02 14:41:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 Python "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/python/python-xue-xi-lu-xian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="python学习路线">python学习路线</span>
+            <span class="post-date" title="2021-10-02 14:36:40">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 G计算机硬件 "
+           href="/2021/10/02/1-ji-suan-ji/g-ji-suan-ji-ying-jian/shu-mei-pai-yan-shi-dian-ying/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="树莓派延时电影">树莓派延时电影</span>
+            <span class="post-date" title="2021-10-02 14:26:28">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 A编程语言 其它 "
+           href="/2021/10/02/1-ji-suan-ji/a-bian-cheng-yu-yan/qi-ta/shell-xue-xi-bi-ji/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Shell学习笔记">Shell学习笔记</span>
+            <span class="post-date" title="2021-10-02 14:21:05">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/idea-an-zhuang-ji-shi-yong/"
+           data-tag="Java"
+           data-author="" >
+            <span class="post-title" title="IDEA安装及使用">IDEA安装及使用</span>
+            <span class="post-date" title="2021-10-02 13:16:19">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-da-jian-ti-shi/"
+           data-tag="WAMP,PHP"
+           data-author="" >
+            <span class="post-title" title="WAMP搭建提示">WAMP搭建提示</span>
+            <span class="post-date" title="2021-10-02 13:00:30">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 WAMP "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/wamp/wamp-pei-zhi-yu-ming/"
+           data-tag="WAMP"
+           data-author="" >
+            <span class="post-title" title="WAMP配置域名">WAMP配置域名</span>
+            <span class="post-date" title="2021-10-02 12:04:50">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/an-zhuang-mysql/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安装mysql">安装mysql</span>
+            <span class="post-date" title="2021-10-02 11:56:10">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/sublime-an-zhuang-ji-shi-yong/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Sublime安装及使用">Sublime安装及使用</span>
+            <span class="post-date" title="2021-10-02 11:54:55">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2021/10/02/1-ji-suan-ji/z-qi-ta-ji-suan-ji/ji-lu-yi-ci-guan-yu-bo-cai-pa-chong-jiao-yu-men-hu-wang-zhan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="记录一次关于菠菜爬虫教育门户网站">记录一次关于菠菜爬虫教育门户网站</span>
+            <span class="post-date" title="2021-10-02 11:54:03">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/10/02/2-jin-rong/a-jin-rong-zhi-shi/guan-yu-wai-hui-he-jing-wai-mai-fang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于外汇和境外买房">关于外汇和境外买房</span>
+            <span class="post-date" title="2021-10-02 11:44:45">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/10/02/2-jin-rong/a-jin-rong-zhi-shi/zhuan-gu-jie-zhi-shi-shi-me-yi-si/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="转股价值是什么意思">转股价值是什么意思</span>
+            <span class="post-date" title="2021-10-02 11:40:12">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/10/02/2-jin-rong/a-jin-rong-zhi-shi/chang-wai-ji-jin-he-chang-nei-ji-jin-shou-xu-fei-bi-jiao/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="场外基金和场内基金手续费比较">场外基金和场内基金手续费比较</span>
+            <span class="post-date" title="2021-10-02 11:35:56">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/02/3-xiu-shen/e-chuang-ye/shen-qing-qi-ye-zhang-hu-wei-xin-xiao-cheng-xu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="申请企业账户微信小程序">申请企业账户微信小程序</span>
+            <span class="post-date" title="2021-10-02 11:33:42">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/02/3-xiu-shen/e-chuang-ye/wei-xin-zhi-fu-ping-tai-de-kai-tong/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="微信支付平台的开通">微信支付平台的开通</span>
+            <span class="post-date" title="2021-10-02 11:31:00">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/02/3-xiu-shen/e-chuang-ye/wei-xin-gong-zhong-ping-tai-ren-zheng-wei-qi-ye/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="微信公众平台认证为企业">微信公众平台认证为企业</span>
+            <span class="post-date" title="2021-10-02 11:26:01">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/02/3-xiu-shen/e-chuang-ye/ge-ren-cheng-xu-qian-yi-wei-qi-ye/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="个人程序迁移为企业">个人程序迁移为企业</span>
+            <span class="post-date" title="2021-10-02 11:24:08">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/liang-tai-linux-zhu-ji-lian-jie-mysql-yuan-cheng-shu-ju-ku-shi-bai-de-jing-yan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="两台Linux主机连接mysql远程数据库失败的经验">两台Linux主机连接mysql远程数据库失败的经验</span>
+            <span class="post-date" title="2021-10-02 00:38:58">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 D软件开发 "
+           href="/2021/10/02/1-ji-suan-ji/d-ruan-jian-kai-fa/xiao-cheng-xu-xue-xi-zhi-nan/"
+           data-tag="Java,github,WAMP,PHP"
+           data-author="" >
+            <span class="post-title" title="小程序学习指南">小程序学习指南</span>
+            <span class="post-date" title="2021-10-02 00:33:40">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pytorch-yu-dao-de-wen-ti/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安装Pytorch遇到的问题">安装Pytorch遇到的问题</span>
+            <span class="post-date" title="2021-10-02 00:32:27">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/python-pei-zhi-yi-ge-guan-yu-pil-de-wen-ti/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Python配置一个关于PIL的问题">Python配置一个关于PIL的问题</span>
+            <span class="post-date" title="2021-10-02 00:28:38">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/02/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/vscode-pei-zhi-kuai-jie-jian-yun-xing-python-wen-jian/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="VSCODE配置快捷键运行Python文件">VSCODE配置快捷键运行Python文件</span>
+            <span class="post-date" title="2021-10-02 00:27:49">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2021/10/02/1-ji-suan-ji/z-qi-ta-ji-suan-ji/pei-zhi-github12306-xiang-mu/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="配置github12306项目">配置github12306项目</span>
+            <span class="post-date" title="2021-10-02 00:18:43">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2021/10/02/1-ji-suan-ji/z-qi-ta-ji-suan-ji/bian-ma-fang-shi-asciiunicodeutf-8utf-16-bian-xi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="编码方式-ASCIIUnicodeUTF-8UTF-16辨析">编码方式-ASCIIUnicodeUTF-8UTF-16辨析</span>
+            <span class="post-date" title="2021-10-02 00:12:17">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2021/10/02/1-ji-suan-ji/z-qi-ta-ji-suan-ji/pa-chong-pa-dao-de-shi-shi-me/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫爬到的&amp;#是什么">爬虫爬到的&amp;#是什么</span>
+            <span class="post-date" title="2021-10-02 00:10:04">2021/10/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao-er/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号二">一台电脑配置两个github账号二</span>
+            <span class="post-date" title="2021-10-01 23:57:10">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/yi-tai-dian-nao-pei-zhi-liang-ge-github-zhang-hao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="一台电脑配置两个github账号">一台电脑配置两个github账号</span>
+            <span class="post-date" title="2021-10-01 23:53:37">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-weibo-daily-hotkey/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="配置github项目——weibo_daily_hotkey">配置github项目——weibo_daily_hotkey</span>
+            <span class="post-date" title="2021-10-01 23:50:36">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 Vs2019 "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vs2019/vs2019-pei-zhi-lian-jie-shu-ju-ku/"
+           data-tag="C++,WAMP"
+           data-author="" >
+            <span class="post-title" title="vs2019配置连接数据库">vs2019配置连接数据库</span>
+            <span class="post-date" title="2021-10-01 23:47:48">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-llvm/"
+           data-tag="github,C++"
+           data-author="" >
+            <span class="post-title" title="安装配置llvm">安装配置llvm</span>
+            <span class="post-date" title="2021-10-01 23:46:27">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/an-zhuang-pei-zhi-flex-bison-deng/"
+           data-tag="C++"
+           data-author="" >
+            <span class="post-title" title="安装配置flex+bison等">安装配置flex+bison等</span>
+            <span class="post-date" title="2021-10-01 23:43:46">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 C算法与数据结构 "
+           href="/2021/10/01/1-ji-suan-ji/c-suan-fa-yu-shu-ju-jie-gou/apriori-suan-fa/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Apriori算法">Apriori算法</span>
+            <span class="post-date" title="2021-10-01 23:41:14">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-jeesite-yun-xing-huan-jing/"
+           data-tag="Java,github"
+           data-author="" >
+            <span class="post-title" title="配置Jeesite运行环境">配置Jeesite运行环境</span>
+            <span class="post-date" title="2021-10-01 23:32:06">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/pei-zhi-github-xiang-mu-ccks-kg/"
+           data-tag="python,pytorch"
+           data-author="" >
+            <span class="post-title" title="配置github项目ccks_kg">配置github项目ccks_kg</span>
+            <span class="post-date" title="2021-10-01 23:28:59">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/centos7-an-zhuang-bu-tong-ban-ben-de-python-bing-she-zhi-mo-ren-python/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="centos7安装不同版本的python并设置默认python">centos7安装不同版本的python并设置默认python</span>
+            <span class="post-date" title="2021-10-01 23:27:20">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/an-zhuang-wordpress-ming-ling-xing-gong-ju-wp-cli-lai-guan-li-wordpress/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="安装wordpress命令行工具WP-CLI来管理wordpress">安装wordpress命令行工具WP-CLI来管理wordpress</span>
+            <span class="post-date" title="2021-10-01 23:25:41">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-bu-shu-jian-kong-gu-shi-jiao-ben/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="在云服务器上部署监控股市脚本">在云服务器上部署监控股市脚本</span>
+            <span class="post-date" title="2021-10-01 23:23:07">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-tensorflow/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="安装tensorflow">安装tensorflow</span>
+            <span class="post-date" title="2021-10-01 23:19:16">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/zai-yun-fu-wu-qi-shang-gua-qi-jiao-ben-zhi-xing-pa-qu-shu-ju-ren-wu-xu-yao-zhu-yi-de-dian/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《在云服务器上挂起脚本执行爬取数据任务需要注意的点》">《在云服务器上挂起脚本执行爬取数据任务需要注意的点》</span>
+            <span class="post-date" title="2021-10-01 23:16:51">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 VsCode "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/vscode/an-zhuang-pei-zhi-senta/"
+           data-tag="github,python"
+           data-author="" >
+            <span class="post-title" title="安装配置senta">安装配置senta</span>
+            <span class="post-date" title="2021-10-01 23:11:15">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 linux "
+           href="/2021/10/01/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/linux/zai-zi-ji-de-fu-wu-qi-shang-an-zhuang-git-fu-wu-qi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="在自己的服务器上安装git服务器">在自己的服务器上安装git服务器</span>
+            <span class="post-date" title="2021-10-01 23:10:24">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2021/10/01/3-xiu-shen/f-qi-si-miao-xiang/xue-xi-gan-zhi-ji-hou-de-xiang-fa/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="学习感知机后的想法">学习感知机后的想法</span>
+            <span class="post-date" title="2021-10-01 23:01:26">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2021/10/01/3-xiu-shen/b-sheng-huo-ji-neng/kuan-dai-jie-ru/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="宽带接入">宽带接入</span>
+            <span class="post-date" title="2021-10-01 22:58:33">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/01/3-xiu-shen/c-sheng-huo-zhi-shi/gao-shu-shu-xue-zi-liao-de-xuan-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="高数数学资料的选择">高数数学资料的选择</span>
+            <span class="post-date" title="2021-10-01 22:51:16">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2021/10/01/3-xiu-shen/f-qi-si-miao-xiang/ju-zhen-yu-shi-ji-sheng-huo-xiang-lian-xi/"
+           data-tag="PHP"
+           data-author="" >
+            <span class="post-title" title="矩阵与实际生活相联系">矩阵与实际生活相联系</span>
+            <span class="post-date" title="2021-10-01 22:48:21">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/10/01/3-xiu-shen/c-sheng-huo-zhi-shi/kao-yan-jing-yan-fen-xiang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="考研经验分享">考研经验分享</span>
+            <span class="post-date" title="2021-10-01 22:47:45">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/guo-jing-yi-nan-tai-yang-yi-xi-cun-shang-xiao-shuo-xun-li-qi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="国境以南，太阳以西——村上小说巡礼七">国境以南，太阳以西——村上小说巡礼七</span>
+            <span class="post-date" title="2021-10-01 22:45:00">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/nuo-wei-de-sen-lin-cun-shang-xiao-shuo-xun-li-wu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="挪威的森林——村上小说巡礼五">挪威的森林——村上小说巡礼五</span>
+            <span class="post-date" title="2021-10-01 22:44:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/wu-wu-wu-cun-shang-xiao-shuo-xun-li-liu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="舞舞舞——村上小说巡礼六">舞舞舞——村上小说巡礼六</span>
+            <span class="post-date" title="2021-10-01 22:44:39">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/shi-jie-jin-tou-he-leng-ku-xian-jing-cun-shang-xiao-shuo-xun-li-si/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="世界尽头和冷酷仙境——村上小说巡礼四">世界尽头和冷酷仙境——村上小说巡礼四</span>
+            <span class="post-date" title="2021-10-01 22:44:16">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/xun-yang-mou-xian-ji-cun-shang-xiao-shuo-xun-li-san/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="寻羊冒险记——村上小说巡礼三">寻羊冒险记——村上小说巡礼三</span>
+            <span class="post-date" title="2021-10-01 22:40:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 村上春树 "
+           href="/2021/10/01/5-xue-ke/a-wen-xue/cun-shang-chun-shu/1973-nian-de-dan-zi-qiu-cun-shang-xiao-shuo-xun-li-er/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1973年的弹子球——村上小说巡礼二">1973年的弹子球——村上小说巡礼二</span>
+            <span class="post-date" title="2021-10-01 22:39:55">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/01/3-xiu-shen/e-chuang-ye/kuai-di-dai-qu-xiang-mu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="快递代取项目">快递代取项目</span>
+            <span class="post-date" title="2021-10-01 22:25:44">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2021/10/01/3-xiu-shen/f-qi-si-miao-xiang/li-shang-an-ge-qu-dui-bi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="李上安歌曲对比">李上安歌曲对比</span>
+            <span class="post-date" title="2021-10-01 22:02:57">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/01/3-xiu-shen/e-chuang-ye/fu-wu-qi-yu-yu-ming-gou-mai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="服务器与域名购买">服务器与域名购买</span>
+            <span class="post-date" title="2021-10-01 21:42:58">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 E创业 "
+           href="/2021/10/01/3-xiu-shen/e-chuang-ye/chuang-ban-gong-si-liu-cheng/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="创办公司流程">创办公司流程</span>
+            <span class="post-date" title="2021-10-01 21:36:31">2021/10/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 E投资记录 "
+           href="/2021/09/30/2-jin-rong/e-tou-zi-ji-lu/2020-nian-tou-zi-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2020年投资记录">2020年投资记录</span>
+            <span class="post-date" title="2021-09-30 00:38:12">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 B生活技能 "
+           href="/2021/09/30/3-xiu-shen/b-sheng-huo-ji-neng/zheng-quan-cong-ye-zi-ge-kao-shi-ji-lu/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="证券从业资格考试记录">证券从业资格考试记录</span>
+            <span class="post-date" title="2021-09-30 00:34:31">2021/09/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/09/29/2-jin-rong/a-jin-rong-zhi-shi/jin-qian-guan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="金钱观">金钱观</span>
+            <span class="post-date" title="2021-09-29 00:49:05">2021/09/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 D投资理念 "
+           href="/2021/09/28/2-jin-rong/d-tou-zi-li-nian/wei-shi-me-bu-yao-jin-jian-gu-qun-he-gen-zhao-gu-piao-da-v-zou/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么不要进荐股群和跟着股票大V走？">为什么不要进荐股群和跟着股票大V走？</span>
+            <span class="post-date" title="2021-09-28 21:39:53">2021/09/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 D政治 "
+           href="/2021/09/21/5-xue-ke/d-zheng-zhi/xue-xi-gong-chan-zhu-yi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="学习共产主义">学习共产主义</span>
+            <span class="post-date" title="2021-09-21 15:23:58">2021/09/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 2金融 A金融知识 "
+           href="/2021/09/20/2-jin-rong/a-jin-rong-zhi-shi/fintech-jin-rong-ke-ji-de-chuang-xin-chuang-ye-yu-an-li/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="FinTech+金融科技的创新,创业与案例">FinTech+金融科技的创新,创业与案例</span>
+            <span class="post-date" title="2021-09-20 12:14:55">2021/09/20</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2021/09/18/4-yun-dong/a-zu-qiu/cai-pan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="裁判职责">裁判职责</span>
+            <span class="post-date" title="2021-09-18 23:55:14">2021/09/18</span>
+        </a>
+        
+        
+        <a  class="全部文章 4运动 A足球 "
+           href="/2021/09/16/4-yun-dong/a-zu-qiu/di-si-guan-yuan-zhi-ze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="第四官员职责">第四官员职责</span>
+            <span class="post-date" title="2021-09-16 00:04:38">2021/09/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Z其他计算机 "
+           href="/2021/09/14/1-ji-suan-ji/z-qi-ta-ji-suan-ji/ji-suan-ji-lun-wen-fa-biao/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="计算机论文发表">计算机论文发表</span>
+            <span class="post-date" title="2021-09-14 19:11:31">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/09/14/3-xiu-shen/c-sheng-huo-zhi-shi/wen-xue-su-cai/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="文学素材">文学素材</span>
+            <span class="post-date" title="2021-09-14 19:03:54">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/09/14/3-xiu-shen/c-sheng-huo-zhi-shi/xiao-hua/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="笑话">笑话</span>
+            <span class="post-date" title="2021-09-14 19:02:50">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 B社会科学 "
+           href="/2021/09/14/5-xue-ke/b-she-hui-ke-xue/xiang-tu-zhong-guo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="乡土中国">乡土中国</span>
+            <span class="post-date" title="2021-09-14 19:01:01">2021/09/14</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 B社会科学 "
+           href="/2021/09/13/5-xue-ke/b-she-hui-ke-xue/she-hui-xing-dong-wu-wei/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社会性动物(未)">社会性动物(未)</span>
+            <span class="post-date" title="2021-09-13 22:25:00">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2021/09/13/1-ji-suan-ji/y-shi-yan-shi/pjsua2-python-ben-di-fu-xian/"
+           data-tag="C++,python"
+           data-author="" >
+            <span class="post-title" title="pjsua2_python本地复现">pjsua2_python本地复现</span>
+            <span class="post-date" title="2021-09-13 22:20:53">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 "
+           href="/2021/09/13/ying-yong-ruan-jian-ji-kai-fa-huan-jing/"
+           data-tag="Java,github,C++,python,PHP"
+           data-author="" >
+            <span class="post-title" title="应用软件及开发环境">应用软件及开发环境</span>
+            <span class="post-date" title="2021-09-13 21:26:05">2021/09/13</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2021/09/07/1-ji-suan-ji/y-shi-yan-shi/biogears/"
+           data-tag="Java,github,C++,python"
+           data-author="" >
+            <span class="post-title" title="biogears">biogears</span>
+            <span class="post-date" title="2021-09-07 21:36:47">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 Y实验室 "
+           href="/2021/09/07/1-ji-suan-ji/y-shi-yan-shi/a-zu-hui-hui-bao/"
+           data-tag="Java,github,C++,python"
+           data-author="" >
+            <span class="post-title" title="阿组会汇报">阿组会汇报</span>
+            <span class="post-date" title="2021-09-07 21:28:12">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 G计算机硬件 "
+           href="/2021/09/07/1-ji-suan-ji/g-ji-suan-ji-ying-jian/dian-zi-she-bei-zhi-shi/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="电子设备知识">电子设备知识</span>
+            <span class="post-date" title="2021-09-07 20:54:21">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 B集成开发环境 windows "
+           href="/2021/09/07/1-ji-suan-ji/b-ji-cheng-kai-fa-huan-jing/windows/typora-picgo-pei-zhi-ben-di-bi-ji/"
+           data-tag="github"
+           data-author="" >
+            <span class="post-title" title="typora+picgo配置本地笔记">typora+picgo配置本地笔记</span>
+            <span class="post-date" title="2021-09-07 20:17:11">2021/09/07</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 C生活知识 "
+           href="/2021/04/15/3-xiu-shen/c-sheng-huo-zhi-shi/jing-wai-lu-you-xue-xi-ru-he-shi-yong-fu-kuan/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="境外旅游学习如何使用付款">境外旅游学习如何使用付款</span>
+            <span class="post-date" title="2021-04-15 15:06:10">2021/04/15</span>
+        </a>
+        
+        
+        <a  class="全部文章 1计算机 E人工智能 "
+           href="/2021/01/27/1-ji-suan-ji/e-ren-gong-zhi-neng/distributed-representations-of-words-and-phrases-and-their-compositionality/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Distributed Representations of Words and Phrases and their Compositionality">Distributed Representations of Words and Phrases and their Compositionality</span>
+            <span class="post-date" title="2021-01-27 19:38:27">2021/01/27</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2019/11/16/3-xiu-shen/f-qi-si-miao-xiang/zhu-guan-shi-jie-he-ke-guan-shi-jie-de-tao-lun-2019-11-16/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="主观世界和客观世界的讨论">主观世界和客观世界的讨论</span>
+            <span class="post-date" title="2019-11-16 00:00:00">2019/11/16</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 "
+           href="/2019/07/05/5-xue-ke/a-wen-xue/tai-si-2019-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="苔丝">苔丝</span>
+            <span class="post-date" title="2019-07-05 00:00:00">2019/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 G影评 "
+           href="/2019/07/05/5-xue-ke/g-ying-ping/tian-cai-qiang-shou-2019-07-05/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="天才枪手">天才枪手</span>
+            <span class="post-date" title="2019-07-05 00:00:00">2019/07/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2018/11/04/3-xiu-shen/f-qi-si-miao-xiang/lun-xue-xi-he-ying-shi-jiao-yu-2018-11-04/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="论学习和应试教育">论学习和应试教育</span>
+            <span class="post-date" title="2018-11-04 00:00:00">2018/11/04</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 "
+           href="/2018/09/08/5-xue-ke/a-wen-xue/xian-yi-ren-x-de-xian-shen-2018-09-08/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="嫌疑人X的献身">嫌疑人X的献身</span>
+            <span class="post-date" title="2018-09-08 00:00:00">2018/09/08</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 G影评 "
+           href="/2018/08/28/5-xue-ke/g-ying-ping/peng-ran-xin-dong-2018-08-28/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="怦然心动">怦然心动</span>
+            <span class="post-date" title="2018-08-28 00:00:00">2018/08/28</span>
+        </a>
+        
+        
+        <a  class="全部文章 5学科 A文学 "
+           href="/2018/08/19/5-xue-ke/a-wen-xue/liao-bu-qi-de-gai-ci-bi-2018-08-19/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="了不起的盖茨比">了不起的盖茨比</span>
+            <span class="post-date" title="2018-08-19 00:00:00">2018/08/19</span>
+        </a>
+        
+        
+        <a  class="全部文章 3修身 F奇思妙想 "
+           href="/2018/08/18/3-xiu-shen/f-qi-si-miao-xiang/nan-nu-sui-tan-2018-08-18/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="男女随谈">男女随谈</span>
+            <span class="post-date" title="2018-08-18 00:00:00">2018/08/18</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-1计算机/B集成开发环境/Git安装及使用" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Git安装及使用</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="1计算机">1计算机</a> > 
+            
+            <a  data-rel="1计算机&lt;---&gt;B集成开发环境">B集成开发环境</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">github</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2022-11-22 15:21:43'>2022-11-12 20:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:9.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6"><span class="toc-text">学习文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%B9%A0%E6%83%AF"><span class="toc-text">使用习惯</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93-%E6%83%B3%E5%90%8C%E6%AD%A5%E5%88%B0github"><span class="toc-text">本地新建仓库,想同步到github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%AB%E4%BA%BA%E7%9A%84%E4%BB%93%E5%BA%93%E4%BB%A3%E7%A0%81"><span class="toc-text">查看别人的仓库代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%88%AB%E4%BA%BA%E7%9A%84%E5%A5%BD%E4%BB%A3%E7%A0%81%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9"><span class="toc-text">对别人的好代码进行修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E6%BB%9A%E5%88%B0%E5%8E%86%E5%8F%B2%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-text">回滚到历史某个版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%A3%E7%A0%81%E5%8F%88%E5%88%87%E6%8D%A2%E5%9B%9E%E6%9D%A5"><span class="toc-text">切换某个版本看一下代码又切换回来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%88%86%E6%94%AF%E5%B9%B6%E5%88%87%E6%8D%A2"><span class="toc-text">创建新分支并切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="toc-text">合并分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit-%E5%92%8C-git-commit-m%E5%8C%BA%E5%88%AB"><span class="toc-text">git commit 和 git commit -m区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84commit%E6%B3%A8%E9%87%8A"><span class="toc-text">Git修改已提交的commit注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git%E6%89%93%E6%A0%87%E7%AD%BE%E5%B9%B6%E6%8E%A8%E9%80%81"><span class="toc-text">git打标签并推送</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-merge-no-ff-dev"><span class="toc-text">git merge --no-ff dev</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">远程仓库相关操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%96%B0%E5%BB%BA%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E6%9C%89%E6%96%87%E4%BB%B6-%E5%92%8C%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%85%B6%E4%BB%96%E6%96%87%E4%BB%B6%E4%B8%8D%E5%86%B2%E7%AA%81-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">如果新建远端仓库有文件, 和本地仓库其他文件不冲突, 解决办法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C"><span class="toc-text">分支工作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-commit-%E8%A7%84%E8%8C%83"><span class="toc-text">Git commit 规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%89%E4%B8%AA%E4%B8%B4%E6%97%B6%E5%88%86%E6%94%AF"><span class="toc-text">Git常用的三个临时分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E6%B8%B8%E6%88%8F"><span class="toc-text">git游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="toc-text">基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9AGit-Commit"><span class="toc-text">1：Git Commit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Git-Branch"><span class="toc-text">2: Git Branch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Git-Merge"><span class="toc-text">3: Git Merge</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Git-Rebase"><span class="toc-text">4: Git Rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E7%AF%87"><span class="toc-text">高级篇</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%9B%B8%E5%AF%B9%E5%BC%95%E7%94%A8"><span class="toc-text">2.相对引用(^)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%9B%B8%E5%AF%B9%E5%BC%95%E7%94%A82"><span class="toc-text">3.相对引用2(~)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%92%A4%E9%94%80%E5%8F%98%E6%9B%B4"><span class="toc-text">4.撤销变更</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">移动提交记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Git-Cherry-pick"><span class="toc-text">1: Git Cherry-pick</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BA%A4%E4%BA%92%E5%BC%8F-rebase"><span class="toc-text">2: 交互式 rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-text">杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%8F%AA%E5%8F%96%E4%B8%80%E4%B8%AA%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="toc-text">1: 只取一个提交记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%8F%90%E4%BA%A4%E7%9A%84%E6%8A%80%E5%B7%A7-1"><span class="toc-text">2: 提交的技巧 #1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8F%90%E4%BA%A4%E7%9A%84%E6%8A%80%E5%B7%A7-2"><span class="toc-text">3: 提交的技巧 #2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Git-Tag"><span class="toc-text">4: Git Tag</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Git-Describe"><span class="toc-text">5: Git Describe</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E8%AF%9D%E9%A2%98"><span class="toc-text">高级话题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%A4%9A%E6%AC%A1-Rebase"><span class="toc-text">1: 多次 Rebase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%A4%E4%B8%AA%E7%88%B6%E8%8A%82%E7%82%B9"><span class="toc-text">2: 两个父节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%BA%A0%E7%BC%A0%E4%B8%8D%E6%B8%85%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-text">3: 纠缠不清的分支</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">远程仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-git-clone"><span class="toc-text">1.git clone</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="toc-text">2.远程分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-git-fetch"><span class="toc-text">3.git fetch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-git-pull"><span class="toc-text">4.git pull</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%A8%A1%E6%8B%9F%E5%9B%A2%E9%98%9F%E5%90%88%E4%BD%9C"><span class="toc-text">5. 模拟团队合作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Git-Push"><span class="toc-text">6. Git Push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E5%81%8F%E7%A6%BB%E7%9A%84%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="toc-text">7.偏离的提交历史</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-%E9%94%81%E5%AE%9A%E7%9A%84Master"><span class="toc-text">8.锁定的Master</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C"><span class="toc-text">Git 远程仓库高级操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8E%A8%E9%80%81%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-text">1.推送主分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%88%E5%B9%B6%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">2: 合并远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%BF%9C%E7%A8%8B%E8%BF%BD%E8%B8%AA"><span class="toc-text">3.远程追踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-git-push%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">4.git push的参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Git-Push%E7%9A%84%E5%8F%82%E6%95%B02"><span class="toc-text">5.Git Push的参数2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Git-Fetch%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">6. Git Fetch的参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-%E6%B2%A1%E6%9C%89Source%E7%9A%84Source"><span class="toc-text">7.没有Source的Source</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Git-Pull%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">8. Git Pull的参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GitAction"><span class="toc-text">GitAction</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-Actions%E7%BB%84%E6%88%90"><span class="toc-text">GitHub Actions组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Workflow%E6%96%87%E4%BB%B6%E6%A0%B7%E4%BE%8B"><span class="toc-text">Workflow文件样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Telegram-bot"><span class="toc-text">Telegram bot</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-4 i,
+    .toc-level-4 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="学习文件"><a href="#学习文件" class="headerlink" title="学习文件"></a>学习文件</h2><p>git学习参考书: <a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">https://git-scm.com/book/zh/v2</a></p>
+<p>git学习廖雪峰:<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+<p>Git 使用规范流程: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/08/git-use-process.html">https://www.ruanyifeng.com/blog/2015/08/git-use-process.html</a></p>
+<p>git commit规范: <a target="_blank" rel="noopener" href="https://feflowjs.com/zh/guide/rule-git-commit.html">https://feflowjs.com/zh/guide/rule-git-commit.html</a></p>
+<p>Git分支管理策略: <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2012/07/git.html">https://www.ruanyifeng.com/blog/2012/07/git.html</a></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>查看git配置:<code>git config --list</code></p>
+<p>查看关联远程仓库情况:<code>git remote -v</code></p>
+<p>修改主分支名字:<code>git branch -M main</code></p>
+<p><code>git reset HEAD~1</code> 撤销改动, 使得当前的这个提交不存在, 回到上一个提交</p>
+<p><code>git revert HEAD</code> 撤消改动, 在<strong>这个提交</strong>以增加新提交的方式, 只不过下一个提交和上一个提交相同, 所以可以远程分享给其他人.</p>
+<h2 id="使用习惯"><a href="#使用习惯" class="headerlink" title="使用习惯"></a>使用习惯</h2><h3 id="本地新建仓库-想同步到github"><a href="#本地新建仓库-想同步到github" class="headerlink" title="本地新建仓库,想同步到github"></a>本地新建仓库,想同步到github</h3><ol>
+<li><p>新建文件夹<code>TestGit</code></p>
+</li>
+<li><p>在文件夹下写一些代码</p>
+</li>
+<li><p>添加仓库根目录.gitignore文件<br>有时候我们不想让一些<code>文件夹</code>或者<code>某类型的文件</code>或者<code>某文件</code>进行版本管理,比如本地的图片库,比如生成的中间文件<code>.class</code>文件,vs2019项目的一些临时文件<code>*.tmp_proj,*_wpftmp.csproj</code>,我们此时可以在仓库根目录添加<code>.gitignore</code>文件进行忽略,<strong>git官网提供了一些<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">.gitignore模板</a></strong>,这里也有一个可以根据语言和编辑器<a target="_blank" rel="noopener" href="https://www.toptal.com/developers/gitignore">自动生成的.gitignore网站</a>,用户可以随意组合已达到自己想要的效果,常用的语句有如下:</p>
+<pre><code>*.a		忽略所有以a结尾的文件
+bin		忽略bin文件夹
+/mtk/*.txt 忽略根目录下mtk目录下的素有*.txt文件
+!/mtk/one.txt 不忽略这个one.txt文件
+</code></pre>
+<p>另外,在github建立远程仓库的时候会让选择.gitignore文件的类型.</p>
+</li>
+<li><p>用git作管理:</p>
+<pre><code>git init	//初始化git仓库管理
+git add .	//将本目录下所有文件存储暂存区,并根据.gitignore作文件筛选
+git add *	//不经过.gitignore作文件筛选,全部加入暂存区
+git add file//将file文件提交到暂存区
+git commit -m "xxxx"	//将暂存区的改动提交到版本库
+git branch -M main //将主分支改为main,一定要改,否则推送到远程仓库中为master分支,但是github远程仓库的主分支是main分支
+</code></pre>
+<p>为了让版本信息更加易读,有<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017205604">三种commit的书写方式</a>:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://link.segmentfault.com/?url=https://www.npmjs.com/package/commitizen">commitizen</a>:<a target="_blank" rel="noopener" href="https://link.segmentfault.com/?url=https://github.com/angular/angular/commits/master">AngularJS</a> 在 github上 的提交记录被业内许多人认可，逐渐被大家引用。</li>
+<li>自己用 .git_template 文件设置模板</li>
+<li>直接遵从”type:description”的书写方式,其中type借鉴commitizen有以下几种:<ul>
+<li>fix: 修复bug</li>
+<li>add: 新功能</li>
+<li>update: 更新</li>
+<li>style : 代码格式改变</li>
+<li>test: 增加测试代码</li>
+<li>revert: 撤销上一次的commit</li>
+<li>build: 构建工具或构建过程等的变动，如：gulp 换成了 webpack，webpack 升级等</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>关联远程仓库</p>
+<ol>
+<li><p>在github上建立本地仓库同名的远程仓库<code>TestGit</code>,不要添加任何文件,因为我现在还不会处理这种情况…</p>
+</li>
+<li><p>关联远程仓库</p>
+<pre><code class="git">git remote add origin git@github.com:pengber/TestGit.git
+</code></pre>
+</li>
+<li><p>第一次推送远程仓库</p>
+<pre><code class="git">git push -u origin main
+</code></pre>
+<p>之后可以省略掉<code>-u</code>这个参数</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="查看别人的仓库代码"><a href="#查看别人的仓库代码" class="headerlink" title="查看别人的仓库代码"></a>查看别人的仓库代码</h3><p>这种情况</p>
+<ol>
+<li>直接克隆到本地查看<br><code>git clone git@github.com:testerSunshine/12306.git</code></li>
+</ol>
+<h3 id="对别人的好代码进行修改"><a href="#对别人的好代码进行修改" class="headerlink" title="对别人的好代码进行修改"></a>对别人的好代码进行修改</h3><p>这种情况暂时不是很经常用</p>
+<ol>
+<li><p>点击别人仓库Fork到自己账户下</p>
+</li>
+<li><p>clone自己的同名仓库到本地</p>
+<pre><code class="git">git clone git@github.com:pengber/12306.git
+</code></pre>
+</li>
+<li><p>自己修改,然后直接可以进行版本管理,不用再进行<code>git remote</code>这一步.</p>
+</li>
+</ol>
+<h3 id="回滚到历史某个版本"><a href="#回滚到历史某个版本" class="headerlink" title="回滚到历史某个版本"></a>回滚到历史某个版本</h3><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/yxlshk/article/details/79944535">Git恢复之前版本的两种方法reset、revert（图文详解）</a></p>
+<p>回滚到某个版本, 并且该版本后的内容都不要了</p>
+<pre><code class="shell">git log			#查看版本号
+git reset --hard 版本号
+git push -f
+</code></pre>
+<h3 id="切换某个版本看一下代码又切换回来"><a href="#切换某个版本看一下代码又切换回来" class="headerlink" title="切换某个版本看一下代码又切换回来"></a>切换某个版本看一下代码又切换回来</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/liuxiao723846/article/details/70313287">git checkout 到历史某个版本</a></p>
+<pre><code class="shell">git log
+git checkout 版本号
+</code></pre>
+<h3 id="创建新分支并切换"><a href="#创建新分支并切换" class="headerlink" title="创建新分支并切换"></a>创建新分支并切换</h3><pre><code>git checkout -b bugFix
+</code></pre>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><h3 id="git-commit-和-git-commit-m区别"><a href="#git-commit-和-git-commit-m区别" class="headerlink" title="git commit 和 git commit -m区别"></a>git commit 和 git commit -m区别</h3><p><code>git commit -m</code> 后面加一句简述, 是比较简便添加注释的方法</p>
+<p><code>git commit </code>执行后会打开一个vim命令行, 而这里面会自带一些内容</p>
+<p><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20221112204310183.png" alt="image-20221112204310183"></p>
+<p>这时候编辑就可以用文本编辑器编辑比较长的段落了, 并且可以取消掉注释, 然后再这行后面加一些对于新增文件的说明之类的, 比如这样, 最后的结果就是这样的</p>
+<p><img src="D:\pic-bed\img\image-20221112204603946.png" alt="image-20221112204603946"></p>
+<p>如果不添加注释, 则会<code>commit fail</code>, 因为git不允许空注释(除非加参数).</p>
+<h3 id="Git修改已提交的commit注释"><a href="#Git修改已提交的commit注释" class="headerlink" title="Git修改已提交的commit注释"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xxhxs-21/p/15405374.html">Git修改已提交的commit注释</a></h3><h3 id="git打标签并推送"><a href="#git打标签并推送" class="headerlink" title="git打标签并推送"></a><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE">git打标签并推送</a></h3><p><code>git tag v1.0.0</code>, 会对head所处的创建一个标签</p>
+<p><code>git tag -a v1.0.0</code>会创建一个标签, 并且会打开一个vim的注释页面</p>
+<p><code>git push origin v1.0.0</code>会把这个标签push上去, 默认不会push</p>
+<p><code>git push origin --tags</code>会把所有本地tags都push上去</p>
+<h3 id="git-merge-no-ff-dev"><a href="#git-merge-no-ff-dev" class="headerlink" title="git merge --no-ff dev"></a><code>git merge --no-ff dev</code></h3><p><code>--no-ff</code>是禁止快进式合并的意思, Git 合并两个分支时，如果顺着一个分支走下去可以到达另一个分支的话，那么Git 在合并两者时，只会简单地把指针右移, 也就是有这个参数可以很清楚的清楚分支合并的过程.</p>
+<pre><code class="shell">git merge feature
+</code></pre>
+<p><img src="D:\pic-bed\img\image-20221112215513082.png" alt="快进式合并"></p>
+<pre><code class="shell">git merge --no-ff feature
+</code></pre>
+<p><img src="D:\pic-bed\img\image-20221112215601291.png" alt="非快进式合并"></p>
+<h3 id="远程仓库相关操作"><a href="#远程仓库相关操作" class="headerlink" title="远程仓库相关操作"></a>远程仓库相关操作</h3><p>同一个本地仓库可以关联不通过的远程仓库，git remote -v 可以查看现在仓库关联了哪些远程仓库，如果同一个仓库关联码云和git两个仓库的话，则可以</p>
+<pre><code>git remote add gitee git@github.com:pengber/-git.gitgit remote add github git@gitee.com:pengber2/-git.git   
+</code></pre>
+<p>假设github账户为pengber，假设码云账户为pengber2，其中add后面那个名字就是push 时填写的远程仓库的代号，比如用<code>git push github master </code>推送到github</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/WPF0414/p/11504695.html">如何快速关联/修改Git远程仓库地址</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/tiankongzhicheng441x/article/details/102949232">本地仓库关联远程仓库（通过仓库地址SSH关联）</a></p>
+<h3 id="如果新建远端仓库有文件-和本地仓库其他文件不冲突-解决办法"><a href="#如果新建远端仓库有文件-和本地仓库其他文件不冲突-解决办法" class="headerlink" title="如果新建远端仓库有文件, 和本地仓库其他文件不冲突, 解决办法"></a>如果新建远端仓库有文件, 和本地仓库其他文件不冲突, <a target="_blank" rel="noopener" href="https://komodor.com/learn/how-to-fix-fatal-refusing-to-merge-unrelated-histories-error/">解决办法</a></h3><p><code>git pull</code> 报错 <code>‘fatal: refusing to merge unrelated histories’ Git error</code></p>
+<p>则可以</p>
+<p><code>git pull origin main --allow-unrelated-histories</code></p>
+<h3 id="分支工作"><a href="#分支工作" class="headerlink" title="分支工作"></a>分支工作</h3><p>首先主要版本代码在<code>main</code>分支上, 干活在<code>salve</code>分支上, </p>
+<p>以下代码新初始化仓库并形成初始版本</p>
+<pre><code class="shell">git init .
+git branch -M main
+git add. 
+git commit -m "init code
+</code></pre>
+<p>新建分支并转移到新分支</p>
+<pre><code class="shell">git checkout -b slave
+</code></pre>
+<p>现在有A.txt, B.txt, 在slave分支修改了B, 现在想在main修改A并push到远端, 并保持slave端与main端的一致性, 如何操作?</p>
+<p>首先在slave端提交B的所有修改</p>
+<pre><code>git add .
+git commit -m "update B"
+</code></pre>
+<p>然后切回main分支进行A的修改并提交push</p>
+<pre><code class="shell">git checkout main
+//修改 A
+git add A.txt
+git commit -m "update A"
+</code></pre>
+<p>切回slave分支保持main的更新, 然后继续进行工作</p>
+<pre><code class="shell">git checkout slave
+git merge main
+</code></pre>
+<h2 id="Git-commit-规范"><a href="#Git-commit-规范" class="headerlink" title="Git commit 规范"></a>Git commit 规范</h2><p><code>git commit</code>的注释规范</p>
+<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;
+</code></pre>
+<p>type的取值:</p>
+<ul>
+<li>feat: 新增feature</li>
+<li>fix: 修复bug</li>
+<li>docs: 修改文档</li>
+<li>sytle: 修改了空格, 格式缩进等, 不改变代码逻辑</li>
+<li>chore: 改变构建流程, 增加依赖库, 工具等</li>
+<li>refactor: 代码重构, 没有加新功能或者修复bug</li>
+<li>perf: 优化相关, 比如提升新能和体验</li>
+<li>revert: 回滚到上一个版本</li>
+</ul>
+<h2 id="Git常用的三个临时分支"><a href="#Git常用的三个临时分支" class="headerlink" title="Git常用的三个临时分支"></a>Git常用的三个临时分支</h2><ul>
+<li>feat (功能分支)</li>
+<li>fix (bug分支)</li>
+<li>release(分支), 我还是新建成pre分支吧</li>
+</ul>
+<h2 id="git游戏"><a href="#git游戏" class="headerlink" title="git游戏"></a>git游戏</h2><p>教学版本: <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">https://learngitbranching.js.org/?locale=zh_CN</a></p>
+<p>沙盒版本: <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN&amp;NODEMO=">https://learngitbranching.js.org/?locale=zh_CN&amp;NODEMO=</a></p>
+<p>这个游戏常用的命令</p>
+<pre><code>reset 恢复初始状态
+undo 撤销
+levels 显示所有关卡
+show solution 显示本关解决方案
+</code></pre>
+<h3 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h3><h4 id="1：Git-Commit"><a href="#1：Git-Commit" class="headerlink" title="1：Git Commit"></a>1：Git Commit</h4><h4 id="2-Git-Branch"><a href="#2-Git-Branch" class="headerlink" title="2: Git Branch"></a>2: Git Branch</h4><p><code>git branch branchName</code>创建一个新分支</p>
+<p><code>git checkout &lt;name&gt;</code>切换到分支</p>
+<p><code>git checkout -b &lt;your-branch-name&gt;</code> 创建并切换新分支</p>
+<h4 id="3-Git-Merge"><a href="#3-Git-Merge" class="headerlink" title="3: Git Merge"></a>3: Git Merge</h4><p><code>git merge &lt;branch&gt;</code>现在head和main都处于C1中, 把branch分支合并到现在head上创建一个新节点, 并前进head指向的main到这个新节点上.</p>
+<p><img src="D:\pic-bed\img\image-20221110223341382.png" alt="image-20221110223341382"></p>
+<h4 id="4-Git-Rebase"><a href="#4-Git-Rebase" class="headerlink" title="4: Git Rebase"></a>4: Git Rebase</h4><p><strong>Git Rebase</strong></p>
+<p>第二种合并分支的方法是 <code>git rebase</code>。Rebase 实际上就是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。</p>
+<p>Rebase 的优势就是可以创造更线性的提交历史，这听上去有些难以理解。如果只允许使用 Rebase 的话，代码库的提交历史将会变得异常清晰。</p>
+<p>咱们还是实际操作一下吧……</p>
+<p><img src="D:\pic-bed\img\image-20221110224234331.png" alt="image-20221110224234331"></p>
+<p><img src="D:\pic-bed\img\image-20221110224302556.png" alt="image-20221110224302556"></p>
+<p><img src="D:\pic-bed\img\image-20221110223708767.png" alt="image-20221110223708767"></p>
+<pre><code class="shell">git checkout -b bugFix
+git commit
+git checkout master
+git commit
+git checkout bugFix
+git rebase master
+</code></pre>
+<p><code>git rebase hash</code>, 将现在head所拥有的从上一次分叉之后的分支移动到hash目标分支下面</p>
+<p><code>git rebase hash1 hash2</code>, 将<code>hash2</code>所拥有的从上一次分叉之后的分支移动到<code>hash1</code>的分支下面</p>
+<h3 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h3><p><strong>1: 分离 HEAD</strong></p>
+<p>HEAD的表示是用一个<code>*</code>来表示现在在哪个分支, <code>HEAD</code>可以移动到分支上, 比如<code>main</code>, <code>bugFix</code>上面, 也可以移动到某个<code>Hash</code>提交记录上, 所以要注意Head在哪里, 可以用<code>git checkout 分支/hash</code>来分离hash, Git官方建议用<code>git switch</code>来代替<code>git checkout</code>.</p>
+<p><img src="D:\pic-bed\img\image-20221110153952310.png" alt="image-20221110153952310"></p>
+<pre><code class="shell">$ git swich C4
+</code></pre>
+<h4 id="2-相对引用"><a href="#2-相对引用" class="headerlink" title="2.相对引用(^)"></a>2.相对引用(^)</h4><p><img src="D:\pic-bed\img\image-20221110093142913.png" alt="image-20221110093142913"></p>
+<h4 id="3-相对引用2"><a href="#3-相对引用2" class="headerlink" title="3.相对引用2(~)"></a>3.相对引用2(~)</h4><p><img src="D:\pic-bed\img\image-20221110093313414.png" alt="image-20221110093313414"></p>
+<pre><code class="shell">$ git branch -f main C6
+
+$ git checkout HEAD^
+
+$ git branch -f bugFix bugFix~4
+
+$ git branch -f bugFix bugFix~3
+</code></pre>
+<h4 id="4-撤销变更"><a href="#4-撤销变更" class="headerlink" title="4.撤销变更"></a>4.撤销变更</h4><p>在 Git 里撤销变更的方法很多。和提交一样，撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成。我们这个应用主要关注的是后者。</p>
+<p>主要有两种方法用来撤销变更 —— 一是 <code>git reset</code>，还有就是 <code>git revert</code>。接下来咱们逐个进行讲解。</p>
+<p><code>git reset</code> 通过把分支记录回退几个提交记录来实现撤销改动。你可以将这想象成“改写历史”。<code>git reset</code> 向上移动分支，原来指向的提交记录就跟从来没有提交过一样。</p>
+<p>虽然在你的本地分支中使用 <code>git reset</code> 很方便，但是这种“改写历史”的方法对大家一起使用的远程分支是无效的哦！</p>
+<p>为了撤销更改并<strong>分享</strong>给别人，我们需要使用 <code>git revert</code>。使用<code>git revert</code>会在我们要撤销的提交记录后面居然多了一个新提交！这是因为新提交记录 <code>C2'</code> 引入了<strong>更改</strong> —— 这些更改刚好是用来撤销 <code>C2</code> 这个提交的。也就是说 <code>C2'</code> 的状态与 <code>C1</code> 是相同的。</p>
+<p>revert 之后就可以把你的更改推送到远程仓库与别人分享啦。</p>
+<p><img src="D:\pic-bed\img\image-20221110095331310.png" alt="image-20221110095331310"></p>
+<p>注意 revert 和 reset 使用的参数不同。</p>
+<pre><code class="shell">$ git reset HEAD
+
+$ git reset HEAD^
+
+$ git checkout pushed
+
+$ git revert HEAD
+</code></pre>
+<h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h4 id="1-Git-Cherry-pick"><a href="#1-Git-Cherry-pick" class="headerlink" title="1: Git Cherry-pick"></a>1: Git Cherry-pick</h4><p>我想要把这个提交放到这里, 那个提交放到刚才那个提交的后面</p>
+<p>本系列的第一个命令是 <code>git cherry-pick</code>, 命令形式为:</p>
+<ul>
+<li><code>git cherry-pick &lt;提交号&gt;...</code></li>
+</ul>
+<p>如果你想将一些提交复制到当前所在的位置（<code>HEAD</code>）下面的话， Cherry-pick 是最直接的方式了。我个人非常喜欢 <code>cherry-pick</code>，因为它特别简单。</p>
+<p><img src="D:\pic-bed\img\image-20221110103206731.png" alt="image-20221110103206731"></p>
+<pre><code class="shell">$ git cherry-pick c3 c4 c7
+</code></pre>
+<h4 id="2-交互式-rebase"><a href="#2-交互式-rebase" class="headerlink" title="2: 交互式 rebase"></a>2: 交互式 rebase</h4><p>我们可以利用交互式的 rebase —— 如果你想从一系列的提交记录中找到想要的记录</p>
+<p>交互式 rebase 指的是使用带参数 <code>--interactive</code> 的 rebase 命令, 简写为 <code>-i</code></p>
+<p>如果你在命令后增加了这个选项, Git 会打开一个 UI 界面并列出将要被复制到目标分支的备选提交记录，它还会显示每个提交记录的哈希值和提交说明，提交说明有助于你理解这个提交进行了哪些更改。</p>
+<p>在实际使用时，所谓的 UI 窗口一般会在文本编辑器 —— 如 Vim —— 中打开一个文件。 考虑到课程的初衷，我弄了一个对话框来模拟这些操作。</p>
+<p><img src="D:\pic-bed\img\image-20221110103823125.png" alt="image-20221110103823125"></p>
+<pre><code class="shell">$ git rebase -i HEAD~4
+</code></pre>
+<h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><h4 id="1-只取一个提交记录"><a href="#1-只取一个提交记录" class="headerlink" title="1: 只取一个提交记录"></a>1: 只取一个提交记录</h4><p>应用场景: 为了修BUG, commit了许多次, 但是前几次commit都有一些注释, 只有最后一次完成的真正是修复bug的功能, 所以只需要把这个提交记录接在上一次的主提交后就可以了</p>
+<p><img src="D:\pic-bed\img\image-20221110110820504.png" alt="image-20221110110820504"></p>
+<pre><code class="shell">$ git checkout main
+
+$ git cherry-pick bugFix
+</code></pre>
+<h4 id="2-提交的技巧-1"><a href="#2-提交的技巧-1" class="headerlink" title="2: 提交的技巧 #1"></a>2: 提交的技巧 #1</h4><p>接下来这种情况也是很常见的：你之前在 <code>newImage</code> 分支上进行了一次提交，然后又基于它创建了 <code>caption</code> 分支，然后又提交了一次。</p>
+<p>此时你想对某个以前的提交记录进行一些小小的调整。比如设计师想修改一下 <code>newImage</code> 中图片的分辨率，尽管那个提交记录并不是最新的了。</p>
+<p>我们可以通过下面的方法来克服困难：</p>
+<ul>
+<li>先用 <code>git rebase -i</code> 将提交重新排序，然后把我们想要修改的提交记录挪到最前</li>
+<li>然后用 <code>git commit --amend</code> 来进行一些小修改</li>
+<li>接着再用 <code>git rebase -i</code> 来将他们调回原来的顺序</li>
+<li>最后我们把 main 移到修改的最前端（用你自己喜欢的方法），就大功告成啦！</li>
+</ul>
+<p>当然完成这个任务的方法不止上面提到的一种（我知道你在看 cherry-pick 啦），之后我们会多点关注这些技巧啦，但现在暂时只专注上面这种方法。 最后有必要说明一下目标状态中的那几个<code>'</code> —— 我们把这个提交移动了两次，每移动一次会产生一个 <code>'</code>；而 C2 上多出来的那个是我们在使用了 amend 参数提交时产生的，所以最终结果就是这样了。</p>
+<p>也就是说，我在对比结果的时候只会对比提交树的结构，对于 <code>'</code> 的数量上的不同，并不纳入对比范围内。只要你的 <code>main</code> 分支结构与目标结构相同，我就算你通过。</p>
+<p><img src="D:\pic-bed\img\image-20221110111826046.png" alt="image-20221110111826046"></p>
+<pre><code class="shell">$ git rebase -i HEAD~2
+
+#移动下分支
+
+$ objective
+
+$ git commit --amend
+
+$ git rebase -i HEAD~2
+
+#移动一下分支
+
+$ git branch -f main c3''
+</code></pre>
+<h4 id="3-提交的技巧-2"><a href="#3-提交的技巧-2" class="headerlink" title="3: 提交的技巧 #2"></a>3: 提交的技巧 #2</h4><p>要在心里牢记 cherry-pick 可以将提交树上任何地方的提交记录取过来追加到 HEAD 上（只要不是 HEAD 上游的提交就没问题）。</p>
+<p><img src="D:\pic-bed\img\image-20221110113904628.png" alt="image-20221110113904628"></p>
+<pre><code class="shell">$ git checkout c1
+
+$ git cherry-pick c2
+
+$ git checkout main
+
+$ git cherry-pick c2' c3
+</code></pre>
+<h4 id="4-Git-Tag"><a href="#4-Git-Tag" class="headerlink" title="4: Git Tag"></a>4: Git Tag</h4><p>使用<code>git tag v1 C1</code>都可以对<code>c1xxxxxxx</code>加tag.</p>
+<p><img src="D:\pic-bed\img\image-20221110115047798.png" alt="image-20221110115047798"></p>
+<pre><code class="shell">$ git tag v0 C1
+
+$ git tag v1 C2
+
+$ git checkout v1
+</code></pre>
+<h4 id="5-Git-Describe"><a href="#5-Git-Describe" class="headerlink" title="5: Git Describe"></a>5: Git Describe</h4><p>由于标签在代码库中起着“锚点”的作用，Git 还为此专门设计了一个命令用来<strong>描述</strong>离你最近的锚点（也就是标签），它就是 <code>git describe</code>！</p>
+<p>Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 <code>git bisect</code>（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是当你坐在你那刚刚度假回来的同事的电脑前时， 可能会用到这个命令</p>
+<p><code>git describe</code> 的语法是：</p>
+<pre><code>git describe &lt;ref&gt;
+</code></pre>
+<p><code>&lt;ref&gt;</code> 可以是任何能被 Git 识别成提交记录的引用，如果你没有指定的话，Git 会以你目前所检出的位置（<code>HEAD</code>）。</p>
+<p>它输出的结果是这样的：</p>
+<pre><code>&lt;tag&gt;_&lt;numCommits&gt;_g&lt;hash&gt;
+</code></pre>
+<p><code>tag</code> 表示的是离 <code>ref</code> 最近的标签， <code>numCommits</code> 是表示这个 <code>ref</code> 与 <code>tag</code> 相差有多少个提交记录， <code>hash</code> 表示的是你所给定的 <code>ref</code> 所表示的提交记录哈希值的前几位。</p>
+<p>当 <code>ref</code> 提交记录上有某个标签时，则只输出标签名称</p>
+<p><img src="D:\pic-bed\img\image-20221110115421110.png" alt="image-20221110115421110"></p>
+<pre><code class="shell">$ git describe
+
+v1_2_gC6
+
+$ git describe main
+
+v0_2_gC2
+
+$ git describe side
+
+v1_1_gC4
+
+$ git describe
+
+v1_2_gC6
+
+$ git commit
+</code></pre>
+<h3 id="高级话题"><a href="#高级话题" class="headerlink" title="高级话题"></a>高级话题</h3><h4 id="1-多次-Rebase"><a href="#1-多次-Rebase" class="headerlink" title="1: 多次 Rebase"></a>1: 多次 Rebase</h4><p>哥们儿，我们准备了很多分支！咱们把这些分支 rebase 到 main 上吧。</p>
+<p>但是你的领导给你提了点要求 —— 他们希望得到有序的提交历史，也就是我们最终的结果应该是 <code>C6'</code> 在 <code>C7'</code> 上面， <code>C5'</code> 在 <code>C6'</code> 上面，依此类推。</p>
+<p>即使你搞砸了也没关系，用 <code>reset</code> 命令就可以重新开始了。记得看看我们提供的答案，看你能否使用更少的命令来完成任务！</p>
+<p><img src="D:\pic-bed\img\image-20221110155049676.png" alt="image-20221110155049676"></p>
+<pre><code>$ git rebase main bugFix
+
+$ git rebase bugFix side
+
+$ git rebase side another
+
+$ git branch -f master another
+</code></pre>
+<p>命令解释</p>
+<p><code>git rebase hash</code>, 将现在head所拥有的从上一次分叉之后的分支移动到hash目标分支下面</p>
+<p><code>git rebase hash1 hash2</code>, 将<code>hash2</code>所拥有的从上一次分叉之后的分支移动到<code>hash1</code>的分支下面</p>
+<h4 id="2-两个父节点"><a href="#2-两个父节点" class="headerlink" title="2: 两个父节点"></a>2: 两个父节点</h4><p><strong>选择父提交记录</strong></p>
+<p>操作符 <code>^</code> 与 <code>~</code> 符一样，后面也可以跟一个数字。</p>
+<p>但是该操作符后面的数字与 <code>~</code> 后面的不同，并不是用来指定向上返回几代，而是指定合并提交记录的某个父提交。还记得前面提到过的一个合并提交有两个父提交吧，所以遇到这样的节点时该选择哪条路径就不是很清晰了。</p>
+<p>Git 默认选择合并提交的“第一个”父提交，在操作符 <code>^</code> 后跟一个数字可以改变这一默认行为。</p>
+<p>废话不多说，举个例子。</p>
+<p><img src="D:\pic-bed\img\image-20221110161030958.png" alt="image-20221110161030958"></p>
+<p>并且, 这些操作符支持链式操作:<code>git checkout HEAD~^2~2</code>完成的是同样的操作.</p>
+<p><img src="D:\pic-bed\img\image-20221110161146305.png" alt="image-20221110161146305"></p>
+<pre><code class="shell">$git checkout HEAD~^2~
+$git branch bugWork
+$git checkout main
+</code></pre>
+<p>正确答案:</p>
+<pre><code class="shell">git branch bugWork HEAD~^2~
+</code></pre>
+<h4 id="3-纠缠不清的分支"><a href="#3-纠缠不清的分支" class="headerlink" title="3: 纠缠不清的分支"></a>3: 纠缠不清的分支</h4><p>现在我们的 <code>main</code> 分支是比 <code>one</code>、<code>two</code> 和 <code>three</code> 要多几个提交。出于某种原因，我们需要把 <code>main</code> 分支上最近的几次提交做不同的调整后，分别添加到各个的分支上。</p>
+<p><code>one</code> 需要重新排序并删除 <code>C5</code>，<code>two</code> 仅需要重排排序，而 <code>three</code> 只需要提交一次。</p>
+<p><img src="D:\pic-bed\img\image-20221110163513791.png" alt="image-20221110163513791"></p>
+<pre><code class="shell">
+$ git rebase -i HEAD~4
+
+#手动移动并删除C5
+
+$ git branch -f one c2'
+
+$ git branch -f main c5
+
+$ git rebase -i HEAD~4
+
+#手动移动
+
+$ git branch -f main c5
+
+$ git branch -f three c2
+
+$ git branch -f two c2'
+</code></pre>
+<p>答案:</p>
+<pre><code class="shell">$ git checkout one
+
+$ git cherry-pick C4 C3 C2
+
+$ git checkout two
+
+$ git cherry-pick C5 C4 C3 C2
+
+$ git branch -f three C2
+</code></pre>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="1-git-clone"><a href="#1-git-clone" class="headerlink" title="1.git clone"></a>1.git clone</h4><p>从技术上来讲，<code>git clone</code> 命令在真实的环境下的作用是在<strong>本地</strong>创建一个远程仓库的拷贝（比如从 github.com）。 但在我们的教程中使用这个命令会有一些不同 —— 它会在远程创建一个你本地仓库的副本。</p>
+<pre><code class="shell">$git clone
+</code></pre>
+<h4 id="2-远程分支"><a href="#2-远程分支" class="headerlink" title="2.远程分支"></a>2.远程分支</h4><p>既然你已经看过 <code>git clone</code> 命令了，咱们深入地看一下发生了什么。</p>
+<p>你可能注意到的第一个事就是在我们的本地仓库多了一个名为 <code>o/main</code> 的分支, 这种类型的分支就叫<strong>远程</strong>分支。由于远程分支的特性导致其拥有一些特殊属性。</p>
+<p>远程分支反映了远程仓库(在你上次和它通信时)的<strong>状态</strong>。这会有助于你理解本地的工作与公共工作的差别 —— 这是你与别人分享工作成果前至关重要的一步.</p>
+<p>远程分支有一个特别的属性，在你检出时自动进入分离 HEAD 状态。Git 这么做是出于不能直接在这些分支上进行操作的原因, 你必须在别的地方完成你的工作, （更新了远程分支之后）再用远程分享你的工作成果。</p>
+<p>你可能想问这些远程分支的前面的 <code>o/</code> 是什么意思呢？好吧, 远程分支有一个命名规范 —— 它们的格式是:</p>
+<ul>
+<li><code>&lt;remote name&gt;/&lt;branch name&gt;</code></li>
+</ul>
+<p>因此，如果你看到一个名为 <code>o/main</code> 的分支，那么这个分支就叫 <code>main</code>，远程仓库的名称就是 <code>o</code>。</p>
+<p>大多数的开发人员会将它们主要的远程仓库命名为 <code>origin</code>，并不是 <code>o</code>。这是因为当你用 <code>git clone</code> 某个仓库时，Git 已经帮你把远程仓库的名称设置为 <code>origin</code> 了</p>
+<p>不过 <code>origin</code> 对于我们的 UI 来说太长了，因此不得不使用简写 <code>o</code> :) 但是要记住, 当你使用真正的 Git 时, 你的远程仓库默认为 <code>origin</code>!</p>
+<p><img src="D:\pic-bed\img\image-20221110170747492.png" alt="image-20221110170747492"></p>
+<p><img src="D:\pic-bed\img\image-20221110170917825.png" alt="image-20221110170917825"></p>
+<pre><code>$ git commit
+
+$ git checkout o/main
+
+$ git commit
+</code></pre>
+<h4 id="3-git-fetch"><a href="#3-git-fetch" class="headerlink" title="3.git fetch"></a>3.git fetch</h4><p>Git 远程仓库相当的操作实际可以归纳为两点：向远程仓库传输数据以及从远程仓库获取数据。既然我们能与远程仓库同步，那么就可以分享任何能被 Git 管理的更新（因此可以分享代码、文件、想法、情书等等）。</p>
+<p>本节课我们将学习如何从远程仓库获取数据 —— 命令如其名，它就是 <code>git fetch</code>。</p>
+<p>你会看到当我们从远程仓库获取数据时, 远程分支也会更新以反映最新的远程仓库。在上一节课程中我们已经提及过这一点了。</p>
+<p><strong>git fetch 做了些什么</strong></p>
+<p><code>git fetch</code> 完成了仅有的但是很重要的两步:</p>
+<ul>
+<li>从远程仓库下载本地仓库中缺失的提交记录</li>
+<li>更新远程分支指针(如 <code>o/main</code>)</li>
+</ul>
+<p><code>git fetch</code> 实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。</p>
+<p>如果你还记得上一节课程中我们说过的，远程分支反映了远程仓库在你<strong>最后一次与它通信时</strong>的状态，<code>git fetch</code> 就是你与远程仓库通信的方式了！希望我说的够明白了，你已经了解 <code>git fetch</code> 与远程分支之间的关系了吧。</p>
+<p><code>git fetch</code> 通常通过互联网（使用 <code>http://</code> 或 <code>git://</code> 协议) 与远程仓库通信</p>
+<p><strong>git fetch 不会做的事</strong></p>
+<p><code>git fetch</code> 并不会改变你本地仓库的状态。它不会更新你的 <code>main</code> 分支，也不会修改你磁盘上的文件。</p>
+<p>理解这一点很重要，因为许多开发人员误以为执行了 <code>git fetch</code> 以后，他们本地仓库就与远程仓库同步了。它可能已经将进行这一操作所需的所有数据都下载了下来，但是<strong>并没有</strong>修改你本地的文件。我们在后面的课程中将会讲解能完成该操作的命令 :D</p>
+<p>所以, 你可以将 <code>git fetch</code> 的理解为单纯的下载操作。</p>
+<p><img src="D:\pic-bed\img\image-20221110171805866.png" alt="image-20221110171805866"></p>
+<pre><code class="shell">$git fetch
+</code></pre>
+<h4 id="4-git-pull"><a href="#4-git-pull" class="headerlink" title="4.git pull"></a>4.git pull</h4><p>既然我们已经知道了如何用 <code>git fetch</code> 获取远程的数据, 现在我们学习如何将这些变化更新到我们的工作当中。</p>
+<p>其实有很多方法的 —— 当远程分支中有新的提交时，你可以像合并本地分支那样来合并远程分支。也就是说就是你可以执行以下命令:</p>
+<ul>
+<li><code>git cherry-pick o/main</code></li>
+<li><code>git rebase o/main</code></li>
+<li><code>git merge o/main</code></li>
+<li>等等</li>
+</ul>
+<p>实际上，由于先抓取更新再合并到本地分支这个流程很常用，因此 Git 提供了一个专门的命令来完成这两个操作。它就是我们要讲的 <code>git pull</code>。</p>
+<p><img src="D:\pic-bed\img\image-20221110172233280.png" alt="image-20221110172233280"></p>
+<p><code>git pull</code>和上面的效果一模一样.</p>
+<p><img src="D:\pic-bed\img\image-20221110172318539.png" alt="image-20221110172318539"></p>
+<pre><code class="shell">$ git pull
+</code></pre>
+<h4 id="5-模拟团队合作"><a href="#5-模拟团队合作" class="headerlink" title="5. 模拟团队合作"></a>5. 模拟团队合作</h4><p><img src="D:\pic-bed\img\image-20221110172458211.png" alt="image-20221110172458211"></p>
+<pre><code class="shell">git clone
+git fakeTeamwork 2
+git commit
+git pull
+</code></pre>
+<h4 id="6-Git-Push"><a href="#6-Git-Push" class="headerlink" title="6. Git Push"></a>6. Git Push</h4><p>OK，我们已经学过了如何从远程仓库获取更新并合并到本地的分支当中。这非常棒……但是我如何与大家分享<strong>我的</strong>成果呢？</p>
+<p>嗯，上传自己分享内容与下载他人的分享刚好相反，那与 <code>git pull</code> 相反的命令是什么呢？<code>git push</code>！</p>
+<p><code>git push</code> 负责将<strong>你的</strong>变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录。一旦 <code>git push</code> 完成, 你的朋友们就可以从这个远程仓库下载你分享的成果了！</p>
+<p>你可以将 <code>git push</code> 想象成发布你成果的命令。它有许多应用技巧，稍后我们会了解到，但是咱们还是先从基础的开始吧……</p>
+<p><em>注意 —— <code>git push</code> 不带任何参数时的行为与 Git 的一个名为 <code>push.default</code> 的配置有关。它的默认值取决于你正使用的 Git 的版本，但是在教程中我们使用的是 <code>upstream</code>。 这没什么太大的影响，但是在你的项目中进行推送之前，最好检查一下这个配置。</em></p>
+<p><img src="D:\pic-bed\img\image-20221110173517083.png" alt="image-20221110173517083"></p>
+<pre><code class="shell">git commit
+git commit 
+git push
+</code></pre>
+<h4 id="7-偏离的提交历史"><a href="#7-偏离的提交历史" class="headerlink" title="7.偏离的提交历史"></a>7.偏离的提交历史</h4><p>假设你周一克隆了一个仓库，然后开始研发某个新功能。到周五时，你新功能开发测试完毕，可以发布了。但是 —— 天啊！你的同事这周写了一堆代码，还改了许多你的功能中使用的 API，这些变动会导致你新开发的功能变得不可用。但是他们已经将那些提交推送到远程仓库了，因此你的工作就变成了基于项目<strong>旧版</strong>的代码，与远程仓库最新的代码不匹配了。</p>
+<p>这种情况下, <code>git push</code> 就不知道该如何操作了。如果你执行 <code>git push</code>，Git 应该让远程仓库回到星期一那天的状态吗？还是直接在新代码的基础上添加你的代码，亦或由于你的提交已经过时而直接忽略你的提交？</p>
+<p>因为这情况（历史偏离）有许多的不确定性，Git 是不会允许你 <code>push</code> 变更的。实际上它会强制你先合并远程最新的代码，然后才能分享你的工作。</p>
+<p><img src="D:\pic-bed\img\image-20221110174002986.png" alt="image-20221110174002986"></p>
+<p><img src="D:\pic-bed\img\image-20221110174030245.png" alt="image-20221110174030245"></p>
+<p>很好！但是要敲那么多命令，有没有更简单一点的？</p>
+<p>当然 —— 前面已经介绍过 <code>git pull</code> 就是 fetch 和 merge 的简写，类似的 <code>git pull --rebase</code> 就是 fetch 和 rebase 的简写！</p>
+<p>让我们看看简写命令是如何工作的。</p>
+<p><img src="D:\pic-bed\img\image-20221110174126607.png" alt="image-20221110174126607"></p>
+<p><img src="D:\pic-bed\img\image-20221110174224869.png" alt="image-20221110174224869"></p>
+<p><img src="D:\pic-bed\img\image-20221110174526882.png" alt="image-20221110174526882"></p>
+<pre><code class="shell">git clone
+git fakeTeamwork 1
+git commit
+git pull --rebase
+git push
+</code></pre>
+<h4 id="8-锁定的Master"><a href="#8-锁定的Master" class="headerlink" title="8.锁定的Master"></a>8.锁定的Master</h4><p><strong>远程服务器拒绝!(Remote Rejected)</strong></p>
+<p>如果你是在一个大的合作团队中工作, 很可能是main被锁定了, 需要一些Pull Request流程来合并修改。如果你直接提交(commit)到本地main, 然后试图推送(push)修改, 你将会收到这样类似的信息:</p>
+<pre><code>! [远程服务器拒绝] main -&gt; main (TF402455: 不允许推送(push)这个分支; 你必须使用pull request来更新这个分支.)
+</code></pre>
+<p><strong>为什么会被拒绝?</strong></p>
+<p>远程服务器拒绝直接推送(push)提交到main, 因为策略配置要求 pull requests 来提交更新.</p>
+<p>你应该按照流程,新建一个分支, 推送(push)这个分支并申请pull request,但是你忘记并直接提交给了main.现在你卡住并且无法推送你的更新.</p>
+<p><strong>解决办法</strong></p>
+<p>新建一个分支feature, 推送到远程服务器. 然后reset你的main分支和远程服务器保持一致, 否则下次你pull并且他人的提交和你冲突的时候就会有问题.</p>
+<p><img src="D:\pic-bed\img\image-20221110174952615.png" alt="image-20221110174952615"></p>
+<pre><code class="shell">git reset --hard o/master
+git checkout -b feature C2
+git push origin feature
+</code></pre>
+<h3 id="Git-远程仓库高级操作"><a href="#Git-远程仓库高级操作" class="headerlink" title="Git 远程仓库高级操作"></a>Git 远程仓库高级操作</h3><h4 id="1-推送主分支"><a href="#1-推送主分支" class="headerlink" title="1.推送主分支"></a>1.推送主分支</h4><p><strong>合并特性分支</strong></p>
+<p>既然你应该很熟悉 fetch、pull、push 了，现在我们要通过一个新的工作流来测试你的这些技能。</p>
+<p>在大型项目中开发人员通常会在（从 <code>main</code> 上分出来的）特性分支上工作，工作完成后只做一次集成。这跟前面课程的描述很相像（把 side 分支推送到远程仓库），不过本节我们会深入一些.</p>
+<p>但是有些开发人员只在 main 上做 push、pull —— 这样的话 main 总是最新的，始终与远程分支 (o/main) 保持一致。</p>
+<p>对于接下来这个工作流，我们集成了两个步骤：</p>
+<ul>
+<li>将特性分支集成到 <code>main</code> 上</li>
+<li>推送并更新远程分支</li>
+</ul>
+<p><img src="D:\pic-bed\img\image-20221110202704340.png" alt="image-20221110202704340"></p>
+<pre><code class="shell">$ git fetch
+
+$ git rebase o/main side1
+
+$ git rebase side1 side2
+
+$ git rebase side2 side3
+
+$ git rebase side3 main
+
+$ git push
+</code></pre>
+<h4 id="2-合并远程仓库"><a href="#2-合并远程仓库" class="headerlink" title="2: 合并远程仓库"></a>2: 合并远程仓库</h4><p>为了 push 新变更到远程仓库，你要做的就是<strong>包含</strong>远程仓库中最新变更。意思就是只要你的本地分支包含了远程分支（如 <code>o/main</code>）中的最新变更就可以了，至于具体是用 rebase 还是 merge，并没有限制。</p>
+<p>那么既然没有规定限制，为何前面几节都在着重于 rebase 呢？为什么在操作远程分支时不喜欢用 <code>merge</code> 呢？</p>
+<p>在开发社区里，有许多关于 merge 与 rebase 的讨论。以下是关于 rebase 的优缺点：</p>
+<p>优点:</p>
+<ul>
+<li>Rebase 使你的提交树变得很干净, 所有的提交都在一条线上</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>Rebase 修改了提交树的历史</li>
+</ul>
+<p>比如, 提交 C1 可以被 rebase 到 C3 之后。这看起来 C1 中的工作是在 C3 之后进行的，但实际上是在 C3 之前。</p>
+<p>一些开发人员喜欢保留提交历史，因此更偏爱 merge。而其他人（比如我自己）可能更喜欢干净的提交树，于是偏爱 rebase。仁者见仁，智者见智。 :D</p>
+<p>本关，我们还是解决上一关卡中的问题，但是要用 merge 替换 rebase。这显然有点画蛇添足，但这只是为了更好的说明上面的观点。</p>
+<p><img src="D:\pic-bed\img\image-20221110205435768.png" alt="image-20221110205435768"></p>
+<pre><code class="shell">$ git checkout main
+
+$ git pull
+
+$ git merge side1
+
+$ git merge side2
+
+$ git merge side3
+
+$ git push
+</code></pre>
+<h4 id="3-远程追踪"><a href="#3-远程追踪" class="headerlink" title="3.远程追踪"></a>3.远程追踪</h4><p>在前几节课程中有件事儿挺神奇的，Git 好像知道 <code>main</code> 与 <code>o/main</code> 是相关的。当然这些分支的名字是相似的，可能会让你觉得是依此将远程分支 main 和本地的 main 分支进行了关联。这种关联在以下两种情况下可以清楚地得到展示：</p>
+<ul>
+<li>pull 操作时, 提交记录会被先下载到 o/main 上，之后再合并到本地的 main 分支。隐含的合并目标由这个关联确定的。</li>
+<li>push 操作时, 我们把工作从 <code>main</code> 推到远程仓库中的 <code>main</code> 分支(同时会更新远程分支 <code>o/main</code>) 。这个推送的目的地也是由这种关联确定的！</li>
+</ul>
+<p>直接了当地讲，<code>main</code> 和 <code>o/main</code> 的关联关系就是由分支的“remote tracking”属性决定的。<code>main</code> 被设定为跟踪 <code>o/main</code> —— 这意味着为 <code>main</code> 分支指定了推送的目的地以及拉取后合并的目标。</p>
+<p>你可能想知道 <code>main</code> 分支上这个属性是怎么被设定的，你并没有用任何命令指定过这个属性呀！好吧, 当你克隆仓库的时候, Git 就自动帮你把这个属性设置好了。</p>
+<p>当你克隆时, Git 会为远程仓库中的每个分支在本地仓库中创建一个远程分支（比如 <code>o/main</code>）。然后再创建一个跟踪远程仓库中活动分支的本地分支，默认情况下这个本地分支会被命名为 <code>main</code>。</p>
+<p>克隆完成后，你会得到一个本地分支（如果没有这个本地分支的话，你的目录就是“空白”的），但是可以查看远程仓库中所有的分支（如果你好奇心很强的话）。这样做对于本地仓库和远程仓库来说，都是最佳选择。</p>
+<p>这也解释了为什么会在克隆的时候会看到下面的输出：</p>
+<pre><code>local branch "main" set to track remote branch "o/main"
+</code></pre>
+<p><strong>我能自己指定这个属性吗？</strong></p>
+<p>当然可以啦！你可以让任意分支跟踪 <code>o/main</code>, 然后该分支会像 <code>main</code> 分支一样得到隐含的 push 目的地以及 merge 的目标。 这意味着你可以在分支 <code>totallyNotMain</code> 上执行 <code>git push</code>，将工作推送到远程仓库的 <code>main</code> 分支上。</p>
+<p>有两种方法设置这个属性，第一种就是通过远程分支检出一个新的分支，执行:</p>
+<pre><code>git checkout -b totallyNotMain o/main
+</code></pre>
+<p>就可以创建一个名为 <code>totallyNotMain</code> 的分支，它跟踪远程分支 <code>o/main</code></p>
+<p><img src="D:\pic-bed\img\image-20221110211330099.png" alt="image-20221110211330099"></p>
+<p><img src="D:\pic-bed\img\image-20221110211408162.png" alt="image-20221110211408162"></p>
+<p><img src="D:\pic-bed\img\image-20221110211448427.png" alt="image-20221110211448427"></p>
+<p><img src="D:\pic-bed\img\image-20221110211546666.png" alt="image-20221110211546666"></p>
+<pre><code class="shell">$ git checkout -b side o/main
+
+$ git commit
+
+$ git pull --rebase
+
+$ git push
+</code></pre>
+<h4 id="4-git-push的参数"><a href="#4-git-push的参数" class="headerlink" title="4.git push的参数"></a>4.git push的参数</h4><p>我们可以为 push 指定参数，语法是：</p>
+<pre><code class="shell">git push &lt;remote&gt; &lt;place&gt;
+</code></pre>
+<p><code>&lt;place&gt;</code> 参数是什么意思呢？我们稍后会深入其中的细节, 先看看例子, 这个命令是:</p>
+<pre><code>git push origin main
+</code></pre>
+<p>把这个命令翻译过来就是：</p>
+<p><em>切到本地仓库中的“main”分支，获取所有的提交，再到远程仓库“origin”中找到“main”分支，将远程仓库中没有的提交记录都添加上去，搞定之后告诉我。</em></p>
+<p>我们通过“place”参数来告诉 Git 提交记录来自于 main, 要推送到远程仓库中的 main。它实际就是要同步的两个仓库的位置。</p>
+<p>需要注意的是，因为我们通过指定参数告诉了 Git 所有它需要的信息, 所以它就忽略了我们所检出的分支的属性！</p>
+<p><img src="D:\pic-bed\img\image-20221110215556387.png" alt="image-20221110215556387"></p>
+<p><img src="D:\pic-bed\img\image-20221110215620322.png" alt="image-20221110215620322"></p>
+<pre><code class="shell">$ git push origin foo
+
+$ git push origin main
+</code></pre>
+<h4 id="5-Git-Push的参数2"><a href="#5-Git-Push的参数2" class="headerlink" title="5.Git Push的参数2"></a>5.Git Push的参数2</h4><p><strong><code>&lt;place&gt;</code>参数详解</strong></p>
+<p>还记得之前课程说的吧，当为 git push 指定 place 参数为 <code>main</code> 时，我们同时指定了提交记录的来源和去向。</p>
+<p>你可能想问 —— 如果来源和去向分支的名称不同呢？比如你想把本地的 <code>foo</code> 分支推送到远程仓库中的 <code>bar</code> 分支。</p>
+<p>哎，很遗憾 Git 做不到…… 开个玩笑，别当真！当然是可以的啦 :) Git 拥有超强的灵活性（有点过于灵活了）</p>
+<p>接下来咱们看看是怎么做的……</p>
+<p>要同时为源和目的地指定 <code>&lt;place&gt;</code> 的话，只需要用冒号 <code>:</code> 将二者连起来就可以了：</p>
+<pre><code>git push origin &lt;source&gt;:&lt;destination&gt;
+</code></pre>
+<p>这个参数实际的值是个 refspec，“refspec” 是一个自造的词，意思是 Git 能识别的位置（比如分支 <code>foo</code> 或者 <code>HEAD~1</code>）</p>
+<p>一旦你指定了独立的来源和目的地，就可以组织出言简意赅的远程操作命令了，让我们看看演示！</p>
+<p><img src="D:\pic-bed\img\image-20221110220055840.png" alt="image-20221110220055840"></p>
+<p><img src="D:\pic-bed\img\image-20221110220111855.png" alt="image-20221110220111855"></p>
+<p><img src="D:\pic-bed\img\image-20221110220138264.png" alt="image-20221110220138264"></p>
+<pre><code class="shell">$ git push origin main^:foo
+$ git push origin foo:main
+</code></pre>
+<h4 id="6-Git-Fetch的参数"><a href="#6-Git-Fetch的参数" class="headerlink" title="6. Git Fetch的参数"></a>6. Git Fetch的参数</h4><p><strong>Git fetch 的参数</strong></p>
+<p>我们刚学习了 git push 的参数，很酷的 <code>&lt;place&gt;</code> 参数，还有用冒号分隔的 refspecs（<code>&lt;source&gt;:&lt;destination&gt;</code>）。 这些参数可以用于 <code>git fetch</code> 吗？</p>
+<p>你猜中了！<code>git fetch</code> 的参数和 <code>git push</code> 极其相似。他们的概念是相同的，只是方向相反罢了（因为现在你是下载，而非上传）</p>
+<p><strong><code>&lt;place&gt;</code> 参数</strong></p>
+<p>如果你像如下命令这样为 git fetch 设置 的话：</p>
+<pre><code>git fetch origin foo
+</code></pre>
+<p>Git 会到远程仓库的 <code>foo</code> 分支上，然后获取所有本地不存在的提交，放到本地的 <code>o/foo</code> 上。</p>
+<p><img src="D:\pic-bed\img\image-20221110220855057.png" alt="image-20221110220855057"></p>
+<p><img src="D:\pic-bed\img\image-20221110220922899.png" alt="image-20221110220922899"></p>
+<p><img src="D:\pic-bed\img\image-20221110220942225.png" alt="image-20221110220942225"></p>
+<pre><code class="shell">$ git fetch origin foo:main
+
+$ git fetch origin main^:foo
+
+$ git checkout foo
+
+$ git merge main
+</code></pre>
+<h4 id="7-没有Source的Source"><a href="#7-没有Source的Source" class="headerlink" title="7.没有Source的Source"></a><strong>7.没有Source的Source</strong></h4><p><strong>古怪的 <code>&lt;source&gt;</code></strong></p>
+<p>Git 有两种关于 <code>&lt;source&gt;</code> 的用法是比较诡异的，即你可以在 git push 或 git fetch 时不指定任何 <code>source</code>，方法就是仅保留冒号和 destination 部分，source 部分留空。</p>
+<ul>
+<li><code>git push origin :side</code></li>
+<li><code>git fetch origin :bugFix</code></li>
+</ul>
+<p><img src="D:\pic-bed\img\image-20221110221714411.png" alt="image-20221110221714411"></p>
+<p><img src="D:\pic-bed\img\image-20221110221733330.png" alt="image-20221110221733330"></p>
+<p><img src="D:\pic-bed\img\image-20221110221757974.png" alt="image-20221110221757974"></p>
+<pre><code class="shell">$ git push origin :foo
+$ git fetch origin :bar
+</code></pre>
+<h4 id="8-Git-Pull的参数"><a href="#8-Git-Pull的参数" class="headerlink" title="8. Git Pull的参数"></a><strong>8. Git Pull的参数</strong></h4><p><strong>Git pull 参数</strong></p>
+<p>既然你已经掌握关于 <code>git fetch</code> 和 <code>git push</code> 参数的方方面面了，关于 git pull 几乎没有什么可以讲的了 :)</p>
+<p>因为 git pull 到头来就是 fetch 后跟 merge 的缩写。你可以理解为用同样的参数执行 git fetch，然后再 merge 你所抓取到的提交记录。</p>
+<p>以下命令在 Git 中是等效的:</p>
+<p><code>git pull origin foo</code> 相当于：</p>
+<pre><code>git fetch origin foo; git merge o/foo
+</code></pre>
+<p>还有…</p>
+<p><code>git pull origin bar~1:bugFix</code> 相当于：</p>
+<pre><code>git fetch origin bar~1:bugFix; git merge bugFix
+</code></pre>
+<p>看到了? git pull 实际上就是 fetch + merge 的缩写, git pull 唯一关注的是提交最终合并到哪里（也就是为 git fetch 所提供的 destination 参数）</p>
+<p>一起来看个例子吧：</p>
+<p><img src="D:\pic-bed\img\image-20221110222130136.png" alt="image-20221110222130136"></p>
+<p><img src="D:\pic-bed\img\image-20221110222143034.png" alt="image-20221110222143034"></p>
+<p><img src="D:\pic-bed\img\image-20221110222241861.png" alt="image-20221110222241861"></p>
+<p><img src="D:\pic-bed\img\image-20221110222301964.png" alt="image-20221110222301964"></p>
+<pre><code class="shell">$ git pull origin bar:foo
+
+$ git pull origin main:side
+</code></pre>
+<h2 id="GitAction"><a href="#GitAction" class="headerlink" title="GitAction"></a>GitAction</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>GitHub Actions 是一个自动执行任务的一种功能,github 官方提供了免费的 runnner 可供运行,<code>Github-hosted runner</code>就是服务器,有三种操作系统可供使用,分别是<code>windows</code>,<code>Unbuntu</code>和<code>macOS</code>,也可以设置 runner 为自己的私有服务器.</p>
+<p>Github Actions 结合GitHub仓库就可以实现脚本的自动运行,具体的应用场景有[^ 1]:</p>
+<ul>
+<li>自己写了一个pythn脚本,需要每天定时运行或者某个事件(push, pull)发生时运行.</li>
+<li>自己构建静态博客项目,将博客从本地 push 到仓库后,需要一些自动化的部署任务进行博客的更新与发布.</li>
+<li>一系列开发环境转化为生产环境的部署工作任务的自动化运行.</li>
+</ul>
+<p>每个 action 的存在形式就是github仓库上方的 Action 按钮和仓库里配置 Action的文件<code>.github/workflows</code>,这个文件夹下的workflow是yaml格式的文件:</p>
+<p><img src="D:\pic-bed\img\image-20211015142103825.png" alt="image-20211015142103825"></p>
+<p>GitHub提供了一些<a target="_blank" rel="noopener" href="https://github.com/marketplace?type=actions">官方市场</a> ,如果需要某些action,比如配置操作系统运行某个程序的初始环境,直接引用其他人写好的 action 即可.</p>
+<h3 id="GitHub-Actions组成"><a href="#GitHub-Actions组成" class="headerlink" title="GitHub Actions组成"></a>GitHub Actions组成</h3><p>GitHub Action 完是自动执行任务,它有如下几个概念:</p>
+<ol>
+<li>Envents: 事件,就是处罚workflow工作的事件,常见的有<code>push</code>,<code>pull</code>,也可以是<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows#example-using-a-single-event">其它事件</a></li>
+<li>Workflows: workflow就是添加到仓库的受事件驱动或者定时的自动运行程序,由至少一个job组成,可以用于构建,测试,封装,发行或者部署任务在github.</li>
+<li>job: 一个 job 由多个在 runner上执行的 steps组成.</li>
+<li>steps: 一个 step 可以是一个 action 或者一个 shell 命令.每个 job 中的step在相同的runner上.</li>
+<li>actions: workflow执行的最小单位, 一个独立的命令.</li>
+<li>runners: 就是一个服务器,Github提供的runner有三种操作系统, 也可以配置自己的服务器.</li>
+</ol>
+<h3 id="Workflow文件样例"><a href="#Workflow文件样例" class="headerlink" title="Workflow文件样例"></a>Workflow文件样例</h3><p>以我自己 fork 的bupt-nov-report-action仓库的 workflow 下的 mainl.yaml为例:</p>
+<pre><code class="yaml">name: Automatically submit the 2019-nCoV report sheet of BUPT
+
+on:
+  schedule:
+    - cron: "0/10 0 * * *"
+  push:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: |
+          npm install -g yarn
+          yarn --frozen-lockfile --non-interactive
+      - name: Run Script
+        run: |
+          yarn run ts-node src/index.ts
+        env:
+          BUPT_USERNAME: ${{ secrets.BUPT_USERNAME }}
+          BUPT_PASSWORD: ${{ secrets.BUPT_PASSWORD }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+</code></pre>
+<p>这个GitHub Action干了这么些事情:</p>
+<ul>
+<li>定时做这个action</li>
+<li>有一个名叫 checker 的 job</li>
+<li>runner 是ubuntu</li>
+<li>这个job下有很多steps,每个steps由 name , uses, run 等关键字组成,做了以下事情:<ul>
+<li>运行了github.com/action/checkout的 v1 版本的程序,检测环境.</li>
+<li>运行了actions/setup-nod@v1, 安装nodejs</li>
+<li>安装Npm依赖</li>
+<li>然后运行自己仓库的打卡脚本.</li>
+</ul>
+</li>
+<li>这些统一组成了一个自动执行的程序.</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>[^ 1]: <a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904137411264519">持续集成,持续交付,持续部署</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html">GitHub Actions 入门教程</a> </p>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/learn-github-actions">Learn GitHub Actions</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/imtsuki/bupt-ncov-report-action">bupt-ncov-report-action</a></p>
+<h3 id="Telegram-bot"><a href="#Telegram-bot" class="headerlink" title="Telegram bot"></a>Telegram bot</h3><p>Telegram bot也是自动执行脚本,只不过提交方式是在telegram,就类似于在wechat给文件助手发送几个参数或者命令,文件传输助手自动执行部署的任务并且发送结果给终端,和github相似的地方都是自动执行脚本,只不过telegram引入了移动设备.</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 欢迎在评论区中进行批评指正，转载请注明来源，如涉及侵权，请联系作者删除。 </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments">
+    <script src="https://utteranc.es/client.js"
+            repo="pengber/pengber.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            label="comment"
+            crossorigin="anonymous"
+            async>
+    </script>
+</div>
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2022-2022 pengber
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+        /* 渲染*/
+        function HTMLDecode(text) {
+            var temp = document.createElement("div");
+            temp.innerHTML = text;
+            var output = temp.innerText || temp.textContent;
+            temp = null;
+            return output;
+        }
+        if (window.mermaid){
+            window.mermaid = null
+        }
+        $.getScript("//cdn.jsdelivr.net/npm/mermaid@8.4.2/dist/mermaid.min.js", function () {
+            var mermaidOptions = JSON.parse(HTMLDecode("{&#34;theme&#34;:&#34;default&#34;,&#34;startOnLoad&#34;:true,&#34;flowchart&#34;:{&#34;useMaxWidth&#34;:false,&#34;htmlLabels&#34;:true}}"))
+            if (window.mermaid) {
+                mermaid.initialize(mermaidOptions)
+                mermaid.contentLoaded()
+            }
+        })
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 622px;
+    }
+    .nav.fullscreen {
+        margin-left: -622px;
+    }
+    .nav-left {
+        width: 200px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 552px;
+        }
+        .nav.fullscreen {
+            margin-left: -552px;
+        }
+        .nav-left {
+            width: 160px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 552px;
+            margin-left: -552px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
