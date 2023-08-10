@@ -955,7 +955,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="290">
-<input type="hidden" id="yelog_site_word_count" value="473.9k">
+<input type="hidden" id="yelog_site_word_count" value="462.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -3710,12 +3710,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-10 23:52:24'>2022-07-06 10:09</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-11 00:08:19'>2022-07-06 10:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:5.4k</span>
+        <span>字数:5.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -3832,9 +3832,11 @@ git commit -m "日期"
 git push
 </code></pre>
 </li>
-<li><p>然后利用notepadd++打开<code>D:\pengber.github.io\source\_posts\mdCreating</code>, 替换文件夹内的所有内容中 <code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code> 为 <code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code> 就可以更新本地图片为图床图片了.<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220710144530807.png" alt="image-20220710144530807"><br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220710144624799.png" alt="image-20220710144624799"></p>
+<li><p>然后利用notepadd++打开<code>D:\pengber.github.io\source\_posts\mdCreating</code>, 替换文件夹内的所有内容中 <code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code> 为 <code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code> 就可以更新本地图片为图床图片了, 但实际上不能这样更新, 因为这会更改本地的图片路径也为网络图片, 我的本意是, 本地文件是用本地图片, 然后发布到网上用网络图床路径, 所以我写了脚本, 在发布的时候替换字符串<br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220710144530807.png" alt="image-20220710144530807"><br><img src="https://raw.githubusercontent.com/pengber/pic-bed/main/img/image-20220710144624799.png" alt="image-20220710144624799"></p>
 </li>
 </ol>
+<p><code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code></p>
+<p><code>https://raw.githubusercontent.com/pengber/pic-bed/main/img/</code></p>
 <h2 id="移动mdcreating到pengber-github-io下"><a href="#移动mdcreating到pengber-github-io下" class="headerlink" title="移动mdcreating到pengber.github.io下"></a>移动mdcreating到pengber.github.io下</h2><p>将<code>D:mdcreating\</code>移动到 <code>D:\pengber.github.io\source\_posts\mdCreating</code> 并且对坚果云进行更改</p>
 <p>对一些私密类的文件进行后缀的更换</p>
 <h2 id="建立域名映射到github-io"><a href="#建立域名映射到github-io" class="headerlink" title="建立域名映射到github.io"></a>建立域名映射到github.io</h2><h3 id="建立CNAME文件"><a href="#建立CNAME文件" class="headerlink" title="建立CNAME文件"></a>建立CNAME文件</h3><p>在<code>D:\pengber.github.io\source</code>下建立<code>CNAME</code>文件, 无后缀, 并且在里面填写你的域名例如<code>pengber.site</code>, 注意<strong>没有http</strong>, <strong>没有www</strong></p>
